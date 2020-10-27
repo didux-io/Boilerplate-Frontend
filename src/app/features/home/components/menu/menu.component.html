@@ -1,0 +1,31 @@
+<div class="menu-inner-div">
+    <div class="logo">
+        <img src="/assets/img/logo.png">
+    </div>
+
+    <div class="logo-small">
+        <img src="/assets/img/logo.png">
+    </div>
+
+    <div class="items">
+        <div class="item" [routerLink]="['overview']" routerLinkActive="active-link">
+            <div class="menu-icon-container">
+                <fa-icon [icon]="['fas', 'home']"></fa-icon>
+            </div>
+            <span>
+                {{ 'MENU.home' | translate }}
+            </span>
+        </div>
+
+        <div class="item" [routerLink]="['logout']" routerLinkActive="active-link">
+            <div class="menu-icon-container">
+                <fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon>
+            </div>
+            <span>
+                {{ 'MENU.signout' | translate }}
+            </span>
+        </div>
+
+        <build-number-text></build-number-text>
+    </div>
+</div>

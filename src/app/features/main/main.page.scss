@@ -1,0 +1,76 @@
+:host {
+
+    .login-header {
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+        position: absolute;
+        background: white;
+        justify-content: space-between;
+        padding-right: 50px;
+
+        p {
+            margin-bottom: 0;
+            font-weight: 800;
+
+            &:hover {
+                cursor: pointer;
+                opacity: 0.5;
+            }
+        }
+
+        img {
+            width: 50px;
+            margin-left: 25px;
+        }
+    }
+
+    .main-view-div {
+        left: 0;
+        top: 0;
+        background: linear-gradient(to bottom, rgba(92, 77, 66, 0.6) 0, rgba(92, 77, 66, 0.6) 100%), url(/assets/img/bg-tech.jpg) no-repeat;
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 10vw;
+        padding-right: 35vw;
+    }
+
+    .section-1 {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 10vw;
+        padding-right: 15vw;
+    }
+
+    .footer {
+        background-color: gray;
+        display: flex;
+        padding-left: 10vw;
+        padding-right: 15vw;
+        padding-bottom: 5vh;
+        padding-top: 5vh;
+    }
+
+    .footer-section {
+
+        h1 {
+            color: #F27D42;
+            margin-bottom: 5vh;
+        }
+        p {
+            color: white;
+        }
+
+        padding-right: 5vw;
+    }
+}

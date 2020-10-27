@@ -1,0 +1,22 @@
+{
+    "MENU": {
+        "home": "Home",
+        "signout": "Uitloggen"
+    },
+    "HEADER": {
+        "OVERVIEW": "Dashboard",
+        "PROFILE": "Profiel"
+    },
+    "PROFILE": {
+        "title": "Gebruikersprofiel",
+        "username": "Gebruikersnaam",
+        "choose_language": "Taal kiezen",
+        "email": "Email",
+        "role": "Rol",
+        "password": "Wachtwoord",
+        "login_button": "Login",
+        "language": "Taal",
+        "registrate_button": "Registreer",
+        "update_button": "Bijwerken"
+    }
+}

@@ -1,0 +1,10 @@
+<div class="header-main-div">
+    <div class="header-left-div">
+        <p>{{ (pageTitleLanguageKey$ | async) | translate }}</p>
+    </div>
+    
+    <div class="header-icons-div">
+        <fa-icon class="user-icon" [routerLink]="['profile']" [icon]="['fas', 'user-circle']"></fa-icon>
+    </div>
+</div>
+

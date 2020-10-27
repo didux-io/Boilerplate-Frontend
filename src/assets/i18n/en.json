@@ -1,0 +1,22 @@
+{
+    "MENU": {
+        "home": "Home",
+        "signout": "Sign out"
+    },
+    "HEADER": {
+        "OVERVIEW": "Overview",
+        "PROFILE": "Profile"
+    },
+    "PROFILE": {
+        "title": "User profile",
+        "username": "Username",
+        "choose_language": "Choose language",
+        "email": "Email",
+        "role": "Role",
+        "password": "Password",
+        "login_button": "Login",
+        "language": "Language",
+        "registrate_button": "Registrate",
+        "update_button": "Update"
+    }
+}
