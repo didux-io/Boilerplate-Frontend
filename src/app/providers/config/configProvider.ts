@@ -5,7 +5,9 @@ import { take } from 'rxjs/operators';
 
 @Injectable()
 export class ConfigProvider {
-    portalBackendUrl: string;
+    backendUrl: string;
+    appName: string;
+    appDescription: string;
 
     constructor(private http: HttpClient) {
 
@@ -14,7 +16,9 @@ export class ConfigProvider {
     async getConfig(): Promise<IConfig> {
         try {
             const config = await this.http.get<IConfig>('/assets/config/config.json').pipe(take(1)).toPromise();
-            this.portalBackendUrl = config.portalBackendUrl;
+            this.backendUrl = config.backendUrl;
+            this.appName = config.appName;
+            this.appDescription = config.appDescription;
             return config;
         } catch (error) {
             console.error('Error in config.json!:', error);
@@ -22,7 +26,15 @@ export class ConfigProvider {
         }
     }
 
-    getPortalBackendUrl(): string {
-        return this.portalBackendUrl;
+    getBackendUrl(): string {
+        return this.backendUrl;
+    }
+
+    getAppName(): string {
+        return this.appName;
+    }
+
+    getAppDescription(): string {
+        return this.appDescription;
     }
 }

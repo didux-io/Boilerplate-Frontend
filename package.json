@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "scripts": {
     "prebuild": "node prebuild.js",
-    "postinstall": "node patch.js",
     "ng": "ng",
     "start": "ng serve --port=4215 --host=0.0.0.0",
     "build": "ng version; ng build --prod",

@@ -1,4 +1,8 @@
 {
+    "APP": {
+        "name": "Applicatie naam",
+        "title": "Een titel"
+    },
     "MENU": {
         "home": "Home",
         "signout": "Uitloggen"

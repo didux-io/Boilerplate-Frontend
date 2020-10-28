@@ -1,3 +1,5 @@
 export interface IConfig {
-    portalBackendUrl: string;
+    backendUrl: string;
+    appName: string;
+    appDescription: string;
 }

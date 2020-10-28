@@ -85,7 +85,7 @@ export class LoginPageComponent extends BaseComponent implements OnInit {
     }
 
     async setupWebRtc(signalingUrl: string) {
-        const portalBackendUrl = (await this.configProvider.getConfig()).portalBackendUrl;
+        const config = await this.configProvider.getConfig()
         this.webRtcProvider.setConfig({
             signalingUrl,
             isHost: true
@@ -117,10 +117,10 @@ export class LoginPageComponent extends BaseComponent implements OnInit {
                         credentials: [
                             { key: 'EMAIL', provider: 'EMAIL', name: 'Email' },
                         ],
-                        by: 'ProofMe.ID Checkin Portal',
-                        description: 'ProofMe.ID Checkin Portal'
+                        by: config.appName,
+                        description: config.appDescription
                     };
-                    this.webRtcProvider.sendData('identify', { request: credentials, type: 'email', timestamp, url: portalBackendUrl, login: true });
+                    this.webRtcProvider.sendData('identify', { request: credentials, type: 'email', timestamp, url: config.backendUrl, login: true });
                 }
                 if (data.token) {
                     // Set the token
