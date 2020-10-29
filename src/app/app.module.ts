@@ -26,7 +26,7 @@ import { STORAGE_ENGINE, NGXS_STORAGE_PLUGIN_OPTIONS } from '@ngxs-labs/async-st
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { StorageProvider } from './providers/storage/capacitor-storage.provider';
-import { WebRtcProvider } from './providers/webRtcProvider/webRtc.provider';
+import { WebRtcProvider } from 'proofmeid-webrtc';
 import { UserStateModule } from './state/user/user.module';
 import { AppStateModule } from './state/app/app.module';
 

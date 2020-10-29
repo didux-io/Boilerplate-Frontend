@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { WebRtcProvider } from 'src/app/providers/webRtcProvider/webRtc.provider';
+import { WebRtcProvider } from 'proofmeid-webrtc';
 import { UserStateFacade } from 'src/app/state/user/user.facade';
 
 @Component({

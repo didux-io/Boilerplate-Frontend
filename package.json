@@ -37,6 +37,7 @@
     "ngx-select-ex": "^3.7.6",
     "ngx-toastr": "^10.0.4",
     "qrcode": "^1.4.4",
+    "proofmeid-webrtc": "0.0.10",
     "rxjs": "~6.4.0",
     "rxjs-compat": "^6.5.4",
     "websocket": "^1.0.32",

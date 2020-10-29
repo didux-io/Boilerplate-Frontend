@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
 import * as QRCode from 'qrcode';
 import { ConfigProvider } from 'src/app/providers/config/configProvider';
 import { BaseComponent } from '../base-component/base-component';
-import { WebRtcProvider } from 'src/app/providers/webRtcProvider/webRtc.provider';
+import { WebRtcProvider } from 'proofmeid-webrtc';
 import { UserStateFacade } from 'src/app/state/user/user.facade';
 import { AppStateFacade } from 'src/app/state/app/app.facade';
 import { ToastrService } from 'ngx-toastr';
