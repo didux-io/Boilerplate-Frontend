@@ -85,8 +85,8 @@ export class AppState {
 
     @Action(SetAuthWsUrlAction)
     setAuthWsUrl(ctx: StateContext<IAppState>, payload: SetAuthWsUrlAction): void {
-        console.log('this.configProvider.getPortalBackendUrl();', this.configProvider.getPortalBackendUrl());
-        this.http.get<any>(`${this.configProvider.getPortalBackendUrl()}/v1/auth/config`).subscribe((config) => {
+        console.log('this.configProvider.getBackendUrl();', this.configProvider.getBackendUrl());
+        this.http.get<any>(`${this.configProvider.getBackendUrl()}/v1/auth/config`).subscribe((config) => {
             ctx.patchState({
                 authWsUrl: config.authWsUrl,
                 emailEnabled: config.emailEnabled,

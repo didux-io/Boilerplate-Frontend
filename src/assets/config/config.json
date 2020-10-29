@@ -1,3 +1,5 @@
 {
-    "portalBackendUrl": "http://10.1.17.46:4015"
+    "backendUrl": "http://10.1.17.52:4015",
+    "appName": "APPLICATION_NAME",
+    "appDescription": "APPLICATION DESCRIPTION"
 }
