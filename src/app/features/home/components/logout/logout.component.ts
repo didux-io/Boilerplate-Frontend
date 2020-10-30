@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { WebRtcProvider } from 'proofmeid-webrtc';
 import { UserStateFacade } from 'src/app/state/user/user.facade';
+import { WebRtcProvider } from '@proofmeid/webrtc';
 
 @Component({
     selector: 'app-logout',

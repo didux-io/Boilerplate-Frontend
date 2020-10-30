@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { LogoutAction } from './actions/logout.action';
 import { IJWTDecoded } from 'src/app/interfaces/jwtDecoded.interface';
 import { SetAccessTokenAction } from './actions/set-access-token.action';
-import * as jwt_decode from 'jwt-decode';
+import jwt_decode from 'jwt-decode';
 import { UpdateUserAction } from './actions/update-account';
 import { tap } from 'rxjs/operators';
 import { catchError } from 'rxjs/internal/operators/catchError';
@@ -13,6 +13,8 @@ import { throwError } from 'rxjs';
 import { RegistrateUserAction } from './actions/registrate-user';
 import { ToastrService } from 'ngx-toastr';
 import { UserLoginAction } from './actions/user-login';
+import { Injectable } from '@angular/core';
+import { FinishRegistrationAction } from './actions/finish-registration';
 
 export interface IUserState {
     access_token: string;
@@ -36,6 +38,7 @@ export interface IUserState {
         registrationError: false
     }
 })
+@Injectable()
 export class UserState {
 
     @Selector()
@@ -73,10 +76,11 @@ export class UserState {
         return state.registrationError;
     }
 
-    constructor(private http: HttpClient,
-                private toastr: ToastrService,
-                private configProvider: ConfigProvider,
-                private router: Router) {
+    constructor(
+        private http: HttpClient,
+        private toastr: ToastrService,
+        private configProvider: ConfigProvider
+    ) {
 
     }
 
@@ -111,14 +115,12 @@ export class UserState {
             }
         ).pipe(
             tap((response: any) => {
-                console.log('User logged in by email');
                 const jwtDecoded: IJWTDecoded = jwt_decode(response.token);
                 ctx.patchState({
                     userLoginError: false,
                     access_token: response.token,
                     jwtDecoded
                 });
-                console.log('patched state');
             }),
             catchError((error) => {
                 ctx.patchState({
@@ -143,7 +145,6 @@ export class UserState {
             }
         ).pipe(
             tap((response: any) => {
-                console.log('success update user!');
                 const jwtDecoded: IJWTDecoded = jwt_decode(response.token);
                 ctx.patchState({
                     updateUserError: false,
@@ -174,14 +175,41 @@ export class UserState {
             }
         ).pipe(
             tap((response: any) => {
-                console.log('success update user!');
-                this.toastr.success(`Registration success`);
                 ctx.patchState({
                     registratedEmail: payload.email
                 });
             }),
             catchError((error) => {
-                console.log('registrationError FALSE');
+                ctx.patchState({
+                    registrationError: true
+                });
+                return throwError(error);
+            })
+        );
+    }
+
+    @Action(FinishRegistrationAction)
+    finishRegistration(ctx: StateContext<IUserState>, payload: FinishRegistrationAction) {
+        ctx.patchState({
+            registrationError: false,
+        });
+        return this.http.post(
+            `${this.configProvider.getBackendUrl()}/v1/user/finishRegistration`,
+            {
+                username: payload.username,
+                termsAndPrivacyAccepted: payload.termsAndPrivacyAccepted,
+                newsLetterAccepted: payload.newsLetter
+            }
+        ).pipe(
+            tap((response: any) => {
+                const jwtDecoded: IJWTDecoded = jwt_decode(response.token);
+                ctx.patchState({
+                    updateUserError: false,
+                    access_token: response.token,
+                    jwtDecoded
+                });
+            }),
+            catchError((error) => {
                 ctx.patchState({
                     registrationError: true
                 });

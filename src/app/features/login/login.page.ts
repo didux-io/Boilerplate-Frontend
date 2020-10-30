@@ -1,17 +1,16 @@
-import { Component, OnInit, ViewChild, ElementRef, NgZone} from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, NgZone, TemplateRef, AfterViewInit} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
-import { LanguageProvider } from '../../providers/language/languageProvider';
-import { first, skip, takeUntil } from 'rxjs/operators';
-import { Subscription } from 'rxjs';
+import { filter, skip, takeUntil } from 'rxjs/operators';
 import * as QRCode from 'qrcode';
 import { ConfigProvider } from 'src/app/providers/config/configProvider';
 import { BaseComponent } from '../base-component/base-component';
-import { WebRtcProvider } from 'proofmeid-webrtc';
 import { UserStateFacade } from 'src/app/state/user/user.facade';
 import { AppStateFacade } from 'src/app/state/app/app.facade';
 import { ToastrService } from 'ngx-toastr';
+import { WebRtcProvider } from '@proofmeid/webrtc';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { RecoveryModalComponent } from 'src/app/modals/recoveryModal.component';
 
 @Component({
     templateUrl: 'login.page.html',
@@ -19,16 +18,13 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginPageComponent extends BaseComponent implements OnInit {
     loginForm: FormGroup;
-
     websocketDisconnected = false;
+    mobileLoginUrl: string;
+    emailEnabled$ = this.appStateFacade.emailEnabled$;
+    webRtcEnabled$ = this.appStateFacade.webRtcEnabled$;
 
     @ViewChild('qrCodeCanvas', null)
     qrCodeCanvas: ElementRef;
-
-    mobileLoginUrl: string;
-
-    emailEnabled$ = this.appStateFacade.emailEnabled$;
-    webRtcEnabled$ = this.appStateFacade.webRtcEnabled$;
 
     constructor(
         private configProvider: ConfigProvider,
@@ -40,6 +36,7 @@ export class LoginPageComponent extends BaseComponent implements OnInit {
         private formBuilder: FormBuilder,
         private toastr: ToastrService,
         private activatedRoute: ActivatedRoute,
+        private modalService: BsModalService
     ) {
         super();
 
@@ -48,11 +45,22 @@ export class LoginPageComponent extends BaseComponent implements OnInit {
             password: new FormControl('', Validators.required)
         });
 
+        // These are for the email callback
         this.activatedRoute.queryParams.subscribe((params: Params) => {
             if (params.emailVerified && params.emailVerified === 'true') {
                 this.toastr.success('Email verification success! Please login');
             } else if (params.emailVerified && params.emailVerified === 'false') {
                 this.toastr.error('Email verification failed!');
+            } else if (params.emailRecoveryExpired && params.emailRecoveryExpired === 'true') {
+                this.toastr.error('Account recovery expired!');
+            } else if (params.emailRecovered && params.emailRecovered === 'true') {
+                this.toastr.success('Account recovery success!');
+            } else if (params.emailRecovered && params.emailRecovered === 'false') {
+                this.toastr.error('Account recovery failed!');
+            } else if (params.emailRecoverCancelled && params.emailRecoverCancelled === 'true') {
+                this.toastr.success('Account recovery cancelled successfully!');
+            } else if (params.emailRecoverCancelled && params.emailRecoverCancelled === 'false') {
+                this.toastr.error('Account recovery cancel failed!');
             }
         });
     }
@@ -61,71 +69,68 @@ export class LoginPageComponent extends BaseComponent implements OnInit {
         await this.configProvider.getConfig();
         this.appStateFacade.setAuthWsUrl();
         this.appStateFacade.authWsUrl$.pipe(takeUntil(this.destroy$)).subscribe((signalingUrl) => {
-            console.log('authWsUrl$:', signalingUrl);
             if (signalingUrl) {
                 this.setupWebRtc(signalingUrl);
             }
         });
 
         this.userStateFacade.userLoginError$.pipe(skip(1), takeUntil(this.destroy$)).subscribe((error) => {
-            console.log('userLoginError$:', error);
             if (error) {
-                console.error(error);
                 this.toastr.error('Login failed');
             }
         });
         this.userStateFacade.accessToken$.pipe(skip(1), takeUntil(this.destroy$)).subscribe((token) => {
-            console.log('accessToken$:', token);
             if (token) {
                 this.ngZone.run(() => {
-                    this.router.navigate(['home/overview']);
+                    this.router.navigate(['registrate-finish']);
                 });
             }
         });
     }
 
     async setupWebRtc(signalingUrl: string) {
-        const config = await this.configProvider.getConfig()
+        const config = await this.configProvider.getConfig();
         this.webRtcProvider.setConfig({
             signalingUrl,
             isHost: true
         });
 
-        this.webRtcProvider.uuid$.pipe(takeUntil(this.destroy$)).subscribe(uuid => {
-            if (uuid != null) {
-                const canvas = this.qrCodeCanvas.nativeElement as HTMLCanvasElement;
-                this.websocketDisconnected = false;
-                QRCode.toCanvas(canvas, `p2p:${uuid}:${encodeURIComponent(signalingUrl)}`, {
-                    width: 210
-                });
-                this.mobileLoginUrl = `diduxio://didux.io/p2p?uuid=${uuid}&wsUrl=${signalingUrl}`;
-            }
+        this.webRtcProvider.uuid$.pipe(skip(1), takeUntil(this.destroy$), filter(x => !!x)).subscribe(uuid => {
+            const canvas = this.qrCodeCanvas.nativeElement as HTMLCanvasElement;
+            this.websocketDisconnected = false;
+            QRCode.toCanvas(canvas, `p2p:${uuid}:${encodeURIComponent(signalingUrl)}`, {
+                width: 210
+            });
+            this.mobileLoginUrl = `diduxio://didux.io/p2p?uuid=${uuid}&wsUrl=${signalingUrl}`;
         });
-        this.webRtcProvider.websocketConnectionClosed$.pipe(takeUntil(this.destroy$)).subscribe((closed) => {
-            if (closed) {
-                this.websocketDisconnected = true;
-            }
+        this.webRtcProvider.websocketConnectionClosed$.pipe(skip(1), takeUntil(this.destroy$), filter(x => !!x)).subscribe((closed) => {
+            this.websocketDisconnected = true;
         });
-        this.webRtcProvider.receivedActions$.pipe(skip(1), takeUntil(this.destroy$)).subscribe((data) => {
+        this.webRtcProvider.receivedActions$.pipe(skip(1), takeUntil(this.destroy$), filter(x => !!x)).subscribe((data) => {
             console.log('Received:', data);
-            if (data) {
-                // When the client is connected
-                if (data.action === 'p2pConnected' && data.p2pConnected) {
-                    // Send an identify by email request
-                    const timestamp = new Date();
-                    const credentials = {
-                        credentials: [
-                            { key: 'EMAIL', provider: 'EMAIL', name: 'Email' },
-                        ],
-                        by: config.appName,
-                        description: config.appDescription
-                    };
-                    this.webRtcProvider.sendData('identify', { request: credentials, type: 'email', timestamp, url: config.backendUrl, login: true });
-                }
-                if (data.token) {
-                    // Set the token
-                    this.userStateFacade.setAccessToken(data.token);
-                }
+            // When the client is connected
+            if (data.action === 'p2pConnected' && data.p2pConnected) {
+                // Login with mobile
+                this.webRtcProvider.sendData('login', { url: config.backendUrl });
+            }
+            if (data.token) {
+                // Set the token
+                this.userStateFacade.setAccessToken(data.token);
+            }
+            if (data.identify) {
+                // Identify with mobile
+                const timestamp = new Date();
+                const credentials = {
+                    credentials: [
+                        { key: 'EMAIL', provider: 'EMAIL', name: 'Email' },
+                    ],
+                    by: config.appName,
+                    description: config.appDescription
+                };
+                this.webRtcProvider.sendData('identify', { request: credentials, type: 'email', timestamp, url: config.backendUrl, login: true });
+            }
+            if (data.recover) {
+                this.modalService.show(RecoveryModalComponent);
             }
         });
         this.webRtcProvider.launchWebsocketClient();
@@ -136,7 +141,6 @@ export class LoginPageComponent extends BaseComponent implements OnInit {
     }
 
     login() {
-        console.log('LOGIN!');
         const email = this.loginForm.get('email').value;
         const password = this.loginForm.get('password').value;
         this.userStateFacade.userLogin(email, password);

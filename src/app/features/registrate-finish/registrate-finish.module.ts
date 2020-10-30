@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { LoginPageComponent } from './login.page';
+import { RegistrateFinishPageComponent } from './registrate-finish.page';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
@@ -9,14 +9,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { NgxSelectModule } from 'ngx-select-ex';
 import { LanguageProvider } from '../../providers/language/languageProvider';
-import { SafeUrlPipe } from 'src/app/pipes/safe-link-pipe';
-import { RecoveryModalComponent } from 'src/app/modals/recoveryModal.component';
-import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
 
 const routes: Routes = [
     {
         path: '',
-        component: LoginPageComponent
+        component: RegistrateFinishPageComponent
     }
 ];
 
@@ -30,19 +27,15 @@ const routes: Routes = [
         FontAwesomeModule,
         NgbModule,
         ComponentsModule,
-        NgxSelectModule,
-        ModalModule.forRoot()
+        NgxSelectModule
     ],
     declarations: [
-        LoginPageComponent,
-        SafeUrlPipe,
-        RecoveryModalComponent
+        RegistrateFinishPageComponent
     ],
     providers: [
-        LanguageProvider,
-        BsModalService
+        LanguageProvider
     ]
 })
-export class LoginPageModule {
+export class RegistrateFinishPageModule {
 
 }

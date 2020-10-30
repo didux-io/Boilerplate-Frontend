@@ -22,5 +22,11 @@
         "language": "Language",
         "registrate_button": "Registrate",
         "update_button": "Update"
+    },
+    "MODALS": {
+        "RECOVERY": {
+            "title": "E-mail already existing",
+            "message": "The e-mail provided is already existing. You have received an e-mail to recover your account"
+        }
     }
 }

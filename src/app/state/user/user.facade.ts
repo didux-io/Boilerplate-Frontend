@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { IJWTDecoded } from 'src/app/interfaces/jwtDecoded.interface';
+import { FinishRegistrationAction } from './actions/finish-registration';
 import { LogoutAction } from './actions/logout.action';
 import { RefreshAction } from './actions/refresh.action';
 import { RegistrateUserAction } from './actions/registrate-user';
@@ -56,5 +57,9 @@ export class UserStateFacade {
 
     userLogin(email: string, password: string): Observable<any> {
         return this.store.dispatch(new UserLoginAction(email, password));
+    }
+
+    finishRegistration(username: string, termsAndPrivacyAccepted: string, newsLetter: string): Observable<any> {
+        return this.store.dispatch(new FinishRegistrationAction(username, termsAndPrivacyAccepted, newsLetter));
     }
 }

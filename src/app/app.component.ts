@@ -3,7 +3,6 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ConfigProvider } from './providers/config/configProvider';
 import { AppStateFacade } from './state/app/app.facade';
-import { WebRtcProvider } from 'proofmeid-webrtc';
 
 @Component({
     selector: 'app-root',
@@ -23,7 +22,6 @@ export class AppComponent implements OnInit {
 
         this.setBuildNumber();
         this.configProvider.getConfig();
-        console.log('WebRtcProvider:', WebRtcProvider);
     }
 
     ngOnInit() {

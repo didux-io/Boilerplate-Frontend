@@ -14,9 +14,7 @@ export class HasJwtTokenDefinedGuard implements CanActivate {
 
     async canActivate() {
         const token = await this.userStateFacade.accessToken$.pipe(take(1)).toPromise();
-        console.log('HasJwtTokenDefinedGuard token', token);
         if (!token) {
-            console.log('No token defined! Back to login');
             this.router.navigate(['login']);
         }
         return !!token;

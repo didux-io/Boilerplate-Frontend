@@ -54,12 +54,10 @@ export class ProfilePageComponent implements OnInit {
 
     convertUserPowerToRoleName(userPower: number) {
         switch (userPower) {
-            case 100:
-                return 'Admin';
-                break;
             case 1:
+                return 'Admin';
+            case 100:
                 return 'User';
-                break;
         }
     }
 

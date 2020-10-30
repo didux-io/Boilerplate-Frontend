@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { AppStateFacade } from 'src/app/state/app/app.facade';
+import { UserStateFacade } from 'src/app/state/user/user.facade';
 
 @Component({
     selector: 'app-header',
@@ -10,9 +11,10 @@ import { AppStateFacade } from 'src/app/state/app/app.facade';
 export class HeaderComponent {
 
     pageTitleLanguageKey$ = this.appStateFacade.pageTitleLanguageKey$;
+    jwtDecoded$ = this.userStateFacade.jwtDecoded$;
 
     constructor(
-        private router: Router,
+        private userStateFacade: UserStateFacade,
         private appStateFacade: AppStateFacade
     ) {
 

@@ -22,5 +22,11 @@
         "language": "Taal",
         "registrate_button": "Registreer",
         "update_button": "Bijwerken"
+    },
+    "MODALS": {
+        "RECOVERY": {
+            "title": "E-mail bestaat al",
+            "message": "Het opgegeven e-mail is al aanwezig. Je heeft een e-mail ontvangen om jouw account te herstellen"
+        }
     }
 }

@@ -4,6 +4,7 @@
     </div>
     
     <div class="header-icons-div">
+        <p>{{ (jwtDecoded$ | async).user_claims.username  }}</p>
         <fa-icon class="user-icon" [routerLink]="['profile']" [icon]="['fas', 'user-circle']"></fa-icon>
     </div>
 </div>

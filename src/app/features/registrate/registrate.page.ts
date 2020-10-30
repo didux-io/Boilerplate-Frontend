@@ -38,9 +38,9 @@ export class RegistratePageComponent extends BaseComponent implements OnInit {
             }
         });
         this.userStateFacade.registratedEmail$.pipe(skip(1), takeUntil(this.destroy$)).subscribe((email) => {
-            console.log('RegistratePageComponent registratedEmail$');
             if (email) {
                 this.registratedEmail = email;
+                this.toastr.success(`Registration success`);
             }
         });
     }

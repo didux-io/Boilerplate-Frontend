@@ -21,6 +21,10 @@ const routes: Routes = [
         loadChildren: './features/registrate/registrate.module#RegistratePageModule'
     },
     {
+        path: 'registrate-finish',
+        loadChildren: './features/registrate-finish/registrate-finish.module#RegistrateFinishPageModule'
+    },
+    {
         path: 'home',
         loadChildren: './features/home/home.module#HomePageModule',
         canActivate: [HasJwtTokenDefinedGuard]

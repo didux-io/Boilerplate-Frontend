@@ -5,6 +5,7 @@ import { SetLanguage } from './actions/set-language.action';
 import { SetAuthWsUrlAction } from './actions/set-auth-ws-url';
 import { HttpClient } from '@angular/common/http';
 import { ConfigProvider } from 'src/app/providers/config/configProvider';
+import { Injectable } from '@angular/core';
 
 export interface IAppState {
     pageTitleLanguageKey: string;
@@ -26,6 +27,7 @@ export interface IAppState {
         emailEnabled: false
     }
 })
+@Injectable()
 export class AppState {
     @Selector()
     static pageTitleLanguageKey(state: IAppState): string {
@@ -85,7 +87,6 @@ export class AppState {
 
     @Action(SetAuthWsUrlAction)
     setAuthWsUrl(ctx: StateContext<IAppState>, payload: SetAuthWsUrlAction): void {
-        console.log('this.configProvider.getBackendUrl();', this.configProvider.getBackendUrl());
         this.http.get<any>(`${this.configProvider.getBackendUrl()}/v1/auth/config`).subscribe((config) => {
             ctx.patchState({
                 authWsUrl: config.authWsUrl,

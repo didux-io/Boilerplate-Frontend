@@ -10,4 +10,16 @@
     --menu-color: #2c3e50;
 
     --content-background-color: var(--light);
+
+    .checkbox-checked {
+        background-color: goldenrod;
+        border: 1px solid goldenrod;
+        border-radius: 2px;
+    }
+
+    .checkbox-not-checked {
+        background-color: grey;
+        border: 1px solid grey;
+        border-radius: 2px;
+    }
 }

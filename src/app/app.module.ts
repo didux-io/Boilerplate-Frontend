@@ -26,9 +26,10 @@ import { STORAGE_ENGINE, NGXS_STORAGE_PLUGIN_OPTIONS } from '@ngxs-labs/async-st
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { StorageProvider } from './providers/storage/capacitor-storage.provider';
-import { WebRtcProvider } from 'proofmeid-webrtc';
 import { UserStateModule } from './state/user/user.module';
 import { AppStateModule } from './state/app/app.module';
+import { WebRtcProvider } from '@proofmeid/webrtc';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -91,6 +92,7 @@ const NGXS_PROVIDERS: Provider[] = [
         ...NGXS_MODULES,
         PopoverModule.forRoot(),
         BsDatepickerModule.forRoot(),
+        ModalModule.forRoot(),
     ],
     providers: [
         ...NGXS_PROVIDERS,
