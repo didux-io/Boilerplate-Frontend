@@ -1,0 +1,98 @@
+<app-main-header></app-main-header>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="main-view-div">
+    <div class="container" style="padding-top:5vh;">
+        <div class="main-title">
+            <h1>{{ 'MAIN.title' | translate }}</h1>
+        </div>
+        <div class="main-text">
+            <h5> {{ 'MAIN.subtitle' | translate }}</h5>
+        </div>
+
+        <section class="section-1">
+
+            <h2>{{ 'MAIN.title2' | translate }}</h2>
+            <p>{{ 'MAIN.subtitle2' | translate }}</p>
+
+        </section>
+    </div>
+</div>
+
+
+<!-- contact-section start -->
+<section id="contact" class="contact-section">
+
+    <div class="container"
+        style="box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.1); padding: 30px; margin-bottom: 5vh; margin-top: 5vh; border-radius: 10px;">
+        <div class="contact-wrapper">
+            <div class="section-header text-center mb--50">
+                <h3>{{ 'index.contact.title' | translate}}</h3>
+                <h6>{{ 'index.contact.subtitle' | translate}} <i class="fa fa-heart"></i>{{ 'index.contact.subtitle2' | translate}}</h6>
+            </div>
+            <div class="contact">
+                <form class="contact-form">
+                    <div class="row">
+                        <div class="col-lg-6 mb-lg-0" style="margin-bottom: 50px;">
+                            <input type="hidden" name="receiver" id="receiver" value="didux">
+                            <input type="text" style="border-radius: 5px;" name="name" id="name"
+                                placeholder="{{ 'index.contact.name' | translate}}">
+                            <input type="email" style="border-radius: 5px;" name="email" id="emailaddress"
+                                placeholder="{{ 'index.contact.email' | translate}}">
+
+                            <!-- Captcha copied from didux -->
+                            <div class="g-recaptcha" name="captchaCode"
+                                data-sitekey="6Lcs7asUAAAAAEcR9OdIPiDKrI-nkxtxrr5k6hw3">
+                                <div style="width: 304px; height: 78px;">
+                                    <div><iframe
+                                            src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Lcs7asUAAAAAEcR9OdIPiDKrI-nkxtxrr5k6hw3&amp;co=aHR0cHM6Ly9kaWR1eC5pbzo0NDM.&amp;hl=nl&amp;v=1AZgzF1o3OlP73CVr69UmL65&amp;size=normal&amp;cb=tuc0caj6jtwu"
+                                            width="304" height="78" role="presentation" name="a-6l35qdvrcloh"
+                                            frameborder="0" scrolling="no"
+                                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+                                    </div><textarea id="g-recaptcha-response" name="g-recaptcha-response"
+                                        class="g-recaptcha-response"
+                                        style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+                                </div><iframe style="display: none;"></iframe>
+                            </div>
+                            <!-- End Captcha -->
+
+                        </div>
+                        <div class="col-lg-6 ">
+                            <textarea id="message" style="border-radius: 5px;"
+                                placeholder="{{ 'index.contact.message' | translate}}"></textarea>
+                        </div>
+                        <div class="col-12 text-center pt--50">
+                            <button type="button" style="border-radius: 5px; margin-top:50px" id="sendEmailButton"
+                                onclick="sendEmail();"><i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                {{ 'index.contact.send' | translate}}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact-section end -->
+
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-section">
+                <h1>Cookies</h1>
+                <p>Chocolate</p>
+                <p>Prime</p>
+                <p>Yummy</p>
+                <p>Creamy</p>
+            </div>
+            <div class="footer-section">
+                <h1>Drinks</h1>
+                <p>Beer</p>
+                <p>Wine</p>
+                <p (click)="navigateToTerms()">{{ 'FOOTER.terms' | translate }}</p>
+                <p (click)="navigateToPrivacy()">{{ 'FOOTER.privacy' | translate }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,109 @@
+:host {
+    $blue-darken: white;
+
+    width: var(--menu-width);
+    height: 100%;
+    background-color: var(--menu-background-color);
+    display: block;
+    position: relative;
+
+    /** Begin menu hidden **/
+    width: 64px;
+    overflow: hidden;
+
+    .menu-inner-div {
+        width: 200px;
+    }
+
+    build-number-text {
+        opacity: 0.0;
+        transition: opacity .1s ease-in-out;
+    }
+
+    .logo {
+        display: none;
+
+        img {
+            margin-top: 18px;
+            max-width: 80px;
+        }
+    }
+
+    .logo-small {
+
+        img {
+            max-width: 60px;
+            margin-top: 20px;
+            margin-left: 2px;
+        }
+    }
+
+    /** End menu hidden **/
+
+    fa-icon {
+        padding-left: 14px;
+    }
+
+    &:hover {
+        width: 200px;
+    
+        .menu-inner-div {
+            width: 200px;
+        }
+    
+        build-number-text {
+            opacity: 1.0;
+            transition: opacity .2s ease-in-out;
+        }
+    
+        .logo {
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo-small {
+            display: none;
+        }
+    }
+
+    transition: width cubic-bezier(0.4, 0, 0.2, 1) .2s;
+
+    .items {
+        padding-top: 20px;
+        width: 100%;
+
+        .item {
+            outline: none;
+            width: 100%;
+            color: white;
+            padding: 10px;
+
+            &:hover {
+                background-color: $blue-darken;
+                color: var(--menu-color);
+                cursor: pointer;
+            }
+            
+            fa-icon {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .active-link {
+        background-color: $blue-darken;
+
+        fa-icon {
+            color: var(--menu-color);
+        }
+
+        span {
+            color: var(--menu-color);
+        }
+    }
+
+    .menu-icon-container {
+        display: inline-block;
+        width: 60px;
+    }
+}
