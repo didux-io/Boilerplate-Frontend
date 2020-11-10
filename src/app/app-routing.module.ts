@@ -37,7 +37,6 @@ const routes: Routes = [
         loadChildren: './features/home/home.module#HomePageModule',
         canActivate: [HasJwtTokenDefinedGuard]
     }
-
 ];
 
 @NgModule({

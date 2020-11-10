@@ -37,7 +37,7 @@
     "@ngx-translate/http-loader": "6.0.0",
     "@ngxs-labs/async-storage-plugin": "0.1.1",
     "@ngxs/store": "3.7.0",
-    "@proofmeid/webrtc": "0.0.3",
+    "@proofmeid/webrtc": "0.0.8",
     "@types/jwt-decode": "2.2.1",
     "@types/qrcode": "1.3.5",
     "bootstrap": "4.5.3",
@@ -48,7 +48,6 @@
     "qrcode": "1.4.4",
     "rxjs": "6.6.3",
     "rxjs-compat": "6.6.3",
-    "scrypt": "github:barrysteyn/node-scrypt#fb60a8d3c158fe115a624b5ffa7480f3a24b03fb",
     "websocket": "1.0.32",
     "wrtc": "0.4.6",
     "zone.js": "0.11.2"

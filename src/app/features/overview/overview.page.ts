@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { first, take } from 'rxjs/operators';
 import { AppStateFacade } from 'src/app/state/app/app.facade';
 
-
 @Component({
     templateUrl: 'overview.page.html',
     styleUrls: ['overview.page.scss']
@@ -23,7 +22,7 @@ export class OverviewPageComponent implements OnInit {
             datum1: new FormControl('', Validators.required),
             tijd1: new FormControl('', Validators.required),
             opmerking: new FormControl(''),
-        }); 
+        });
     }
 
     ngOnInit() {
