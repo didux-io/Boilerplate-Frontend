@@ -49,8 +49,8 @@
                                                 {{ 'HEADER.language' | translate }}</p>
                                         <div [ngbCollapse]="isLanguageCollapsed" class="dropdown-menu"
                                                 aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="/nl-NL/#">{{ 'HEADER.dutch' | translate }}</a>
-                                                <a class="dropdown-item" href="/en-US/#">{{ 'HEADER.english' | translate }}</a>
+                                                <p class="dropdown-item" (click)="selectLanguage('nl')" (click)="isLanguageCollapsed = true">{{ 'HEADER.dutch' | translate }}</p>
+                                                <p class="dropdown-item" (click)="selectLanguage('en')" (click)="isLanguageCollapsed = true">{{ 'HEADER.english' | translate }}</p>
                                         </div>
                                 </li>
                         </ul>

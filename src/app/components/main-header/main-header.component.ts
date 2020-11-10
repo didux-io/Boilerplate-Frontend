@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { AppStateFacade } from 'src/app/state/app/app.facade';
 
 @Component({
@@ -16,7 +17,9 @@ export class MainHeaderComponent {
     type: string;
 
     constructor(
-        private router: Router
+        private router: Router,
+        private appStateFacade: AppStateFacade,
+        private translateService: TranslateService
     ) {
 
     }
@@ -32,5 +35,11 @@ export class MainHeaderComponent {
 
     navigateToMainPage() {
         this.router.navigate(['main']);
+    }
+
+    selectLanguage(language: string) {
+        console.log('language:', language);
+        this.appStateFacade.setLanguage(language);
+        this.translateService.use(language);
     }
 }

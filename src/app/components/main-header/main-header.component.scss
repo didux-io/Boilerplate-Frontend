@@ -12,3 +12,9 @@ a:not([href]):not([tabindex]) {
     position: fixed;
     width: 100%;
 }
+
+.dropdown-item {
+    &:hover {
+        cursor: pointer;
+    }
+}
