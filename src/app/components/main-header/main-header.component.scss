@@ -1,38 +1,4 @@
 :host {
-<<<<<<< HEAD
-    .main-header {
-        height: 80px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        z-index: 1;
-        position: absolute;
-        background: white;
-        justify-content: space-between;
-        padding-right: 50px;
-
-        p {
-            margin-bottom: 0;
-            font-weight: 800;
-
-            &:hover {
-                cursor: pointer;
-                opacity: 0.5;
-            }
-        }
-
-        img {
-            width: 50px;
-            margin-left: 25px;
-        }
-    }
-
-    .header-logo {
-        &:hover {
-            cursor: pointer;
-        }
-    }
-=======
     .nav-link {
         color: var(--menu-color);
         margin-top: revert;
@@ -45,5 +11,4 @@ a:not([href]):not([tabindex]) {
 .sticky-top {
     position: fixed;
     width: 100%;
->>>>>>> 8688c8e... main,terms,privacy
 }

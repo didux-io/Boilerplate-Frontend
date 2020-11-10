@@ -1,7 +1,4 @@
 :host {
-<<<<<<< HEAD
-
-=======
     h3{
         font-size: 1.875em;
         color: var(--title-color);
@@ -34,7 +31,6 @@
         border: none;
         color: #fff;
     }
->>>>>>> 8688c8e... main,terms,privacy
     .login-header {
         height: 80px;
         width: 100%;
@@ -65,11 +61,7 @@
     .main-view-div {
         left: 0;
         top: 0;
-<<<<<<< HEAD
-        background: linear-gradient(to bottom, rgba(92, 77, 66, 0.6) 0, rgba(92, 77, 66, 0.6) 100%), url(/assets/img/bg-tech.jpg) no-repeat;
-=======
         background: linear-gradient(to bottom, rgba(92, 77, 66, 0.6) 0, rgba(92, 77, 66, 0.6) 100%), url(/assets/img/background.jpg) no-repeat;
->>>>>>> 8688c8e... main,terms,privacy
         background-size: cover;
         height: 100vh;
         width: 100%;
@@ -78,11 +70,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-<<<<<<< HEAD
-        padding-left: 10vw;
-        padding-right: 35vw;
-=======
->>>>>>> 8688c8e... main,terms,privacy
     }
 
     .section-1 {
@@ -90,25 +77,15 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-<<<<<<< HEAD
-        padding-left: 10vw;
-        padding-right: 15vw;
-=======
         // padding-left: 10vw;
         // padding-right: 15vw;
->>>>>>> 8688c8e... main,terms,privacy
     }
 
     .footer {
         background-color: gray;
         display: flex;
-<<<<<<< HEAD
-        padding-left: 10vw;
-        padding-right: 15vw;
-=======
         // padding-left: 10vw;
         // padding-right: 15vw;
->>>>>>> 8688c8e... main,terms,privacy
         padding-bottom: 5vh;
         padding-top: 5vh;
     }
@@ -117,17 +94,6 @@
 
         h1 {
             color: #F27D42;
-<<<<<<< HEAD
-            margin-bottom: 5vh;
-        }
-        p {
-            color: white;
-        }
-
-        padding-right: 5vw;
-    }
-}
-=======
             font-weight: 700;
             font-family: "Roboto", sans-serif;
             line-height: 1.5;
@@ -204,4 +170,3 @@
 		}
     }
 }
->>>>>>> 8688c8e... main,terms,privacy

@@ -8,10 +8,6 @@
         "signout": "Sign out"
     },
     "HEADER": {
-<<<<<<< HEAD
-        "OVERVIEW": "Overview",
-        "PROFILE": "Profile"
-=======
         "OVERVIEW": "Dashboard",
         "PROFILE": "Profile",
         "company": "Didux.io",
@@ -23,7 +19,6 @@
         "language": "language",
         "dutch":"Dutch",
         "english":"English"
->>>>>>> 8688c8e... main,terms,privacy
     },
     "PROFILE": {
         "title": "User profile",
@@ -35,9 +30,6 @@
         "login_button": "Login",
         "language": "Language",
         "registrate_button": "Registrate",
-<<<<<<< HEAD
-        "update_button": "Update"
-=======
         "update_button": "Update",
         "loginProofme":"Login with the ProofMe App",
         "clickhere":"Click here to login with the",
@@ -54,15 +46,12 @@
         "terms":"Terms & conditions",
         "privacy":"Privacy policy"
      
->>>>>>> 8688c8e... main,terms,privacy
     },
     "MODALS": {
         "RECOVERY": {
             "title": "E-mail already existing",
             "message": "The e-mail provided is already existing. You have received an e-mail to recover your account"
         }
-<<<<<<< HEAD
-=======
     },
     "TITLE":{
         "terms":"Terms & conditions",
@@ -307,6 +296,5 @@
                 "part3": "If you have any questions about this Privacy Policy, please contact us via"
             }
         }
->>>>>>> 8688c8e... main,terms,privacy
     }
 }

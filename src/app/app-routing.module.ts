@@ -21,8 +21,6 @@ const routes: Routes = [
         loadChildren: './features/registrate/registrate.module#RegistratePageModule'
     },
     {
-<<<<<<< HEAD
-=======
         path: 'terms',
         loadChildren: './features/terms/terms.module#TermsPageModule'
     },
@@ -31,7 +29,6 @@ const routes: Routes = [
         loadChildren: './features/privacy/privacy.module#PrivacyPageModule'
     },
     {
->>>>>>> 8688c8e... main,terms,privacy
         path: 'registrate-finish',
         loadChildren: './features/registrate-finish/registrate-finish.module#RegistrateFinishPageModule'
     },
@@ -40,10 +37,6 @@ const routes: Routes = [
         loadChildren: './features/home/home.module#HomePageModule',
         canActivate: [HasJwtTokenDefinedGuard]
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 8688c8e... main,terms,privacy
 ];
 
 @NgModule({

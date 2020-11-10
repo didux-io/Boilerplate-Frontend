@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-<app-main-header type="registrate"></app-main-header>
-<div class="main-container">
-=======
 <app-main-header></app-main-header>
 <div class="background-img">
 <div class="container">
->>>>>>> 8688c8e... main,terms,privacy
     <div class="main-view-div">
         <form [formGroup]=loginForm class="loginForm" [hidden]="!(emailEnabled$ | async)">
             <div class="form-group">
@@ -28,17 +23,6 @@
         <div class="qr-code fixed-width" [hidden]="!(webRtcEnabled$ | async)">
             <div>
                 <div *ngIf="websocketDisconnected" class="disconnect-overlay" (click)="refreshWebsocketDisconnect()">
-<<<<<<< HEAD
-                    <p>Disconnected! Click to refresh</p>
-                </div>
-                <canvas [ngClass]="websocketDisconnected ? 'disconnected-qr' : ''" #qrCodeCanvas></canvas>
-            </div>
-            <p *ngIf="!websocketDisconnected" class="qr-code-text">Login with the ProofMe App</p>
-        </div>
-        <div class="fixed-width mobile-button-div" *ngIf="(webRtcEnabled$ | async)">
-            <p>Click here to login with the <b>ProofMe.ID App</b></p>
-            <a [href]="mobileLoginUrl | safeUrl" class="btn btn-success mobile-button" target="_blank">Login</a>
-=======
                     <p>{{ 'PROFILE.disconnected' | translate }}</p>
                 </div>
                 <canvas [ngClass]="websocketDisconnected ? 'disconnected-qr' : ''" #qrCodeCanvas></canvas>
@@ -48,7 +32,6 @@
         <div class="fixed-width mobile-button-div" *ngIf="(webRtcEnabled$ | async)">
             <p>{{ 'PROFILE.clickhere' | translate }}<b>{{ 'PROFILE.proofmeAPP' | translate }}</b></p>
             <a [href]="mobileLoginUrl | safeUrl" class="btn btn-success mobile-button" target="_blank">{{ 'PROFILE.login' | translate }}</a>
->>>>>>> 8688c8e... main,terms,privacy
         </div>
     </div>
 </div>

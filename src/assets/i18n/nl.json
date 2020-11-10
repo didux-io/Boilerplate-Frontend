@@ -9,9 +9,6 @@
     },
     "HEADER": {
         "OVERVIEW": "Dashboard",
-<<<<<<< HEAD
-        "PROFILE": "Profiel"
-=======
         "PROFILE": "Profiel",
         "company": "Didux.io",
         "login": "Inloggen",
@@ -22,7 +19,6 @@
         "language": "Taal",
         "dutch":"Nederlands",
         "english":"Engels"
->>>>>>> 8688c8e... main,terms,privacy
     },
     "PROFILE": {
         "title": "Gebruikersprofiel",
@@ -34,9 +30,6 @@
         "login_button": "Login",
         "language": "Taal",
         "registrate_button": "Registreer",
-<<<<<<< HEAD
-        "update_button": "Bijwerken"
-=======
         "update_button": "Bijwerken",
         "loginProofme":"Login met de ProofMe App",
         "clickhere":"Klik hier om in te loggen met de",
@@ -53,15 +46,12 @@
         "terms":"Algemene voorwaarden",
         "privacy":"Privacybeleid"
 
->>>>>>> 8688c8e... main,terms,privacy
     },
     "MODALS": {
         "RECOVERY": {
             "title": "E-mail bestaat al",
             "message": "Het opgegeven e-mail is al aanwezig. Je heeft een e-mail ontvangen om jouw account te herstellen"
         }
-<<<<<<< HEAD
-=======
     },
     "TITLE":{
         "terms":"Algemene voorwaarden",
@@ -306,6 +296,5 @@
                 "part3": "Als je vragen hebt over dit privacybeleid, neem dan contact met ons op via"
             }
         }
->>>>>>> 8688c8e... main,terms,privacy
     }
 }

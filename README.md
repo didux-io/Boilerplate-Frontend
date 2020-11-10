@@ -1,5 +1,4 @@
 # Didux.IO Template Frontend
-<<<<<<< HEAD
 
 # Make a private fork
 
@@ -30,5 +29,3 @@ git remote add public git@github.com:didux-io/Boilerplate-Frontend.git
 git pull public main # Creates a merge commit
 git push origin main
 ```
-=======
->>>>>>> 8688c8e... main,terms,privacy
