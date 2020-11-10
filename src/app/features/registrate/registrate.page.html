@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <app-main-header type="login"></app-main-header>
 <div class="main-container">
     <div class="main-view-div">
@@ -26,3 +27,34 @@
     </div>
 </div>
 
+=======
+<app-main-header></app-main-header>
+<div class="background-img">
+    <div class="main-container">
+        <div class="main-view-div">
+            <form [formGroup]=registrateForm class="registrateForm" *ngIf="!registratedEmail">
+                <div class="form-group">
+                    <label>
+                        {{ 'PROFILE.email' | translate }}
+                    </label>
+                    <input type="text" class="form-control" formControlName="email">
+                </div>
+                <div class="form-group">
+                    <label>
+                        {{ 'PROFILE.password' | translate }}
+                    </label>
+                    <input type="password" class="form-control" formControlName="password">
+                </div>
+                <button class="btn btn-success" (click)="registrate()" [disabled]="!registrateForm.valid">
+                    {{ 'PROFILE.registrate_button' | translate }}
+                </button>
+            </form>
+            <div *ngIf="registratedEmail" class="registration-success-div">
+                <p>Registration success!</p>
+                <p>An e-mail has been sent to <b>{{ registratedEmail }}</b></p>
+                <p>Please click on the link in the e-mail address to verify</p>
+            </div>
+        </div>
+    </div>
+</div>
+>>>>>>> 8688c8e... main,terms,privacy

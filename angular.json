@@ -29,7 +29,13 @@
             "styles": [
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+<<<<<<< HEAD
               "src/styles.scss",
+=======
+              { "input": "./src/styles.scss" },
+              { "input": "./src/theme/variables.scss" },
+              { "input": "./src/theme/panel.scss" },
+>>>>>>> 8688c8e... main,terms,privacy
               "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []

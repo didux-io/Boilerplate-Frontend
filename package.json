@@ -9,6 +9,19 @@
     "lint": "ng lint"
   },
   "private": true,
+<<<<<<< HEAD
+=======
+  "browser": {
+    "http": false,
+    "https":false,
+    "net": false,
+    "path": false,
+    "stream": false,
+    "tls": false,
+    "fs": false,
+    "zlib": false
+  },
+>>>>>>> 8688c8e... main,terms,privacy
   "dependencies": {
     "@angular/animations": "10.2.1",
     "@angular/common": "10.2.1",
@@ -27,7 +40,11 @@
     "@ngx-translate/http-loader": "6.0.0",
     "@ngxs-labs/async-storage-plugin": "0.1.1",
     "@ngxs/store": "3.7.0",
+<<<<<<< HEAD
     "@proofmeid/webrtc": "0.0.4",
+=======
+    "@proofmeid/webrtc": "0.0.3",
+>>>>>>> 8688c8e... main,terms,privacy
     "@types/jwt-decode": "2.2.1",
     "@types/qrcode": "1.3.5",
     "bootstrap": "4.5.3",
@@ -38,6 +55,10 @@
     "qrcode": "1.4.4",
     "rxjs": "6.6.3",
     "rxjs-compat": "6.6.3",
+<<<<<<< HEAD
+=======
+    "scrypt": "github:barrysteyn/node-scrypt#fb60a8d3c158fe115a624b5ffa7480f3a24b03fb",
+>>>>>>> 8688c8e... main,terms,privacy
     "websocket": "1.0.32",
     "wrtc": "0.4.6",
     "zone.js": "0.11.2"

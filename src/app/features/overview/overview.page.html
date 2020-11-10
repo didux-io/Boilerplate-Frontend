@@ -1,3 +1,42 @@
+<<<<<<< HEAD
 <div class="container">
    <p>Welcome to the overview screen, you can insert content here!</p>
 </div>
+=======
+<div class="main-container">
+   <div class="main-view-div">
+      <form [formGroup]=overviewForm>
+         <div class="form-group2">
+            <label style="padding-left: 1%;">
+               Voornaam*
+            </label>
+            <input type="text" class="form-control" formControlName="text">
+
+            <label style="padding-left: 1%;">
+               Achternaam*
+            </label>
+            <input type="text" class="form-control" formControlName="text1">
+
+            <label style="padding-left: 1%;">
+               Datum*
+            </label>
+            <input type="date" class="form-control" formControlName="datum1">
+
+            <label style="padding-left: 1%;">
+               Tijd*
+            </label>
+            <input type="time" class="form-control" formControlName="tijd1">
+
+            <label style="padding-left: 1%;">
+               Opmerking
+            </label>
+            <input type="text" class="form-control" formControlName="opmerking">
+
+            <button class="btn btn-danger" (click)="updateOverview()" [disabled]="!overviewForm.valid">
+               Test button
+            </button>
+         </div>
+      </form>
+   </div>
+</div>
+>>>>>>> 8688c8e... main,terms,privacy

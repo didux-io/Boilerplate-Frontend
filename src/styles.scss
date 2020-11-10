@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
+<<<<<<< HEAD
 @import './theme/variables.scss';
 @import './theme/panel.scss';
+=======
+>>>>>>> 8688c8e... main,terms,privacy
 // regular style toast 
 @import '~ngx-toastr/toastr';
  
@@ -16,6 +19,13 @@
 @import '~bootstrap/scss/mixins';
 @import '~ngx-toastr/toastr-bs4-alert';
 
+<<<<<<< HEAD
+=======
+@import './theme/variables.scss';
+@import './theme/panel.scss';
+
+
+>>>>>>> 8688c8e... main,terms,privacy
 html, body {
     width: 100%;
     height: 100%;

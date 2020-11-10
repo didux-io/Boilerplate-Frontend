@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { Component, OnInit, ViewChild, ElementRef, OnDestroy} from '@angular/core';
-=======
 import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
->>>>>>> 8688c8e... main,terms,privacy
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
@@ -16,10 +12,10 @@ import { BaseComponent } from '../base-component/base-component';
 declare const diduxWallet: any;
 
 @Component({
-    templateUrl: 'main.page.html',
-    styleUrls: ['main.page.scss']
+    templateUrl: 'terms.page.html',
+    styleUrls: ['terms.page.scss']
 })
-export class MainPageComponent extends BaseComponent implements OnInit {
+export class TermsPageComponent extends BaseComponent implements OnInit {
     languages = [];
 
     constructor(
@@ -35,13 +31,4 @@ export class MainPageComponent extends BaseComponent implements OnInit {
         await this.configProvider.getConfig();
         this.languages = this.languageProvider.getLanguages();
     }
-<<<<<<< HEAD
-=======
-    navigateToTerms() {
-        this.router.navigate(['terms']);
-    }
-    navigateToPrivacy() {
-        this.router.navigate(['privacy']);
-    }
->>>>>>> 8688c8e... main,terms,privacy
 }

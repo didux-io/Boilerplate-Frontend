@@ -8,6 +8,9 @@ import { AppStateFacade } from 'src/app/state/app/app.facade';
     styleUrls: ['main-header.component.scss']
 })
 export class MainHeaderComponent {
+    public isMenuCollapsed = true;
+    public isAccountCollapsed = true;
+    public isLanguageCollapsed = true;
 
     @Input()
     type: string;
@@ -19,6 +22,7 @@ export class MainHeaderComponent {
     }
 
     navigateToLogin() {
+        this.isMenuCollapsed = true;
         this.router.navigate(['login']);
     }
 
@@ -26,7 +30,7 @@ export class MainHeaderComponent {
         this.router.navigate(['registrate']);
     }
 
-    toMainPage() {
+    navigateToMainPage() {
         this.router.navigate(['main']);
     }
 }
