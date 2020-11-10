@@ -1,4 +1,4 @@
-<div *ngIf="(jwtDecoded$ | async) && (jwtDecoded$ | async).userPower === 1">
+<div *ngIf="(isAdmin$ | async)">
     <fa-icon [icon]="['fas', 'plug']"></fa-icon>
     <span>
         Build {{ buildNumber$ | async }}

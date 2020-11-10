@@ -21,6 +21,14 @@ const routes: Routes = [
         loadChildren: './features/registrate/registrate.module#RegistratePageModule'
     },
     {
+        path: 'terms',
+        loadChildren: './features/terms/terms.module#TermsPageModule'
+    },
+    {
+        path: 'privacy',
+        loadChildren: './features/privacy/privacy.module#PrivacyPageModule'
+    },
+    {
         path: 'registrate-finish',
         loadChildren: './features/registrate-finish/registrate-finish.module#RegistrateFinishPageModule'
     },

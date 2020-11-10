@@ -1,10 +1,12 @@
 :host {
-
-    .main-view-div {
+    .background-img{
         left: 0;
         top: 0;
-        background: linear-gradient(to bottom, rgba(92, 77, 66, 0.6) 0, rgba(92, 77, 66, 0.6) 100%), url(/assets/img/bg-tech.jpg) no-repeat;
+        background: linear-gradient(to bottom, rgba(92, 77, 66, 0.6) 0, rgba(92, 77, 66, 0.6) 100%), url(/assets/img/background.jpg) no-repeat;
         background-size: cover;
+    }
+    
+    .main-view-div {
         height: 100vh;
         width: 100%;
         overflow: hidden;
@@ -69,17 +71,6 @@
         margin-left: 55px;
     }
 
-
-    .mobile-button-div {
-        display: none;
-
-        flex-direction: column;
-        width: 100%;
-        margin-top: 20px;
-        justify-content: center;
-        align-items: center;
-    }
-
     .down-text {
         margin-bottom: 0;
         font-weight: 500;
@@ -99,30 +90,36 @@
         }
     }
 
-    @media (max-width: 1024px) {
-        .qr-code {
-            display: none;
-        }
+    .loginForm-mobile {
+        width: 100%;
+    }
 
-        .loginForm {
-            width: 80%;
-        }
+    .main-view-div-mobile {
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-        .main-view-div {
-            flex-direction: column;
-        }
+    .divider-mobile {
+        display: none;
+    }
 
-        .divider {
-            display: none;
-        }
+    .mobile-button-div {
+        // display: inherit;
+        // width: 80%;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+    }
 
-        .mobile-button-div {
-            display: inherit;
-            width: 80%;
-        }
-
-        .mobile-button {
-            width: 100%;
-        }
+    .mobile-button {
+        width: 100%;
     }
 }

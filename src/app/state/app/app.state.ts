@@ -36,7 +36,6 @@ export class AppState {
         return state.backendUrlDown;
     }
 
-
     @Selector()
     static pageTitleLanguageKey(state: IAppState): string {
         return state.pageTitleLanguageKey;
@@ -95,6 +94,7 @@ export class AppState {
 
     @Action(SetAuthWsUrlAction)
     setAuthWsUrl(ctx: StateContext<IAppState>, payload: SetAuthWsUrlAction): void {
+        console.log('setAuthWsUrl');
         this.http.get<any>(`${this.configProvider.config.backendUrl}/v1/config`).subscribe((config) => {
             ctx.patchState({
                 backendUrlDown: false,

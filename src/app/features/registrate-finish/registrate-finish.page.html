@@ -1,5 +1,5 @@
 <app-main-header type="login"></app-main-header>
-<div class="main-container">
+<div class="container">
     <div class="main-view-div">
         <form [formGroup]=finishRegistrationForm class="registrateForm">
             <div class="form-group">
@@ -9,8 +9,10 @@
                 <input type="text" class="form-control" formControlName="username">
             </div>
             <div class="checkbox-div">
-                <input type="checkbox" id="termsAndPrivacy" name="termsAndPrivacy" formControlName="termsAndPrivacyAccepted">
-                <label for="termsAndPrivacy">I Accept the <a href="/privacy-policy" target="_blank">privacy policy</a> and <a href="/terms-and-conditions" target="_blank">terms & conditions</a></label>
+                <input type="checkbox" id="termsAndPrivacy" name="termsAndPrivacy"
+                    formControlName="termsAndPrivacyAccepted">
+                <label for="termsAndPrivacy">I Accept the <a href="/privacy-policy" target="_blank">privacy policy</a>
+                    and <a href="/terms-and-conditions" target="_blank">terms & conditions</a></label>
             </div>
             <div class="checkbox-div">
                 <input type="checkbox" id="newsLetter" name="newsLetter" formControlName="newsLetter">

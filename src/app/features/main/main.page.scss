@@ -1,5 +1,36 @@
 :host {
-
+    h3{
+        font-size: 1.875em;
+        color: var(--title-color);
+        font-weight: 700;
+        font-family: "Roboto", sans-serif;
+        line-height: 1.5;  
+    }
+    h6{
+        font-size: 19px;
+        font-weight: bold;
+        margin: 0 0 1.6em;
+        color: var(--subtext-color);
+        line-height: 1.75;
+        font-family: "Roboto", sans-serif;
+        font-weight: 600;
+    }
+    p{
+        font-size: 15px;
+        margin: 0 0 1.6em;
+        color: var(--white);
+        line-height: 1.75;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+    }
+    .contact-form button {
+    
+        padding: 15px 60px;
+        font-size: 17px;
+        background-color: var(--app-primary-color);
+        border: none;
+        color: #fff;
+    }
     .login-header {
         height: 80px;
         width: 100%;
@@ -30,7 +61,7 @@
     .main-view-div {
         left: 0;
         top: 0;
-        background: linear-gradient(to bottom, rgba(92, 77, 66, 0.6) 0, rgba(92, 77, 66, 0.6) 100%), url(/assets/img/bg-tech.jpg) no-repeat;
+        background: linear-gradient(to bottom, rgba(92, 77, 66, 0.6) 0, rgba(92, 77, 66, 0.6) 100%), url(/assets/img/background.jpg) no-repeat;
         background-size: cover;
         height: 100vh;
         width: 100%;
@@ -39,8 +70,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-left: 10vw;
-        padding-right: 35vw;
     }
 
     .section-1 {
@@ -48,29 +77,126 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-left: 10vw;
-        padding-right: 15vw;
     }
 
     .footer {
         background-color: gray;
         display: flex;
-        padding-left: 10vw;
-        padding-right: 15vw;
         padding-bottom: 5vh;
         padding-top: 5vh;
+    }
+
+    .footer-bottom-bar {
+        background-color: lightgrey;
+        display: flex;
+        padding-bottom: 5vh;
+        padding-top: 5vh;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .footer-social {
+                a {
+                    color: inherit;
+                }
+            }
+
+            fa-icon {
+                font-size: 36px;
+                margin-right: 16px;
+
+                &:hover {
+                    cursor: pointer;
+                    opacity: 0.5;
+                }
+            }
+        }
+
+        p {
+            margin-bottom: 0;
+            color: black;
+        }
     }
 
     .footer-section {
 
         h1 {
-            color: #F27D42;
-            margin-bottom: 5vh;
+            color: var(--title-color);
+            font-weight: 700;
+            font-family: "Roboto", sans-serif;
+            line-height: 1.5;
         }
         p {
             color: white;
+            font-weight: 700;
+            font-family: "Roboto", sans-serif;
+            line-height: 1.5;
+        }
+        a{
+            color: white;
+            font-weight: 700;
+            font-family: "Roboto", sans-serif;
+            line-height: 1.5;
         }
 
         padding-right: 5vw;
+        margin-left: 15px;
+    }
+}
+
+.contact-wrapper {
+        opacity: 1.0;
+        background-image: url(/assets/img/contact-background.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin-bottom: 5px;
+}
+// .col-lg-6{
+//     margin-bottom: 50px;
+// }
+
+// contact form scss
+.contact-form {
+	max-width: 930px;
+	width: 100%;
+	margin: auto;
+	input, textarea {
+		width: 100%;
+		padding: 12px 25px;
+		border: 1px solid #e2e7f3;
+		box-shadow: 0 0 15px 0 rgba(var(--black), 0.06);
+		outline: none;
+		// @include border-radius(3px);
+		// @include transition(0.3s);
+		&:active,&:hover,&:focus {
+			border-color: var(--base-color);
+        }
+	}
+	input {
+		margin-bottom: 50px;
+		font-size: 14px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	textarea {
+		font-size: 14px;
+        height: 100%;
+    }
+    
+	button {
+		padding: 15px 60px;
+		font-size: 14px;
+		background-color: var(--base-color);
+		border: none;
+		color: var(--white);
+		// @include transition(0.3s);
+		// @include border-radius(3px);
+		&:hover {
+			color:  var(--white);
+			background-color: var(--title-color);
+		}
     }
 }

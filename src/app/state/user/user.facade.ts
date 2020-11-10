@@ -15,6 +15,9 @@ import { UserState } from './user.state';
     providedIn: 'root'
 })
 export class UserStateFacade {
+    @Select(UserState.isAdmin)
+    isAdmin$: Observable<boolean>;
+
     @Select(UserState.accessToken)
     accessToken$: Observable<string>;
 

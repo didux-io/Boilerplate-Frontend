@@ -1,7 +1,8 @@
-<app-main-header type="registrate"></app-main-header>
-<div class="main-container" >
-    <div class="main-view-div" *ngIf="!(backendUrlDown$ | async)">
-        <form [formGroup]=loginForm class="loginForm" [hidden]="!(emailEnabled$ | async)">
+<app-main-header></app-main-header>
+<div class="background-img">
+<div class="container">
+    <div [ngClass]="!showMobileLogin ? 'main-view-div' : 'main-view-div-mobile'">
+        <form [formGroup]=loginForm [ngClass]="!showMobileLogin ? 'loginForm' : 'loginForm-mobile'" [hidden]="!(emailEnabled$ | async)">
             <div class="form-group">
                 <label>
                     {{ 'PROFILE.email' | translate }}
@@ -14,23 +15,23 @@
                 </label>
                 <input type="password" class="form-control" formControlName="password">
             </div>
-            <button class="btn btn-success" (click)="login()" [disabled]="!loginForm.valid">
+            <button class="btn btn-success" [ngClass]="showMobileLogin ? 'mobile-button' : ''" (click)="login()" [disabled]="!loginForm.valid">
                 {{ 'PROFILE.login_button' | translate }}
             </button>
         </form>
-        <div class="divider" *ngIf="(webRtcEnabled$ | async) && (emailEnabled$ | async)"></div>
-        <div class="qr-code fixed-width" [hidden]="!(webRtcEnabled$ | async)">
+        <div [ngClass]="!showMobileLogin ? 'divider' : 'divider-mobile'" *ngIf="(webRtcEnabled$ | async) && (emailEnabled$ | async)"></div>
+        <div class="qr-code fixed-width" [hidden]="!(webRtcEnabled$ | async) || showMobileLogin">
             <div>
                 <div *ngIf="websocketDisconnected" class="disconnect-overlay" (click)="refreshWebsocketDisconnect()">
-                    <p>Disconnected! Click to refresh</p>
+                    <p>{{ 'PROFILE.disconnected' | translate }}</p>
                 </div>
                 <canvas [ngClass]="websocketDisconnected ? 'disconnected-qr' : ''" #qrCodeCanvas></canvas>
             </div>
-            <p *ngIf="!websocketDisconnected" class="qr-code-text">Login with the ProofMe App</p>
+            <p *ngIf="!websocketDisconnected" class="qr-code-text">{{ 'PROFILE.loginProofme' | translate }}</p>
         </div>
-        <div class="fixed-width mobile-button-div" *ngIf="(webRtcEnabled$ | async)">
-            <p>Click here to login with the <b>ProofMe.ID App</b></p>
-            <a [href]="mobileLoginUrl | safeUrl" class="btn btn-success mobile-button" target="_blank">Login</a>
+        <div *ngIf="showMobileLogin && (webRtcEnabled$ | async)" class="fixed-width mobile-button-div">
+            <p>{{ 'PROFILE.clickhere' | translate }}<b> {{ 'PROFILE.proofmeAPP' | translate }}</b></p>
+            <a [href]="mobileLoginUrl | safeUrl" class="btn btn-success mobile-button" target="_blank">{{ 'PROFILE.login_button_app' | translate }}</a>
         </div>
     </div>
     <div class="main-view-div" *ngIf="(backendUrlDown$ | async)">

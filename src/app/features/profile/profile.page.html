@@ -29,6 +29,7 @@
     <hr>
     <div class="form-group">
         <label>{{ 'PROFILE.language' | translate }}</label>
-        <ngx-select [items]="languages" [defaultValue]="language$ | async" optionValueField="key" optionTextField="name" [formControl]="selectLanguage"></ngx-select>
+        <ngx-select [items]="languages" [defaultValue]="language$ | async" optionValueField="key" optionTextField="name"
+            [formControl]="selectLanguage"></ngx-select>
     </div>
 </div>

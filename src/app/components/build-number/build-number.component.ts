@@ -10,7 +10,7 @@ import { UserStateFacade } from 'src/app/state/user/user.facade';
 })
 export class BuildNumberComponent {
     buildNumber$ = this.appStateFacade.buildNumber$;
-    jwtDecoded$ = this.userStateFacade.jwtDecoded$;
+    isAdmin$ = this.userStateFacade.isAdmin$;
 
     constructor(
         private appStateFacade: AppStateFacade,

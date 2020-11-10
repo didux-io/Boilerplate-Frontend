@@ -76,6 +76,11 @@ export class UserState {
         return state.registrationError;
     }
 
+    @Selector()
+    static isAdmin(state: IUserState): boolean {
+        return state.jwtDecoded.userPower === 1;
+    }
+
     constructor(
         private http: HttpClient,
         private toastr: ToastrService,
