@@ -9,6 +9,8 @@ import { SetAuthWsUrlAction } from './actions/set-auth-ws-url';
 
 @Injectable()
 export class AppStateFacade {
+    @Select(AppState.backendUrlDown)
+    backendUrlDown$: Observable<boolean>;
 
     @Select(AppState.pageTitleLanguageKey)
     pageTitleLanguageKey$: Observable<string>;

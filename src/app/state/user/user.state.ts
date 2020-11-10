@@ -108,7 +108,7 @@ export class UserState {
             userLoginError: false
         });
         return this.http.post(
-            `${this.configProvider.getBackendUrl()}/v1/auth/authemail`,
+            `${this.configProvider.config.backendUrl}/v1/auth/authemail`,
             {
                 email: payload.email,
                 password: payload.password
@@ -139,7 +139,7 @@ export class UserState {
             updateUserError: false
         });
         return this.http.patch(
-            `${this.configProvider.getBackendUrl()}/v1/user/${userId}`,
+            `${this.configProvider.config.backendUrl}/v1/user/${userId}`,
             {
                 username: payload.username
             }
@@ -168,7 +168,7 @@ export class UserState {
             registratedEmail: null
         });
         return this.http.post(
-            `${this.configProvider.getBackendUrl()}/v1/user/registrate`,
+            `${this.configProvider.config.backendUrl}/v1/user/registrate`,
             {
                 email: payload.email,
                 password: payload.password
@@ -194,7 +194,7 @@ export class UserState {
             registrationError: false,
         });
         return this.http.post(
-            `${this.configProvider.getBackendUrl()}/v1/user/finishRegistration`,
+            `${this.configProvider.config.backendUrl}/v1/user/finishRegistration`,
             {
                 username: payload.username,
                 termsAndPrivacyAccepted: payload.termsAndPrivacyAccepted,

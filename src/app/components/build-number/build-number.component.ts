@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppStateFacade } from 'src/app/state/app/app.facade';
+import { UserStateFacade } from 'src/app/state/user/user.facade';
 
 @Component({
     // tslint:disable-next-line: component-selector
@@ -9,10 +10,13 @@ import { AppStateFacade } from 'src/app/state/app/app.facade';
 })
 export class BuildNumberComponent {
     buildNumber$ = this.appStateFacade.buildNumber$;
+    jwtDecoded$ = this.userStateFacade.jwtDecoded$;
 
-    constructor(private appStateFacade: AppStateFacade) {
+    constructor(
+        private appStateFacade: AppStateFacade,
+        private userStateFacade: UserStateFacade
+    ) {
 
     }
-
 
 }

@@ -1,6 +1,6 @@
 <app-main-header type="registrate"></app-main-header>
-<div class="main-container">
-    <div class="main-view-div">
+<div class="main-container" >
+    <div class="main-view-div" *ngIf="!(backendUrlDown$ | async)">
         <form [formGroup]=loginForm class="loginForm" [hidden]="!(emailEnabled$ | async)">
             <div class="form-group">
                 <label>
@@ -31,6 +31,12 @@
         <div class="fixed-width mobile-button-div" *ngIf="(webRtcEnabled$ | async)">
             <p>Click here to login with the <b>ProofMe.ID App</b></p>
             <a [href]="mobileLoginUrl | safeUrl" class="btn btn-success mobile-button" target="_blank">Login</a>
+        </div>
+    </div>
+    <div class="main-view-div" *ngIf="(backendUrlDown$ | async)">
+        <div class="down-div">
+            <fa-icon [icon]="['fas', 'exclamation-triangle']"></fa-icon>
+            <p class="down-text">The portal backend is unreachable</p>
         </div>
     </div>
 </div>

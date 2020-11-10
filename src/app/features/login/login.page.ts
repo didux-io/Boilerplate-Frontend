@@ -8,7 +8,7 @@ import { BaseComponent } from '../base-component/base-component';
 import { UserStateFacade } from 'src/app/state/user/user.facade';
 import { AppStateFacade } from 'src/app/state/app/app.facade';
 import { ToastrService } from 'ngx-toastr';
-import { WebRtcProvider } from '@proofmeid/webrtc';
+import { WebRtcProvider } from '@proofmeid/webrtc-web';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { RecoveryModalComponent } from 'src/app/modals/recoveryModal.component';
 
@@ -22,6 +22,7 @@ export class LoginPageComponent extends BaseComponent implements OnInit {
     mobileLoginUrl: string;
     emailEnabled$ = this.appStateFacade.emailEnabled$;
     webRtcEnabled$ = this.appStateFacade.webRtcEnabled$;
+    backendUrlDown$ = this.appStateFacade.backendUrlDown$;
 
     @ViewChild('qrCodeCanvas', null)
     qrCodeCanvas: ElementRef;
@@ -84,6 +85,12 @@ export class LoginPageComponent extends BaseComponent implements OnInit {
                 this.ngZone.run(() => {
                     this.router.navigate(['registrate-finish']);
                 });
+            }
+        });
+
+        this.appStateFacade.backendUrlDown$.pipe(skip(1), takeUntil(this.destroy$)).subscribe((down) => {
+            if (down) {
+                this.toastr.error('Portal backend unreachable.');
             }
         });
     }

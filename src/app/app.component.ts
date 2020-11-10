@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, NgZone } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { ConfigProvider } from './providers/config/configProvider';
 import { AppStateFacade } from './state/app/app.facade';
@@ -15,17 +16,18 @@ export class AppComponent implements OnInit {
         private translateService: TranslateService,
         private http: HttpClient,
         private appStateFacade: AppStateFacade,
-        private configProvider: ConfigProvider
+        private configProvider: ConfigProvider,
+        private titleService: Title
     ) {
         this.translateService.setDefaultLang('en');
         this.translateService.use('en');
 
         this.setBuildNumber();
-        this.configProvider.getConfig();
     }
 
-    ngOnInit() {
-
+    async ngOnInit() {
+        await this.configProvider.getConfig();
+        this.titleService.setTitle(this.configProvider.config.appName);
     }
 
     setBuildNumber() {

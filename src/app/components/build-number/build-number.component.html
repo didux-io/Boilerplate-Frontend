@@ -1,4 +1,6 @@
-<fa-icon [icon]="['fas', 'plug']"></fa-icon>
-<span>
-    Build {{ buildNumber$ | async }}
-</span>
+<div *ngIf="(jwtDecoded$ | async) && (jwtDecoded$ | async).userPower === 1">
+    <fa-icon [icon]="['fas', 'plug']"></fa-icon>
+    <span>
+        Build {{ buildNumber$ | async }}
+    </span>
+</div>

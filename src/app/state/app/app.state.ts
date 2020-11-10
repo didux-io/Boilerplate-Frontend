@@ -14,6 +14,7 @@ export interface IAppState {
     authWsUrl: string;
     emailEnabled: boolean;
     webRtcEnabled: boolean;
+    backendUrlDown: boolean;
 }
 
 @State<IAppState>({
@@ -24,11 +25,18 @@ export interface IAppState {
         language: 'en',
         authWsUrl: null,
         webRtcEnabled: false,
-        emailEnabled: false
+        emailEnabled: false,
+        backendUrlDown: false
     }
 })
 @Injectable()
 export class AppState {
+    @Selector()
+    static backendUrlDown(state: IAppState): boolean {
+        return state.backendUrlDown;
+    }
+
+
     @Selector()
     static pageTitleLanguageKey(state: IAppState): string {
         return state.pageTitleLanguageKey;
@@ -87,12 +95,18 @@ export class AppState {
 
     @Action(SetAuthWsUrlAction)
     setAuthWsUrl(ctx: StateContext<IAppState>, payload: SetAuthWsUrlAction): void {
-        this.http.get<any>(`${this.configProvider.getBackendUrl()}/v1/auth/config`).subscribe((config) => {
+        this.http.get<any>(`${this.configProvider.config.backendUrl}/v1/config`).subscribe((config) => {
             ctx.patchState({
+                backendUrlDown: false,
                 authWsUrl: config.authWsUrl,
                 emailEnabled: config.emailEnabled,
                 webRtcEnabled: config.webRtcEnabled
             });
+        }, (err) => {
+            ctx.patchState({
+                backendUrlDown: true
+            })
+            console.error(err);
         });
     }
 }

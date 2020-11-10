@@ -28,7 +28,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { StorageProvider } from './providers/storage/capacitor-storage.provider';
 import { UserStateModule } from './state/user/user.module';
 import { AppStateModule } from './state/app/app.module';
-import { WebRtcProvider } from '@proofmeid/webrtc';
+import { WebRtcProvider } from '@proofmeid/webrtc-web';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
 // AoT requires an exported function for factories
