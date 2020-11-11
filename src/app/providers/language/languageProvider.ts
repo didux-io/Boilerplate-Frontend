@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable()
 export class LanguageProvider {
     languages = [
-        { key: 'nl' , name: 'Nederlands' },
-        { key: 'en' , name: 'English' }
+        { key: "nl" , name: "Nederlands" },
+        { key: "en" , name: "English" }
     ];
 
     constructor() {

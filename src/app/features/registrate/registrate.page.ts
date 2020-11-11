@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Toast, ToastrService } from 'ngx-toastr';
-import { errorObject } from 'rxjs/internal-compatibility';
-import { skip, takeUntil } from 'rxjs/operators';
-import { UserStateFacade } from 'src/app/state/user/user.facade';
-import { UserStateModule } from 'src/app/state/user/user.module';
-import { BaseComponent } from '../base-component/base-component';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { ToastrService } from "ngx-toastr";
+import { skip, takeUntil } from "rxjs/operators";
+import { UserStateFacade } from "src/app/state/user/user.facade";
+import { BaseComponent } from "../base-component/base-component";
 
 @Component({
-    templateUrl: 'registrate.page.html',
-    styleUrls: ['registrate.page.scss']
+    templateUrl: "registrate.page.html",
+    styleUrls: ["registrate.page.scss"]
 })
 export class RegistratePageComponent extends BaseComponent implements OnInit {
     registrateForm: FormGroup;
@@ -25,29 +23,29 @@ export class RegistratePageComponent extends BaseComponent implements OnInit {
         super();
 
         this.registrateForm = this.formBuilder.group({
-            email: new FormControl('', Validators.required),
-            password: new FormControl('', Validators.required)
+            email: new FormControl("", Validators.required),
+            password: new FormControl("", Validators.required)
         });
     }
 
     ngOnInit() {
         this.userStateFacade.registrationError$.pipe(skip(1), takeUntil(this.destroy$)).subscribe((error) => {
-            console.log('RegistratePageComponent registrationError$:', error);
+            console.log("RegistratePageComponent registrationError$:", error);
             if (error) {
-                this.toastr.error('Registration failure');
+                this.toastr.error("Registration failure");
             }
         });
         this.userStateFacade.registratedEmail$.pipe(skip(1), takeUntil(this.destroy$)).subscribe((email) => {
             if (email) {
                 this.registratedEmail = email;
-                this.toastr.success(`Registration success`);
+                this.toastr.success("Registration success");
             }
         });
     }
 
     registrate() {
-        const email = this.registrateForm.get('email').value;
-        const password = this.registrateForm.get('password').value;
+        const email = this.registrateForm.get("email").value;
+        const password = this.registrateForm.get("password").value;
         this.userStateFacade.registrate(email, password);
     }
 }

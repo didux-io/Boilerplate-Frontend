@@ -1,5 +1,5 @@
 export class LogoutAction {
-    static readonly type = '[User] LogoutAction';
+    static readonly type = "[User] LogoutAction";
 
     constructor() {}
 }

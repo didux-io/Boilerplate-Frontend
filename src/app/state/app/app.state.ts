@@ -1,11 +1,11 @@
-import { State, Selector, StateContext, Action } from '@ngxs/store';
-import { SetPageTitleLanguageKeyAction } from './actions/set-page-title-language-key.action';
-import { SetBuildNumber } from './actions/set-build-number.action';
-import { SetLanguage } from './actions/set-language.action';
-import { SetAuthWsUrlAction } from './actions/set-auth-ws-url';
-import { HttpClient } from '@angular/common/http';
-import { ConfigProvider } from 'src/app/providers/config/configProvider';
-import { Injectable } from '@angular/core';
+import { State, Selector, StateContext, Action } from "@ngxs/store";
+import { SetPageTitleLanguageKeyAction } from "./actions/set-page-title-language-key.action";
+import { SetBuildNumber } from "./actions/set-build-number.action";
+import { SetLanguage } from "./actions/set-language.action";
+import { SetAuthWsUrlAction } from "./actions/set-auth-ws-url";
+import { HttpClient } from "@angular/common/http";
+import { ConfigProvider } from "src/app/providers/config/configProvider";
+import { Injectable } from "@angular/core";
 
 export interface IAppState {
     pageTitleLanguageKey: string;
@@ -17,11 +17,11 @@ export interface IAppState {
 }
 
 @State<IAppState>({
-    name: 'app',
+    name: "app",
     defaults: {
-        pageTitleLanguageKey: '',
+        pageTitleLanguageKey: "",
         buildNumber: 0,
-        language: 'en',
+        language: "en",
         authWsUrl: null,
         webRtcEnabled: false,
         emailEnabled: false

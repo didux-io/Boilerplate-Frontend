@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Select, Store } from '@ngxs/store';
-import { AppState } from './app.state';
-import { SetPageTitleLanguageKeyAction } from './actions/set-page-title-language-key.action';
-import { SetBuildNumber } from './actions/set-build-number.action';
-import { SetLanguage } from './actions/set-language.action';
-import { SetAuthWsUrlAction } from './actions/set-auth-ws-url';
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { Select, Store } from "@ngxs/store";
+import { AppState } from "./app.state";
+import { SetPageTitleLanguageKeyAction } from "./actions/set-page-title-language-key.action";
+import { SetBuildNumber } from "./actions/set-build-number.action";
+import { SetLanguage } from "./actions/set-language.action";
+import { SetAuthWsUrlAction } from "./actions/set-auth-ws-url";
 
 @Injectable()
 export class AppStateFacade {

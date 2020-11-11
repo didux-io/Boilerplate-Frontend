@@ -4,11 +4,11 @@ import { TranslateService } from "@ngx-translate/core";
 import { AppStateFacade } from "src/app/state/app/app.facade";
 
 @Component({
-    selector: "app-main-header",
-    templateUrl: "main-header.component.html",
-    styleUrls: ["main-header.component.scss"]
+    selector: "app-footer",
+    templateUrl: "footer.component.html",
+    styleUrls: ["footer.component.scss"]
 })
-export class MainHeaderComponent {
+export class FooterComponent {
     public isMenuCollapsed = true;
     public isAccountCollapsed = true; 
     public isLanguageCollapsed = true;
@@ -35,6 +35,15 @@ export class MainHeaderComponent {
 
     navigateToMainPage() {
         this.router.navigate(["main"]) && window.scrollTo(0, 0);
+    }
+    navigateToTerms() {
+        this.router.navigate(["terms"]) && window.scrollTo(0, 0);
+    }
+    navigateToPrivacy() {
+        this.router.navigate(["privacy"]) && window.scrollTo(0, 0);
+    }
+    navigateToFAQ() {
+        this.router.navigate(["faq"]) && window.scrollTo(0, 0);
     }
 
     selectLanguage(language: string) {

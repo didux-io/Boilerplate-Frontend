@@ -1,18 +1,18 @@
-import { Injectable } from '@angular/core';
-import { Store, Select } from '@ngxs/store';
-import { Observable } from 'rxjs';
-import { IJWTDecoded } from 'src/app/interfaces/jwtDecoded.interface';
-import { FinishRegistrationAction } from './actions/finish-registration';
-import { LogoutAction } from './actions/logout.action';
-import { RefreshAction } from './actions/refresh.action';
-import { RegistrateUserAction } from './actions/registrate-user';
-import { SetAccessTokenAction } from './actions/set-access-token.action';
-import { UpdateUserAction } from './actions/update-account';
-import { UserLoginAction } from './actions/user-login';
-import { UserState } from './user.state';
+import { Injectable } from "@angular/core";
+import { Store, Select } from "@ngxs/store";
+import { Observable } from "rxjs";
+import { IJWTDecoded } from "src/app/interfaces/jwtDecoded.interface";
+import { FinishRegistrationAction } from "./actions/finish-registration";
+import { LogoutAction } from "./actions/logout.action";
+import { RefreshAction } from "./actions/refresh.action";
+import { RegistrateUserAction } from "./actions/registrate-user";
+import { SetAccessTokenAction } from "./actions/set-access-token.action";
+import { UpdateUserAction } from "./actions/update-account";
+import { UserLoginAction } from "./actions/user-login";
+import { UserState } from "./user.state";
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: "root"
 })
 export class UserStateFacade {
     @Select(UserState.accessToken)

@@ -7,7 +7,7 @@
 */
 export const STORAGE_KEYS: (string | IStorageKey)[] = [
     // App state
-    'app.language',
-    'user.access_token',
-    'user.jwtDecoded',
+    "app.language",
+    "user.access_token",
+    "user.jwtDecoded",
 ];

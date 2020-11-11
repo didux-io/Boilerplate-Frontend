@@ -76,44 +76,6 @@
         // padding-right: 15vw;
     }
 
-    .footer {
-        background-color: var(--header-border-color);
-        display: flex;
-        // padding-left: 10vw;
-        // padding-right: 15vw;
-        padding-bottom: 5vh;
-        padding-top: 5vh;
-    }
-
-    .footer-section {
-
-        h1 {
-            color: var(--title-color);
-            font-weight: 700;
-            font-family: "Roboto", sans-serif;
-            line-height: 1.5;
-        }
-        p {
-            color: var(--white);
-            font-weight: 700;
-            font-family: "Roboto", sans-serif;
-            line-height: 1.5;
-            &:hover {
-                color: var(--title-color);
-              }
-        }
-        a{
-            color: var(--white);
-            font-weight: 700;
-            font-family: "Roboto", sans-serif;
-            line-height: 1.5;
-        }
-
-        padding-right: 5vw;
-        margin-left: 15px;
-    }
-}
-
 .contact-wrapper {
         opacity: 1.0;
         background-image: url(/assets/img/contact-background.jpg);
@@ -168,3 +130,5 @@
 		}
     }
 }
+}
+

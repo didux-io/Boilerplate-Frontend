@@ -1,20 +1,19 @@
-import { State, Selector, StateContext, Action } from '@ngxs/store';
-import { HttpClient } from '@angular/common/http';
-import { ConfigProvider } from 'src/app/providers/config/configProvider';
-import { Router } from '@angular/router';
-import { LogoutAction } from './actions/logout.action';
-import { IJWTDecoded } from 'src/app/interfaces/jwtDecoded.interface';
-import { SetAccessTokenAction } from './actions/set-access-token.action';
-import jwt_decode from 'jwt-decode';
-import { UpdateUserAction } from './actions/update-account';
-import { tap } from 'rxjs/operators';
-import { catchError } from 'rxjs/internal/operators/catchError';
-import { throwError } from 'rxjs';
-import { RegistrateUserAction } from './actions/registrate-user';
-import { ToastrService } from 'ngx-toastr';
-import { UserLoginAction } from './actions/user-login';
-import { Injectable } from '@angular/core';
-import { FinishRegistrationAction } from './actions/finish-registration';
+import { State, Selector, StateContext, Action } from "@ngxs/store";
+import { HttpClient } from "@angular/common/http";
+import { ConfigProvider } from "src/app/providers/config/configProvider";
+import { LogoutAction } from "./actions/logout.action";
+import { IJWTDecoded } from "src/app/interfaces/jwtDecoded.interface";
+import { SetAccessTokenAction } from "./actions/set-access-token.action";
+import jwt_decode from "jwt-decode";
+import { UpdateUserAction } from "./actions/update-account";
+import { tap } from "rxjs/operators";
+import { catchError } from "rxjs/internal/operators/catchError";
+import { throwError } from "rxjs";
+import { RegistrateUserAction } from "./actions/registrate-user";
+import { ToastrService } from "ngx-toastr";
+import { UserLoginAction } from "./actions/user-login";
+import { Injectable } from "@angular/core";
+import { FinishRegistrationAction } from "./actions/finish-registration";
 
 export interface IUserState {
     access_token: string;
@@ -27,7 +26,7 @@ export interface IUserState {
 }
 
 @State<IUserState>({
-    name: 'user',
+    name: "user",
     defaults: {
         access_token: null,
         refresh_token: null,

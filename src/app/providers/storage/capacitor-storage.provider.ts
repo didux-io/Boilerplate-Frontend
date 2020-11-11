@@ -1,10 +1,9 @@
-import { Observable, from, of } from 'rxjs';
-import { AsyncStorageEngine } from '@ngxs-labs/async-storage-plugin';
-import { Injectable } from '@angular/core';
-import { pluck } from 'rxjs/operators';
+import { Observable, of } from "rxjs";
+import { AsyncStorageEngine } from "@ngxs-labs/async-storage-plugin";
+import { Injectable } from "@angular/core";
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: "root"
 })
 export class StorageProvider implements AsyncStorageEngine {
     length(): Observable<number> {
@@ -28,6 +27,6 @@ export class StorageProvider implements AsyncStorageEngine {
     }
 
     key(val: number): Observable<string> {
-        throw new Error('Method not implemented.');
+        throw new Error("Method not implemented.");
     }
 }

@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { UserStateFacade } from 'src/app/state/user/user.facade';
-import { WebRtcProvider } from '@proofmeid/webrtc';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { UserStateFacade } from "src/app/state/user/user.facade";
+import { WebRtcProvider } from "@proofmeid/webrtc";
 
 @Component({
-    selector: 'app-logout',
-    templateUrl: 'logout.component.html',
-    styleUrls: ['logout.component.scss']
+    selector: "app-logout",
+    templateUrl: "logout.component.html",
+    styleUrls: ["logout.component.scss"]
 })
 export class LogoutComponent implements OnInit {
 
@@ -18,6 +18,6 @@ export class LogoutComponent implements OnInit {
         localStorage.clear();
         this.webRtcProvider.remoteDisconnect();
         this.userStateFacade.logout();
-        this.route.navigate(['/login']);
+        this.route.navigate(["/login"]);
     }
 }
