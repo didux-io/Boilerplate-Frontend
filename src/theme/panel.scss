@@ -17,9 +17,9 @@
     }
 
     .title {
-        background-color: #fff;
+        background-color: var(--white);
         font-weight: bold;
-        border-bottom: 1px solid lightgray;
+        border-bottom: 1px solid var(--lightGrey);
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
     }

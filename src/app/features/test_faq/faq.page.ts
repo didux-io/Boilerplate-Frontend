@@ -12,10 +12,10 @@ import { BaseComponent } from '../base-component/base-component';
 declare const diduxWallet: any;
 
 @Component({
-    templateUrl: 'main.page.html',
-    styleUrls: ['main.page.scss']
+    templateUrl: 'faq.page.html',
+    styleUrls: ['faq.page.scss']
 })
-export class MainPageComponent extends BaseComponent implements OnInit {
+export class FaqPageComponent extends BaseComponent implements OnInit {
     languages = [];
 
     constructor(
@@ -30,14 +30,5 @@ export class MainPageComponent extends BaseComponent implements OnInit {
     async ngOnInit() {
         await this.configProvider.getConfig();
         this.languages = this.languageProvider.getLanguages();
-    }
-    navigateToTerms() {
-        this.router.navigate(['terms']) && window.scrollTo(0, 0);
-    }
-    navigateToPrivacy() {
-        this.router.navigate(['privacy']) && window.scrollTo(0, 0);
-    }
-    navigateToFAQ() {
-        this.router.navigate(['faq']);
     }
 }

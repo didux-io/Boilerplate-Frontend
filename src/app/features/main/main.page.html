@@ -13,7 +13,7 @@
         <section class="section-1">
 
             <h2>{{ 'MAIN.title2' | translate }}</h2>
-            <p>{{ 'MAIN.subtitle2' | translate }}</p>
+            <h5>{{ 'MAIN.subtitle2' | translate }}</h5>
 
         </section>
     </div>
@@ -28,7 +28,8 @@
         <div class="contact-wrapper">
             <div class="section-header text-center mb--50">
                 <h3>{{ 'index.contact.title' | translate}}</h3>
-                <h6>{{ 'index.contact.subtitle' | translate}} <i class="fa fa-heart"></i>{{ 'index.contact.subtitle2' | translate}}</h6>
+                <h6>{{ 'index.contact.subtitle' | translate}} <i
+                        class="fa fa-heart"></i>{{ 'index.contact.subtitle2' | translate}}</h6>
             </div>
             <div class="contact">
                 <form class="contact-form">
@@ -88,9 +89,9 @@
             <div class="footer-section">
                 <h1>Drinks</h1>
                 <p>Beer</p>
-                <p>Wine</p>
-                <p (click)="navigateToTerms()">{{ 'FOOTER.terms' | translate }}</p>
-                <p (click)="navigateToPrivacy()">{{ 'FOOTER.privacy' | translate }}</p>
+                <p (click)="navigateToTerms()"> {{ 'FOOTER.terms' | translate }}</p>
+                <p (click)="navigateToPrivacy()"> {{ 'FOOTER.privacy' | translate }}</p>
+                <p (click)="navigateToFAQ()"> {{ 'FOOTER.faq' | translate }} </p>
             </div>
         </div>
     </div>

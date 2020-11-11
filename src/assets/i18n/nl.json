@@ -32,19 +32,23 @@
         "registrate_button": "Registreer",
         "update_button": "Bijwerken",
         "loginProofme":"Login met de ProofMe App",
-        "clickhere":"Klik hier om in te loggen met de",
+        "clickhere":"Klik hier om in te loggen met de ",
         "proofmeAPP":"ProofMe.ID App",
-        "disconnected":"Losgekoppeld! Klik om te vernieuwen"
+        "disconnected":"Losgekoppeld! Klik om te vernieuwen",
+        "success":"Registratie is gelukt!",
+        "email-sent":"Er is een email verzonden naar",
+        "link":"Klik op de link in de e-mail om dit te verifiëren."
     },
     "MAIN":{
-        "title": "Welcome to this awesome template",
-        "subtitle":"Using this template allows you to see how it's done. This is the landing page. Replace your icon in the top left corner and make a choice in the top right corner to navigate. Scroll to see some random section in the middle and a footer on the bottom. Have fun!",
-        "title2": "This is some random section",
-        "subtitle2":"And this is some random text beneith your main screen about some random things that will waste your time if you read too much. You should change this text into something more meaningfull. You can scroll a bit more to the bottom of this page to see more things you probably want to replace."
+        "title": "Welkom bij deze geweldige template",
+        "subtitle":"Door deze template, kunt u zien hoe het moet. Dit is de hoofdpagina. Vervang je logo in de linkerbovenhoek en maak een keuze in de rechterbovenhoek om te navigeren. Scrol om een ​​willekeurig gedeelte in het midden en een voettekst onderaan te zien. Veel plezier!",
+        "title2": "Dit is een willekeurige sectie",
+        "subtitle2":"En dit is een willekeurige tekst onder je hoofdscherm over enkele willekeurige dingen die je tijd zullen verspillen als je te veel leest. U moet deze tekst veranderen in iets meer betekenis. U kunt iets meer naar de onderkant van deze pagina scrollen om meer dingen te zien die u waarschijnlijk wilt vervangen."
     }, 
     "FOOTER":{
         "terms":"Algemene voorwaarden",
-        "privacy":"Privacybeleid"
+        "privacy":"Privacybeleid",
+        "faq":"Veel gestelde vragen"
 
     },
     "MODALS": {
@@ -55,13 +59,24 @@
     },
     "TITLE":{
         "terms":"Algemene voorwaarden",
-        "privacy":"Privacybeleid"
+        "privacy":"Privacybeleid",
+        "faq":"Veel gestelde vragen"
+    },
+    "FAQ":{
+        "question1":"Hebben jullie een privacybeleid pagina?",
+        "answer1":"Ja, u klikt op de privacybeleids tekst in de footer op de hoofdpagina om de privacybeleid pagina te openen.",
+        "question2":"Heeft u een pagina met algemene voorwaarden?",
+        "answer2":"Ja, u klikt op de tekst Algemene voorwaarden in de footer op de hoofdpagina om de pagina Privacybeleid te openen.",
+        "question3":"Hoe kan ik een vraag stellen over het bedrijf over een specifieke vraag die niet op de veel gestelde vragen pagina staat?",
+        "answer3.1":"If your question is not answered on the FAQ page, please contact us. You do this by:",
+        "answer3.2":"- 1. Klik linksbovenin op het bedrijfslogo zodat u op de hoofdpagina bent.",
+        "answer3.3":"- 2. Ga naar de sectie: Neem contact met ons op en stuur uw vraag naar ons."
     },
     "index": {
         "contact":{
-            "title":"Contact Us",
-            "subtitle":"We ",
-            "subtitle2":" to hear from you!",
+            "title":"Neem contact met ons op",
+            "subtitle":"Wij ",
+            "subtitle2":" er van om van jou te horen!",
             "name":"Naam*",
             "email":"Email*",
             "message":"Bericht*",

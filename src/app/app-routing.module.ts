@@ -33,6 +33,10 @@ const routes: Routes = [
         loadChildren: './features/registrate-finish/registrate-finish.module#RegistrateFinishPageModule'
     },
     {
+        path: 'faq',
+        loadChildren: './features/test_faq/faq.module#FaqPageModule'
+    },
+    {
         path: 'home',
         loadChildren: './features/home/home.module#HomePageModule',
         canActivate: [HasJwtTokenDefinedGuard]

@@ -34,7 +34,7 @@ export class MainHeaderComponent {
     }
 
     navigateToMainPage() {
-        this.router.navigate(['main']);
+        this.router.navigate(['main']) && window.scrollTo(0, 0);
     }
 
     selectLanguage(language: string) {
