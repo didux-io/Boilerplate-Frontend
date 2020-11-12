@@ -1,4 +1,4 @@
-import { IUserClaims } from './userClaims.interface';
+import { IUserClaims } from "./userClaims.interface";
 
 export interface IJWTDecoded {
     iat: number;

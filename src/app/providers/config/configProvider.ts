@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { IConfig } from '../../interfaces/config.interface';
-import { take } from 'rxjs/operators';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { IConfig } from "../../interfaces/config.interface";
+import { take } from "rxjs/operators";
 
 @Injectable()
 export class ConfigProvider {
@@ -17,7 +17,7 @@ export class ConfigProvider {
             this.config = config;
             return config;
         } catch (error) {
-            console.error('Error in config.json!:', error);
+            console.error("Error in config.json!:", error);
             return null;
         }
     }

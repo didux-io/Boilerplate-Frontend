@@ -2,6 +2,9 @@
     .nav-link {
         color: var(--menu-color);
         margin-top: revert;
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 a:not([href]):not([tabindex]) {
@@ -14,6 +17,12 @@ a:not([href]):not([tabindex]) {
 }
 
 .dropdown-item {
+    &:hover {
+        cursor: pointer;
+    }
+}
+.navbar-brand{
+    color: var(--menu-color);
     &:hover {
         cursor: pointer;
     }

@@ -1,19 +1,19 @@
-import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
-import { LanguageProvider } from '../../providers/language/languageProvider';
-import { first } from 'rxjs/operators';
-import { Subscription } from 'rxjs';
-import * as QRCode from 'qrcode';
-import { ConfigProvider } from 'src/app/providers/config/configProvider';
-import { BaseComponent } from '../base-component/base-component';
+import { Component, OnInit, ViewChild, ElementRef} from "@angular/core";
+import { FormControl } from "@angular/forms";
+import { Router } from "@angular/router";
+import { TranslateService } from "@ngx-translate/core";
+import { LanguageProvider } from "../../providers/language/languageProvider";
+import { first } from "rxjs/operators";
+import { Subscription } from "rxjs";
+import * as QRCode from "qrcode";
+import { ConfigProvider } from "src/app/providers/config/configProvider";
+import { BaseComponent } from "../base-component/base-component";
 
 declare const diduxWallet: any;
 
 @Component({
-    templateUrl: 'main.page.html',
-    styleUrls: ['main.page.scss']
+    templateUrl: "main.page.html",
+    styleUrls: ["main.page.scss"]
 })
 export class MainPageComponent extends BaseComponent implements OnInit {
     languages = [];
@@ -33,9 +33,12 @@ export class MainPageComponent extends BaseComponent implements OnInit {
         this.languages = this.languageProvider.getLanguages();
     }
     navigateToTerms() {
-        this.router.navigate(['terms']);
+        this.router.navigate(["terms"]) && window.scrollTo(0, 0);
     }
     navigateToPrivacy() {
-        this.router.navigate(['privacy']);
+        this.router.navigate(["privacy"]) && window.scrollTo(0, 0);
+    }
+    navigateToFAQ() {
+        this.router.navigate(["faq"]);
     }
 }

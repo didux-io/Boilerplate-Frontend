@@ -1,5 +1,3 @@
 export class SetAuthWsUrlAction {
-    static readonly type = '[App] SetAuthWsUrlAction';
-
-    constructor() {}
+    static readonly type = "[App] SetAuthWsUrlAction";
 }

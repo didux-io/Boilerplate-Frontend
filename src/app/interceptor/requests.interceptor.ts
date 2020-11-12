@@ -1,16 +1,16 @@
-import { Injectable } from '@angular/core';
-import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
-import { Store } from '@ngxs/store';
-import { Observable } from 'rxjs/Observable';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Router } from '@angular/router';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/take';
-import { throwError } from 'rxjs';
-import { UserStateFacade } from '../state/user/user.facade';
-import { UserState } from '../state/user/user.state';
+import { Injectable } from "@angular/core";
+import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from "@angular/common/http";
+import { Store } from "@ngxs/store";
+import { Observable } from "rxjs/Observable";
+import { BehaviorSubject } from "rxjs/BehaviorSubject";
+import { Router } from "@angular/router";
+import "rxjs/add/operator/catch";
+import "rxjs/add/operator/filter";
+import "rxjs/add/operator/switchMap";
+import "rxjs/add/operator/take";
+import { throwError } from "rxjs";
+import { UserStateFacade } from "../state/user/user.facade";
+import { UserState } from "../state/user/user.state";
 
 
 
@@ -40,14 +40,14 @@ export class RequestInterceptor implements HttpInterceptor {
             // We don't want to refresh token for some requests like login or refresh token itself
             // So we verify url and we throw an error if it's the case
             if (
-                request.url.includes('refresh') ||
-                request.url.includes('login')
+                request.url.includes("refresh") ||
+                request.url.includes("login")
             ) {
                 // We do another check to see if refresh token failed
                 // In this case we want to logout user and to redirect it to login page
-                if (request.url.includes('refresh')) {
+                if (request.url.includes("refresh")) {
                     this.userStateFacade.logout();
-                    this.router.navigate(['login']);
+                    this.router.navigate(["login"]);
                 }
                 return throwError(error);
             }
@@ -90,7 +90,7 @@ export class RequestInterceptor implements HttpInterceptor {
         const refreshToken = this.store.selectSnapshot(UserState.refreshToken);
 
         const path = request.url;
-        if (path.includes('/authenticate/refresh')) {
+        if (path.includes("/authenticate/refresh")) {
             token = refreshToken;
         }
 

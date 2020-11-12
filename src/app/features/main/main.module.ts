@@ -13,7 +13,7 @@ import { LanguageProvider } from '../../providers/language/languageProvider';
 
 const routes: Routes = [
     {
-        path: '',
+        path: "",
         component: MainPageComponent
     }
 ];

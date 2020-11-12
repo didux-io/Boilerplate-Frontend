@@ -43,12 +43,12 @@
     }
 
     .registration-success-div {
-        background: white;
-        color: black;
+        background: var(--white);
+        color: var(--black);
         padding: 20px;
         border-radius: 25px;
-        display: flex;
-        flex-direction: column;
+        display: flex!important;
+        flex-direction: column!important;
         align-items: center;
     }
 
@@ -60,6 +60,9 @@
         label {
             margin-left: 8px;
             margin-bottom: 0;
+        }
+        a{
+            color:var(--green);
         }
     }
 }

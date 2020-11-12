@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-import { DisableControlDirective } from './disable.control.directive';
+import { NgModule } from "@angular/core";
+import {  } from "./disable.control.directive";
 
 @NgModule({
   imports: [],
-  declarations: [DisableControlDirective],
-  exports: [DisableControlDirective]
+  declarations: [],
+  exports: []
 })
 export class DirectivesModule { }

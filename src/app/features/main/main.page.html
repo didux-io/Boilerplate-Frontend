@@ -13,7 +13,7 @@
         <section class="section-1">
 
             <h2>{{ 'MAIN.title2' | translate }}</h2>
-            <p>{{ 'MAIN.subtitle2' | translate }}</p>
+            <h5>{{ 'MAIN.subtitle2' | translate }}</h5>
 
         </section>
     </div>
@@ -28,7 +28,8 @@
         <div class="contact-wrapper">
             <div class="section-header text-center mb--50">
                 <h3>{{ 'index.contact.title' | translate}}</h3>
-                <h6>{{ 'index.contact.subtitle' | translate}} <i class="fa fa-heart"></i>{{ 'index.contact.subtitle2' | translate}}</h6>
+                <h6>{{ 'index.contact.subtitle' | translate}} <i
+                        class="fa fa-heart"></i>{{ 'index.contact.subtitle2' | translate}}</h6>
             </div>
             <div class="contact">
                 <form class="contact-form">
@@ -40,7 +41,7 @@
                             <input type="email" style="border-radius: 5px;" name="email" id="emailaddress"
                                 placeholder="{{ 'index.contact.email' | translate}}">
 
-                            <!-- Captcha copied from didux -->
+                            <!-- Captcha from didux -->
                             <div class="g-recaptcha" name="captchaCode"
                                 data-sitekey="6Lcs7asUAAAAAEcR9OdIPiDKrI-nkxtxrr5k6hw3">
                                 <div style="width: 304px; height: 78px;">
@@ -65,6 +66,7 @@
                             <button type="button" style="border-radius: 5px; margin-top:50px" id="sendEmailButton"
                                 onclick="sendEmail();"><i class="fa fa-paper-plane" aria-hidden="true"></i>
                                 {{ 'index.contact.send' | translate}}</button>
+                            <a href="#top-page" class="to-top"><span class="ti-angle-up"></span></a>
                         </div>
                     </div>
                 </form>
@@ -73,41 +75,4 @@
     </div>
 </section>
 <!-- contact-section end -->
-
-
-<div class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="footer-section">
-                <h1>Cookies</h1>
-                <p>Chocolate</p>
-                <p>Prime</p>
-                <p>Yummy</p>
-                <p>Creamy</p>
-            </div>
-            <div class="footer-section">
-                <h1>Drinks</h1>
-                <p>Beer</p>
-                <p>Wine</p>
-                <p (click)="navigateToTerms()">{{ 'FOOTER.terms' | translate }}</p>
-                <p (click)="navigateToPrivacy()">{{ 'FOOTER.privacy' | translate }}</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="footer-bottom-bar">
-    <div class="container">
-        <p>{{ 'FOOTER.copyright' | translate }}</p>
-        <div class="footer-social">
-            <a [href]="configProvider.config.facebook" target="_blank">
-                <fa-icon [icon]="['fab', 'facebook-square']"></fa-icon>
-            </a>
-            <a [href]="configProvider.config.linkedin" target="_blank">
-                <fa-icon [icon]="['fab', 'linkedin']"></fa-icon>
-            </a>
-            <a [href]="configProvider.config.twitter" target="_blank">
-                <fa-icon [icon]="['fab', 'twitter-square']"></fa-icon>
-            </a>
-        </div>
-    </div>
-</div>
+<app-footer></app-footer>

@@ -1,7 +1,7 @@
-import { Injectable, Inject } from '@angular/core';
-import { NgxsPlugin, NgxsNextPluginFn, actionMatcher, InitState, UpdateState, getValue, setValue } from '@ngxs/store';
-import { tap, concatMap, reduce, map } from 'rxjs/operators';
-import { Observable, of, from } from 'rxjs';
+import { Injectable, Inject } from "@angular/core";
+import { NgxsPlugin, NgxsNextPluginFn, actionMatcher, InitState, UpdateState, getValue, setValue } from "@ngxs/store";
+import { tap, concatMap, reduce, map } from "rxjs/operators";
+import { Observable, of, from } from "rxjs";
 import {
     NGXS_STORAGE_PLUGIN_OPTIONS,
     STORAGE_ENGINE,
@@ -9,7 +9,7 @@ import {
     StorageEngine,
     AsyncStorageEngine,
     AsyncStorageEngineProxy
-} from '@ngxs-labs/async-storage-plugin';
+} from "@ngxs-labs/async-storage-plugin";
 
 @Injectable()
 export class StoragePlugin implements NgxsPlugin {
@@ -19,7 +19,7 @@ export class StoragePlugin implements NgxsPlugin {
         @Inject(NGXS_STORAGE_PLUGIN_OPTIONS) private pluginOptions: NgxsStoragePluginOptions,
         @Inject(STORAGE_ENGINE) private storageEngine: StorageEngine | AsyncStorageEngine
     ) {
-        if (typeof this.storageEngine.length === 'function') {
+        if (typeof this.storageEngine.length === "function") {
             this.asyncStorageEngine = this.storageEngine as AsyncStorageEngine;
         } else {
             this.asyncStorageEngine = new AsyncStorageEngineProxy(this.storageEngine as StorageEngine);
@@ -38,19 +38,19 @@ export class StoragePlugin implements NgxsPlugin {
             initAction = from(keys).pipe(
                 concatMap(key => this.asyncStorageEngine.getItem(key.key || key).pipe(map(val => [key, val]))),
                 reduce((previousState, [key, val]) => {
-                    const isMaster = key === '@@STATE';
+                    const isMaster = key === "@@STATE";
                     let nextState = previousState;
-                    if (val !== 'undefined' && typeof val !== 'undefined' && val !== null) {
+                    if (val !== "undefined" && typeof val !== "undefined" && val !== null) {
                         try {
                             val = options.deserialize(val);
                         } catch (e) {
-                            console.error('Error ocurred while deserializing the store value, falling back to empty object.', e);
+                            console.error("Error ocurred while deserializing the store value, falling back to empty object.", e);
                             val = {};
                         }
 
                         if (options.migrations) {
                             options.migrations.forEach(strategy => {
-                                const versionMatch = strategy.version === getValue(val, strategy.versionKey || 'version');
+                                const versionMatch = strategy.version === getValue(val, strategy.versionKey || "version");
                                 const keyMatch = (!strategy.key && isMaster) || strategy.key === key;
                                 if (versionMatch && keyMatch) {
                                     val = strategy.migrate(val);
@@ -76,8 +76,8 @@ export class StoragePlugin implements NgxsPlugin {
                     for (let key of keys) {
                         let val = nextState as any;
 
-                        if (key !== '@@STATE') {
-                            if (!key || typeof(key) === 'string') {
+                        if (key !== "@@STATE") {
+                            if (!key || typeof(key) === "string") {
                                 val = await getValue(nextState, key);
                             } else {
                                 const subKeys = key.subKeys;
@@ -102,7 +102,7 @@ export class StoragePlugin implements NgxsPlugin {
                         try {
                             this.asyncStorageEngine.setItem(key, options.serialize(val));
                         } catch (e) {
-                            console.error('Error ocurred while serializing the store value, value not updated.', e);
+                            console.error("Error ocurred while serializing the store value, value not updated.", e);
                         }
                     }
                 }

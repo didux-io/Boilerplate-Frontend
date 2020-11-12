@@ -29,7 +29,7 @@
         font-size: 17px;
         background-color: var(--app-primary-color);
         border: none;
-        color: #fff;
+        color: var(--white);
     }
     .login-header {
         height: 80px;
@@ -38,18 +38,13 @@
         align-items: center;
         z-index: 1;
         position: absolute;
-        background: white;
+        color: var(--white);
         justify-content: space-between;
         padding-right: 50px;
 
         p {
             margin-bottom: 0;
             font-weight: 800;
-
-            &:hover {
-                cursor: pointer;
-                opacity: 0.5;
-            }
         }
 
         img {
@@ -66,7 +61,7 @@
         height: 100vh;
         width: 100%;
         overflow: hidden;
-        color: white;
+        color: var(--white);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -79,124 +74,51 @@
         justify-content: center;
     }
 
-    .footer {
-        background-color: gray;
-        display: flex;
-        padding-bottom: 5vh;
-        padding-top: 5vh;
+    .contact-wrapper {
+            opacity: 1.0;
+            background-image: url(/assets/img/contact-background.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin-bottom: 5px;
     }
 
-    .footer-bottom-bar {
-        background-color: lightgrey;
-        display: flex;
-        padding-bottom: 5vh;
-        padding-top: 5vh;
-
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            .footer-social {
-                a {
-                    color: inherit;
-                }
-            }
-
-            fa-icon {
-                font-size: 36px;
-                margin-right: 16px;
-
-                &:hover {
-                    cursor: pointer;
-                    opacity: 0.5;
-                }
+    .contact-form {
+        max-width: 930px;
+        width: 100%;
+        margin: auto;
+        input, textarea {
+            width: 100%;
+            padding: 12px 25px;
+            border: 1px solid var(--lightGrey);
+            box-shadow: 0 0 15px 0 rgba(var(--black), 0.06);
+            outline: none;
+            &:active,&:hover,&:focus {
+                border-color: var(--base-color);
             }
         }
-
-        p {
-            margin-bottom: 0;
-            color: black;
+        input {
+            margin-bottom: 50px;
+            font-size: 14px;
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
-    }
-
-    .footer-section {
-
-        h1 {
-            color: var(--title-color);
-            font-weight: 700;
-            font-family: "Roboto", sans-serif;
-            line-height: 1.5;
+        textarea {
+            font-size: 14px;
+            height: 100%;
         }
-        p {
-            color: white;
-            font-weight: 700;
-            font-family: "Roboto", sans-serif;
-            line-height: 1.5;
+        
+        button {
+            padding: 15px 60px;
+            font-size: 14px;
+            background-color: var(--base-color);
+            border: none;
+            color: var(--white);
+            &:hover {
+                color:  var(--white);
+                background-color: var(--title-color);
+            }
         }
-        a{
-            color: white;
-            font-weight: 700;
-            font-family: "Roboto", sans-serif;
-            line-height: 1.5;
-        }
-
-        padding-right: 5vw;
-        margin-left: 15px;
     }
 }
 
-.contact-wrapper {
-        opacity: 1.0;
-        background-image: url(/assets/img/contact-background.jpg);
-        background-repeat: no-repeat;
-        background-position: center center;
-        margin-bottom: 5px;
-}
-// .col-lg-6{
-//     margin-bottom: 50px;
-// }
-
-// contact form scss
-.contact-form {
-	max-width: 930px;
-	width: 100%;
-	margin: auto;
-	input, textarea {
-		width: 100%;
-		padding: 12px 25px;
-		border: 1px solid #e2e7f3;
-		box-shadow: 0 0 15px 0 rgba(var(--black), 0.06);
-		outline: none;
-		// @include border-radius(3px);
-		// @include transition(0.3s);
-		&:active,&:hover,&:focus {
-			border-color: var(--base-color);
-        }
-	}
-	input {
-		margin-bottom: 50px;
-		font-size: 14px;
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
-	textarea {
-		font-size: 14px;
-        height: 100%;
-    }
-    
-	button {
-		padding: 15px 60px;
-		font-size: 14px;
-		background-color: var(--base-color);
-		border: none;
-		color: var(--white);
-		// @include transition(0.3s);
-		// @include border-radius(3px);
-		&:hover {
-			color:  var(--white);
-			background-color: var(--title-color);
-		}
-    }
-}
