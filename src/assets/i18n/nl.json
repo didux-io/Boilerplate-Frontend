@@ -7,6 +7,9 @@
         "home": "Home",
         "signout": "Uitloggen"
     },
+    "HOME": {
+        "instructions": "Follow the instructions in the app"
+    },
     "HEADER": {
         "OVERVIEW": "Dashboard",
         "PROFILE": "Profiel",
@@ -29,7 +32,7 @@
         "password": "Wachtwoord",
         "login_button": "Login",
         "language": "Taal",
-        "registrate_button": "Registreer",
+        "registrate_button": "Registreren",
         "update_button": "Bijwerken",
         "loginProofme":"Login met de ProofMe App",
         "clickhere":"Klik hier om in te loggen met de ",
@@ -50,12 +53,19 @@
         "privacy":"Privacybeleid",
         "faq":"Veel gestelde vragen",
         "email":"E-mail",
-        "address":"Adres"
+        "menu":"Menu",
+        "home":"Home",
+        "address":"Adres",
+        "street":"Brugstraat 9",
+        "city":"Almelo, NL",
+        "rights":"Didux.io Alle rechten voorbehouden.",
+        "email":"info@didux.io"
     },
     "MODALS": {
         "RECOVERY": {
             "title": "E-mail bestaat al",
-            "message": "Het opgegeven e-mail is al aanwezig. Je heeft een e-mail ontvangen om jouw account te herstellen"
+            "message": "Het opgegeven e-mail is al aanwezig. Je hebt een e-mail ontvangen om jouw account te herstellen.",
+            "okay":"oke"
         }
     },
     "TITLE":{
@@ -72,6 +82,11 @@
         "answer3.1":"Staat uw vraag er niet tussen, neem dan contact met ons op. Dit doe je door:",
         "answer3.2":"- 1. Klik linksbovenin op het bedrijfslogo zodat u op de hoofdpagina bent.",
         "answer3.3":"- 2. Ga naar de sectie: Neem contact met ons op en stuur uw vraag naar ons."
+    },
+        "REGISTRATE":{
+        "accept":"Ik accepteer het",
+        "and":"en de",
+        "subscribe":"Ik wil me abonneren op de nieuwsbrief"
     },
     "index": {
         "contact":{

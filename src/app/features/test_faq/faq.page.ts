@@ -5,7 +5,6 @@ import { LanguageProvider } from "../../providers/language/languageProvider";
 import { ConfigProvider } from "src/app/providers/config/configProvider";
 import { BaseComponent } from "../base-component/base-component";
 
-declare const diduxWallet: any;
 
 @Component({
     templateUrl: "faq.page.html",

@@ -58,8 +58,14 @@
             margin-left: 8px;
             margin-bottom: 0;
         }
-        a{
-            color:var(--green);
+    }
+    a{
+        color:var(--green);
+    }
+    a, button{
+        &:hover {
+            color: var(--white);
+            cursor: pointer;
         }
     }
 }

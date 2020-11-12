@@ -4,19 +4,19 @@
         <form [formGroup]=finishRegistrationForm class="registrateForm">
             <div class="form-group">
                 <label>
-                    Username
+                   {{ 'PROFILE.username' | translate }}
                 </label>
                 <input type="text" class="form-control" formControlName="username">
             </div>
             <div class="checkbox-div">
                 <input type="checkbox" id="termsAndPrivacy" name="termsAndPrivacy"
                     formControlName="termsAndPrivacyAccepted">
-                <label for="termsAndPrivacy">I Accept the <a href="/privacy-policy" target="_blank">privacy policy</a>
-                    and <a href="/terms-and-conditions" target="_blank">terms & conditions</a></label>
+                <label for="termsAndPrivacy">{{ 'REGISTRATE.accept' | translate }} <a (click)="navigateToPrivacy()">{{ 'TITLE.privacy' | translate }}</a>
+                    {{ 'REGISTRATE.and' | translate }} <a (click)="navigateToTerms()">{{ 'TITLE.terms' | translate }}</a></label>
             </div>
             <div class="checkbox-div">
                 <input type="checkbox" id="newsLetter" name="newsLetter" formControlName="newsLetter">
-                <label for="newsLetter">I want to subscribe to the newsletter</label>
+                <label for="newsLetter">{{ 'REGISTRATE.subscribe' | translate }}</label>
             </div>
             <button class="btn btn-success" (click)="registrate()" [disabled]="!finishRegistrationForm.valid">
                 {{ 'PROFILE.registrate_button' | translate }}

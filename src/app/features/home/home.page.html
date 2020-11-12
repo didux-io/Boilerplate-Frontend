@@ -6,7 +6,7 @@
     <div class="overlay-instruction-background"></div>
     <div class="overlay-instruction-popup" *ngIf="(loginType$ | async) && (loginType$ | async) === 'diduxio'">
         <img src="/assets/img/mobile.png" class="mobile-logo">
-        <p class="mobile-instructions-text">Volg de instructies in de app</p>
+        <p class="mobile-instructions-text">{{ 'HOME.instructions' | translate }}</p>
     </div>
 </div>
 

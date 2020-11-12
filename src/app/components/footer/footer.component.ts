@@ -10,7 +10,7 @@ import { AppStateFacade } from "src/app/state/app/app.facade";
 })
 export class FooterComponent {
     public isMenuCollapsed = true;
-    public isAccountCollapsed = true; 
+    public isAccountCollapsed = true;
     public isLanguageCollapsed = true;
 
     @Input()

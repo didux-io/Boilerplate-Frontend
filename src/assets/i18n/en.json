@@ -7,6 +7,9 @@
         "home": "Home",
         "signout": "Sign out"
     },
+    "HOME": {
+        "instructions": "Follow the instructions in the app"
+    },
     "HEADER": {
         "OVERVIEW": "Dashboard",
         "PROFILE": "Profile",
@@ -50,12 +53,19 @@
         "privacy":"Privacy policy",
         "faq":"Frequently asked questions",
         "email":"Email",
-        "address":"Address"
+        "menu":"Menu",
+        "home":"Home",
+        "address":"Address",
+        "street":"Brugstraat 9",
+        "city":"Almelo, NL",
+        "rights":"Didux.io All Rights Reserved.",
+        "email":"info@didux.io"
     },
     "MODALS": {
         "RECOVERY": {
             "title": "E-mail already existing",
-            "message": "The e-mail provided is already existing. You have received an e-mail to recover your account"
+            "message": "The e-mail provided is already existing. You have received an e-mail to recover your account.",
+            "okay":"okay"
         }
     },
     "TITLE":{
@@ -72,6 +82,11 @@
         "answer3.1":"If your question is not answered on the FAQ page, please contact us. You do this by:",
         "answer3.2":"- 1. Click on the company logo at the top left so that you are on the main page.",
         "answer3.3":"- 2. Scroll to the section: Contact Us, and send your question to us."
+    },
+    "REGISTRATE":{
+        "accept":"I Accept the",
+        "and":"and",
+        "subscribe":"I want to subscribe to the newsletter"
     },
     "index": {
         "contact":{

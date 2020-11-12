@@ -1,36 +1,18 @@
+<app-main-header></app-main-header>
 <div class="main-container">
-   <div class="main-view-div">
-      <form [formGroup]=overviewForm>
-         <div class="form-group2">
-            <label style="padding-left: 1%;">
-               Voornaam*
-            </label>
-            <input type="text" class="form-control" formControlName="text">
+    <div class="container" style="padding-top:5vh;">
+        <div class="main-title">
+            <h1>{{ 'MAIN.title' | translate }}</h1>
+        </div>
+        <div class="main-text">
+            <h5> {{ 'MAIN.subtitle' | translate }}</h5>
+        </div>
 
-            <label style="padding-left: 1%;">
-               Achternaam*
-            </label>
-            <input type="text" class="form-control" formControlName="text1">
+        <section class="section-1">
 
-            <label style="padding-left: 1%;">
-               Datum*
-            </label>
-            <input type="date" class="form-control" formControlName="datum1">
+            <h2>{{ 'MAIN.title2' | translate }}</h2>
+            <h5>{{ 'MAIN.subtitle2' | translate }}</h5>
 
-            <label style="padding-left: 1%;">
-               Tijd*
-            </label>
-            <input type="time" class="form-control" formControlName="tijd1">
-
-            <label style="padding-left: 1%;">
-               Opmerking
-            </label>
-            <input type="text" class="form-control" formControlName="opmerking">
-
-            <button class="btn btn-danger" (click)="updateOverview()" [disabled]="!overviewForm.valid">
-               Test button
-            </button>
-         </div>
-      </form>
-   </div>
+        </section>
+    </div>
 </div>

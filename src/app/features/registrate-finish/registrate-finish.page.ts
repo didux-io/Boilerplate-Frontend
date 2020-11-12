@@ -57,4 +57,10 @@ export class RegistrateFinishPageComponent extends BaseComponent implements OnIn
         const newsLetter = this.finishRegistrationForm.get("newsLetter").value;
         this.userStateFacade.finishRegistration(username, termsAndPrivacyAccepted, newsLetter);
     }
+    navigateToTerms() {
+        this.router.navigate(["terms"]) && window.scrollTo(0, 0);
+    }
+    navigateToPrivacy() {
+        this.router.navigate(["privacy"]) && window.scrollTo(0, 0);
+    }
 }
