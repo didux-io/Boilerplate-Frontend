@@ -1,42 +1,52 @@
 
-    .footer {
-        background-color: var(--footer-background);
-        display: flex;
-        // padding-left: 10vw;
-        // padding-right: 15vw;
-        padding-bottom: 5vh;
-        padding-top: 5vh;
+    @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+
+    body {
+        background: linear-gradient(0deg, var(--white), 50%, var(--white-mix));
+        font-family: 'Rubik', sans-serif;
+        background: var(--back-color);
+        height: 100 !important
     }
-
-    .footer-section {
-
-        h1 {
-            color: var(--title-color);
-            font-weight: 700;
-            line-height: 1.5;
-            padding-bottom: 30px;
-        }
-        p {
-            color: var(--white);
-            font-weight: 700;
-            font-family: "Roboto", sans-serif;
-            line-height: 1.5;
+   
+    .container-fluid {
+        overflow: hidden;
+        margin-top: 250px;
+        background:var(--footer-background);
+        color: var(--footer-text) !important;
+        margin-bottom: 0;
+        padding-bottom: 0
+    }
+   
+    small {
+        font-size: calc(12px + (15 - 12) * ((100vw - 360px) / (1600 - 360))) !important
+    }
+   
+    .bold-text {
+        color: var(--footer-title) !important
+    }
+   
+    .mt-55 {
+        margin-top: calc(50px + (60 - 50) * ((100vw - 360px) / (1600 - 360))) !important
+    }
+   
+    h3 {
+        font-size: calc(34px + (40 - 34) * ((100vw - 360px) / (1600 - 360))) !important
+    }
+    div.col{
+        width: 250px;
+    }
+    .social {
+        font-size: 21px !important
+    }
+    .rights {
+        font-size: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important
+    }
+    li::before {
+            content: "•"; color: var(--footer-text);
+    }
+    li, i, h3, .hover{
             &:hover {
-                color: var(--title-color);
+                color: var(--white);
                 cursor: pointer;
-              }
+            }
         }
-        p::before {
-            content: "•"; color: white
-        }
-    
-        a{
-            color: var(--white);
-            font-weight: 700;
-            font-family: "Roboto", sans-serif;
-            line-height: 1.5;
-        }
-
-        padding-right: 5vw;
-        margin-left: 15px;
-    }

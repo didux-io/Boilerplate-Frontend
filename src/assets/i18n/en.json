@@ -48,8 +48,9 @@
     "FOOTER":{
         "terms":"Terms & conditions",
         "privacy":"Privacy policy",
-        "faq":"Frequently asked questions"
-     
+        "faq":"Frequently asked questions",
+        "email":"Email",
+        "address":"Address"
     },
     "MODALS": {
         "RECOVERY": {

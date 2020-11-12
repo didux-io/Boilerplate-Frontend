@@ -48,8 +48,9 @@
     "FOOTER":{
         "terms":"Algemene voorwaarden",
         "privacy":"Privacybeleid",
-        "faq":"Veel gestelde vragen"
-
+        "faq":"Veel gestelde vragen",
+        "email":"E-mail",
+        "address":"Adres"
     },
     "MODALS": {
         "RECOVERY": {
