@@ -1,3 +1,5 @@
+import { IStorageKey } from "src/app/interfaces/storage-key.interface";
+
 /*
 * List of state keys which should be stored (unencrypted!) in local storage.
 *

@@ -24,30 +24,32 @@ export class FooterComponent {
 
     }
 
-    navigateToLogin() {
+    navigateToLogin(): void {
         this.isMenuCollapsed = true;
         this.router.navigate(["login"]);
     }
 
-    navigateToRegistrate() {
+    navigateToRegistrate(): void {
         this.router.navigate(["registrate"]);
     }
 
-    navigateToMainPage() {
-        this.router.navigate(["main"]) && window.scrollTo(0, 0);
-    }
-    navigateToTerms() {
-        this.router.navigate(["terms"]) && window.scrollTo(0, 0);
-    }
-    navigateToPrivacy() {
-        this.router.navigate(["privacy"]) && window.scrollTo(0, 0);
-    }
-    navigateToFAQ() {
-        this.router.navigate(["faq"]) && window.scrollTo(0, 0);
+    navigateToMainPage(): void {
+        this.router.navigate(["main"]);
     }
 
-    selectLanguage(language: string) {
-        console.log("language:", language);
+    navigateToTerms(): void {
+        this.router.navigate(["terms"]);
+    }
+
+    navigateToPrivacy(): void {
+        this.router.navigate(["privacy"]);
+    }
+
+    navigateToFAQ(): void {
+        this.router.navigate(["faq"]);
+    }
+
+    selectLanguage(language: string): void {
         this.appStateFacade.setLanguage(language);
         this.translateService.use(language);
     }

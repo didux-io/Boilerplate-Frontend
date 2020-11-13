@@ -5,10 +5,15 @@
     },
     "MENU": {
         "home": "Home",
+        "users": "Users",
         "signout": "Sign out"
+    },
+    "INSTRUCTION_OVERLAY": {
+        "message": "Follow the instructions in the app"
     },
     "HEADER": {
         "OVERVIEW": "Dashboard",
+        "USERS": "Users",
         "PROFILE": "Profile",
         "company": "Didux.io",
         "login": "Login",

@@ -70,14 +70,11 @@ export class LoginPageComponent extends BaseComponent implements OnInit {
         });
 
         if (this.deviceService.isMobile() || this.deviceService.isTablet()) {
-            console.log('mobile!');
             this.showMobileLogin = true;
-        } else {
-            console.log('not mobile!');
         }
     }
 
-    async ngOnInit() {
+    async ngOnInit(): Promise<void> {
         await this.configProvider.getConfig();
         this.appStateFacade.setAuthWsUrl();
         this.appStateFacade.authWsUrl$.pipe(takeUntil(this.destroy$)).subscribe((signalingUrl) => {
@@ -101,12 +98,12 @@ export class LoginPageComponent extends BaseComponent implements OnInit {
 
         this.appStateFacade.backendUrlDown$.pipe(skip(1), takeUntil(this.destroy$)).subscribe((down) => {
             if (down) {
-                this.toastr.error('Portal backend unreachable.');
+                this.toastr.error("Portal backend unreachable.");
             }
         });
     }
 
-    async setupWebRtc(signalingUrl: string) {
+    async setupWebRtc(signalingUrl: string): Promise<void> {
         const config = await this.configProvider.getConfig();
         this.webRtcProvider.setConfig({
             signalingUrl,
@@ -121,24 +118,26 @@ export class LoginPageComponent extends BaseComponent implements OnInit {
             });
             this.ngZone.run(() => {
                 this.mobileLoginUrl = `diduxio://didux.io/p2p?uuid=${uuid}&wsUrl=${signalingUrl}`;
-                console.log('this.mobileLoginUrl:', this.mobileLoginUrl);
+                console.log("this.mobileLoginUrl:", this.mobileLoginUrl);
             });
         });
-        this.webRtcProvider.websocketConnectionClosed$.pipe(skip(1), takeUntil(this.destroy$), filter(x => !!x)).subscribe((closed) => {
+        this.webRtcProvider.websocketConnectionClosed$.pipe(skip(1), takeUntil(this.destroy$), filter(x => !!x)).subscribe(() => {
             this.websocketDisconnected = true;
         });
         this.webRtcProvider.receivedActions$.pipe(skip(1), takeUntil(this.destroy$), filter(x => !!x)).subscribe((data) => {
             console.log("Received:", data);
             // When the client is connected
-            if (data.action === 'p2pConnected') {
+            if (data.action === "p2pConnected") {
                 if (data.p2pConnected) {
                     // Login with mobile
-                    this.webRtcProvider.sendData('login', { url: config.backendUrl });
+                    this.userStateFacade.setShowExternalInstruction(true);
+                    this.webRtcProvider.sendData("login", { url: config.backendUrl });
                 } else {
                     this.webRtcProvider.launchWebsocketClient();
                 }
             }
             if (data.token) {
+                this.userStateFacade.setShowExternalInstruction(false);
                 // Set the token
                 this.userStateFacade.setAccessToken(data.token);
             }
@@ -161,11 +160,11 @@ export class LoginPageComponent extends BaseComponent implements OnInit {
         this.webRtcProvider.launchWebsocketClient();
     }
 
-    refreshWebsocketDisconnect() {
+    refreshWebsocketDisconnect(): void {
         this.webRtcProvider.launchWebsocketClient();
     }
 
-    login() {
+    login(): void {
         const email = this.loginForm.get("email").value;
         const password = this.loginForm.get("password").value;
         this.userStateFacade.userLogin(email, password);

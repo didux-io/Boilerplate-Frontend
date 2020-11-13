@@ -2,9 +2,9 @@ import { OnDestroy } from "@angular/core";
 import { Subject } from "rxjs";
 
 export abstract class BaseComponent implements OnDestroy {
-    private destroySubject: Subject<any>;
+    private destroySubject: Subject<unknown>;
 
-    get destroy$() {
+    get destroy$(): Subject<unknown> {
         if (!this.destroySubject) {
             // Perf optimization:
             // since this is likely used as base component everywhere
@@ -14,7 +14,7 @@ export abstract class BaseComponent implements OnDestroy {
         return this.destroySubject;
     }
 
-    ngOnDestroy() {
+    ngOnDestroy(): void {
         if (this.destroySubject) {
             this.destroySubject.next(true);
             this.destroySubject.complete();

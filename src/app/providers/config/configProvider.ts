@@ -13,7 +13,7 @@ export class ConfigProvider {
 
     async getConfig(): Promise<IConfig> {
         try {
-            const config = await this.http.get<IConfig>('/assets/config/config.json').pipe(take(1)).toPromise();
+            const config = await this.http.get<IConfig>("/assets/config/config.json").pipe(take(1)).toPromise();
             this.config = config;
             return config;
         } catch (error) {

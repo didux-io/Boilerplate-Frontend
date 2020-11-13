@@ -28,9 +28,8 @@ export class RegistratePageComponent extends BaseComponent implements OnInit {
         });
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.userStateFacade.registrationError$.pipe(skip(1), takeUntil(this.destroy$)).subscribe((error) => {
-            console.log("RegistratePageComponent registrationError$:", error);
             if (error) {
                 this.toastr.error("Registration failure");
             }
@@ -43,7 +42,7 @@ export class RegistratePageComponent extends BaseComponent implements OnInit {
         });
     }
 
-    registrate() {
+    registrate(): void {
         const email = this.registrateForm.get("email").value;
         const password = this.registrateForm.get("password").value;
         this.userStateFacade.registrate(email, password);

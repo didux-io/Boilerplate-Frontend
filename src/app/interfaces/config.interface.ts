@@ -5,4 +5,5 @@ export interface IConfig {
     facebook: string;
     linkedin: string;
     twitter: string;
+    captchaSiteKey: string;
 }

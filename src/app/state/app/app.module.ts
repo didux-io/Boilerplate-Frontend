@@ -12,5 +12,5 @@ import { AppStateFacade } from "./app.facade";
     ]
 })
 export class AppStateModule {
-    constructor() {}
+
 }

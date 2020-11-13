@@ -63,9 +63,15 @@ import { Buffer } from "buffer";
  * APPLICATION IMPORTS
  */
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 (window as any).global = window;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 (window as any).process = window;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 (window as any).Buffer = Buffer;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 (window as any).process.browser = true;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 (window as any).process.version = "";
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 (window as any).process.versions = {node: false};

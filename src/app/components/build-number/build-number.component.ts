@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { AppStateFacade } from 'src/app/state/app/app.facade';
-import { UserStateFacade } from 'src/app/state/user/user.facade';
+import { Component } from "@angular/core";
+import { AppStateFacade } from "src/app/state/app/app.facade";
+import { UserStateFacade } from "src/app/state/user/user.facade";
 
 @Component({
     // tslint:disable-next-line: component-selector

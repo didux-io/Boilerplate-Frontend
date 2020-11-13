@@ -2,13 +2,7 @@
 
 </app-menu>
 
-<div class="overlay-instruction" *ngIf="(showExternalInstruction$ | async)">
-    <div class="overlay-instruction-background"></div>
-    <div class="overlay-instruction-popup" *ngIf="(loginType$ | async) && (loginType$ | async) === 'diduxio'">
-        <img src="/assets/img/mobile.png" class="mobile-logo">
-        <p class="mobile-instructions-text">Volg de instructies in de app</p>
-    </div>
-</div>
+<instruction-overlay></instruction-overlay>
 
 <div class="right">
     <app-header>

@@ -6,6 +6,7 @@ import { SetAuthWsUrlAction } from "./actions/set-auth-ws-url";
 import { HttpClient } from "@angular/common/http";
 import { ConfigProvider } from "src/app/providers/config/configProvider";
 import { Injectable } from "@angular/core";
+import { IConfigResponse } from "src/app/interfaces/config-response.interface";
 
 export interface IAppState {
     pageTitleLanguageKey: string;
@@ -93,9 +94,8 @@ export class AppState {
     }
 
     @Action(SetAuthWsUrlAction)
-    setAuthWsUrl(ctx: StateContext<IAppState>, payload: SetAuthWsUrlAction): void {
-        console.log('setAuthWsUrl');
-        this.http.get<any>(`${this.configProvider.config.backendUrl}/v1/config`).subscribe((config) => {
+    setAuthWsUrl(ctx: StateContext<IAppState>): void {
+        this.http.get<IConfigResponse>(`${this.configProvider.config.backendUrl}/v1/config`).subscribe((config) => {
             ctx.patchState({
                 backendUrlDown: false,
                 authWsUrl: config.authWsUrl,
