@@ -1,17 +1,18 @@
-import { Component, OnDestroy } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Component } from "@angular/core";
+import { UserStateFacade } from "src/app/state/user/user.facade";
 
 @Component({
-    selector: 'app-menu',
-    templateUrl: 'menu.component.html',
-    styleUrls: ['menu.component.scss'],
+    selector: "app-menu",
+    templateUrl: "menu.component.html",
+    styleUrls: ["menu.component.scss"],
 })
-export class MenuComponent implements OnDestroy {
+export class MenuComponent {
 
-    constructor(private router: Router) {
-    }
+    isAdmin$ = this.userStateFacade.isAdmin$;
 
-    ngOnDestroy(): void {
+    constructor(
+        private userStateFacade: UserStateFacade
+    ) {
 
     }
 }

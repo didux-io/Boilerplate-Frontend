@@ -1,25 +1,24 @@
-import { Observable, from, of } from 'rxjs';
-import { AsyncStorageEngine } from '@ngxs-labs/async-storage-plugin';
-import { Injectable } from '@angular/core';
-import { pluck } from 'rxjs/operators';
+import { Observable, of } from "rxjs";
+import { AsyncStorageEngine } from "@ngxs-labs/async-storage-plugin";
+import { Injectable } from "@angular/core";
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: "root"
 })
 export class StorageProvider implements AsyncStorageEngine {
     length(): Observable<number> {
         return of(localStorage.length);
     }
 
-    getItem(key: any): Observable<any> {
+    getItem(key: string): Observable<string> {
         return of(localStorage.getItem(key));
     }
 
-    setItem(key: any, val: any): Observable<any> {
+    setItem(key: string, val: string): Observable<void> {
         return of(localStorage.setItem(key, val));
     }
 
-    removeItem(key: any): Observable<any> {
+    removeItem(key: string): Observable<void> {
         return of(localStorage.removeItem(key));
     }
 
@@ -27,7 +26,7 @@ export class StorageProvider implements AsyncStorageEngine {
         return of(localStorage.clear());
     }
 
-    key(val: number): Observable<string> {
-        throw new Error('Method not implemented.');
+    key(): Observable<string> {
+        throw new Error("Method not implemented.");
     }
 }

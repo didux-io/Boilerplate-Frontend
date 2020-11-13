@@ -3,7 +3,7 @@
 
     width: var(--menu-width);
     height: 100%;
-    background-color: var(--menu-background-color);
+    background-color: var(--app-primary-color);
     display: block;
     position: relative;
 
@@ -75,7 +75,7 @@
         .item {
             outline: none;
             width: 100%;
-            color: white;
+            color: var(--white);
             padding: 10px;
 
             &:hover {

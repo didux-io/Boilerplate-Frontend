@@ -1,11 +1,12 @@
-import { State, Selector, StateContext, Action } from '@ngxs/store';
-import { SetPageTitleLanguageKeyAction } from './actions/set-page-title-language-key.action';
-import { SetBuildNumber } from './actions/set-build-number.action';
-import { SetLanguage } from './actions/set-language.action';
-import { SetAuthWsUrlAction } from './actions/set-auth-ws-url';
-import { HttpClient } from '@angular/common/http';
-import { ConfigProvider } from 'src/app/providers/config/configProvider';
-import { Injectable } from '@angular/core';
+import { State, Selector, StateContext, Action } from "@ngxs/store";
+import { SetPageTitleLanguageKeyAction } from "./actions/set-page-title-language-key.action";
+import { SetBuildNumber } from "./actions/set-build-number.action";
+import { SetLanguage } from "./actions/set-language.action";
+import { SetAuthWsUrlAction } from "./actions/set-auth-ws-url";
+import { HttpClient } from "@angular/common/http";
+import { ConfigProvider } from "src/app/providers/config/configProvider";
+import { Injectable } from "@angular/core";
+import { IConfigResponse } from "src/app/interfaces/config-response.interface";
 
 export interface IAppState {
     pageTitleLanguageKey: string;
@@ -14,21 +15,28 @@ export interface IAppState {
     authWsUrl: string;
     emailEnabled: boolean;
     webRtcEnabled: boolean;
+    backendUrlDown: boolean;
 }
 
 @State<IAppState>({
-    name: 'app',
+    name: "app",
     defaults: {
-        pageTitleLanguageKey: '',
+        pageTitleLanguageKey: "",
         buildNumber: 0,
-        language: 'en',
+        language: "en",
         authWsUrl: null,
         webRtcEnabled: false,
-        emailEnabled: false
+        emailEnabled: false,
+        backendUrlDown: false
     }
 })
 @Injectable()
 export class AppState {
+    @Selector()
+    static backendUrlDown(state: IAppState): boolean {
+        return state.backendUrlDown;
+    }
+
     @Selector()
     static pageTitleLanguageKey(state: IAppState): string {
         return state.pageTitleLanguageKey;
@@ -86,13 +94,19 @@ export class AppState {
     }
 
     @Action(SetAuthWsUrlAction)
-    setAuthWsUrl(ctx: StateContext<IAppState>, payload: SetAuthWsUrlAction): void {
-        this.http.get<any>(`${this.configProvider.getBackendUrl()}/v1/auth/config`).subscribe((config) => {
+    setAuthWsUrl(ctx: StateContext<IAppState>): void {
+        this.http.get<IConfigResponse>(`${this.configProvider.config.backendUrl}/v1/config`).subscribe((config) => {
             ctx.patchState({
+                backendUrlDown: false,
                 authWsUrl: config.authWsUrl,
                 emailEnabled: config.emailEnabled,
                 webRtcEnabled: config.webRtcEnabled
             });
+        }, (err) => {
+            ctx.patchState({
+                backendUrlDown: true
+            })
+            console.error(err);
         });
     }
 }

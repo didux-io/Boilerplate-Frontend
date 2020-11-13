@@ -1,5 +1,3 @@
 export class RefreshAction {
-    static readonly type = '[User] RefreshAction';
-
-    constructor() {}
+    static readonly type = "[User] RefreshAction";
 }

@@ -1,10 +1,12 @@
 :host {
-
-    .main-view-div {
+    .background-img{
         left: 0;
         top: 0;
-        background: linear-gradient(to bottom, rgba(92, 77, 66, 0.6) 0, rgba(92, 77, 66, 0.6) 100%), url(/assets/img/bg-tech.jpg) no-repeat;
+        background: linear-gradient(to bottom, rgba(92, 77, 66, 0.6) 0, rgba(92, 77, 66, 0.6) 100%), url(/assets/img/background.jpg) no-repeat;
         background-size: cover;
+    }
+    
+    .main-view-div {
         height: 100vh;
         width: 100%;
         overflow: hidden;
@@ -64,15 +66,52 @@
 
     .divider {
         width: 1px;
-        background: lightgray;
+        background: var(--lightGrey);
         height: 350px;
         margin-left: 55px;
     }
 
+    .down-text {
+        margin-bottom: 0;
+        font-weight: 500;
+        font-size: 24px;
+    }
+
+    .down-div {
+        background: red;
+        padding: 75px 200px 75px 200px;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+
+        fa-icon {
+            font-size: 24px;
+            padding-right: 16px;
+        }
+    }
+
+    .loginForm-mobile {
+        width: 100%;
+    }
+
+    .main-view-div-mobile {
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .divider-mobile {
+        display: none;
+    }
 
     .mobile-button-div {
-        display: none;
-
+        // display: inherit;
+        // width: 80%;
         flex-direction: column;
         width: 100%;
         margin-top: 20px;
@@ -80,30 +119,7 @@
         align-items: center;
     }
 
-    @media (max-width: 1024px) {
-        .qr-code {
-            display: none;
-        }
-
-        .loginForm {
-            width: 80%;
-        }
-
-        .main-view-div {
-            flex-direction: column;
-        }
-
-        .divider {
-            display: none;
-        }
-
-        .mobile-button-div {
-            display: inherit;
-            width: 80%;
-        }
-
-        .mobile-button {
-            width: 100%;
-        }
+    .mobile-button {
+        width: 100%;
     }
 }

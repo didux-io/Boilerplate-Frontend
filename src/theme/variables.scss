@@ -1,16 +1,37 @@
 :root {
     // Header variables
     --header-height: 100px;
-    --header-border-color: var(--gray);
+    --header-border-color: grey;
+    
+    //== Colors
+    --black-color: #000;
+    --base-color: var(--app-primary-color);;
+    --custom-color: blue;
+    --subtext-color: #9BA4AD;
+    --black: #000;
+    --white: #fff;
+    --white-mix: #DEEEFE;
+    --lightGrey:lightgray;
+    --green: #28a745;
+    --back-color: #455A64;
 
+    //footer 
+    --footer-background: #262626;
+    --footer-title: #989c9e;
+    --footer-text: #627482;
     // Menu variables
     --menu-width: 200px;
     --menu-background-color: #221E2B;
     --menu-border-color: #fff;
-    --menu-color: #2c3e50;
-
-    --content-background-color: var(--light);
-
+    --menu-color:#2c3e50;
+    
+    .background-img {
+        left: 0;
+        top: 0;
+        background: linear-gradient(to bottom, rgba(92, 77, 66, 0.6) 0, rgba(92, 77, 66, 0.6) 100%), url(/assets/img/background.jpg) no-repeat;
+        background-size: cover;
+ 
+    }
     .checkbox-checked {
         background-color: goldenrod;
         border: 1px solid goldenrod;

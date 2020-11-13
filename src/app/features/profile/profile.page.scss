@@ -8,7 +8,7 @@
     }
 
     .avatar_div {
-        background: white;
+        background: var(--white);
         width: 240px;
     }
 
@@ -29,7 +29,7 @@
         padding-left: 16px;
 
         &:hover {
-            background: lightgray;
+            background: var(--lightGrey);
         }
     }
 

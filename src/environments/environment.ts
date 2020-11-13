@@ -2,7 +2,7 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-import { STORAGE_KEYS } from './storage-keys';
+import { STORAGE_KEYS } from "./storage-keys";
 
 export const environment = {
     production: false,

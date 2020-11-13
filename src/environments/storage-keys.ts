@@ -1,3 +1,5 @@
+import { IStorageKey } from "src/app/interfaces/storage-key.interface";
+
 /*
 * List of state keys which should be stored (unencrypted!) in local storage.
 *
@@ -7,7 +9,7 @@
 */
 export const STORAGE_KEYS: (string | IStorageKey)[] = [
     // App state
-    'app.language',
-    'user.access_token',
-    'user.jwtDecoded',
+    "app.language",
+    "user.access_token",
+    "user.jwtDecoded",
 ];

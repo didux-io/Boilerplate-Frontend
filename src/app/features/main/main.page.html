@@ -1,41 +1,58 @@
-
-<div class="main-container">
-    <app-main-header type="login"></app-main-header>
-    <div class="main-view-div">
+<app-main-header></app-main-header>
+<div class="main-view-div">
+    <div class="container">
         <div class="main-title">
-            <h1>Welcome to this awesome template</h1>
+            <h1>{{ 'MAIN.title' | translate }}</h1>
         </div>
         <div class="main-text">
-            <h5>
-                Using this template allows you to see how it's done. This is the landing page. Replace your icon in the top left
-                corner and make a choice in the top right corner to navigate. Scroll to see some random section in the middle and a footer
-                on the bottom. Have fun!
-            </h5>
+            <h5> {{ 'MAIN.subtitle' | translate }}</h5>
         </div>
-    </div>
-    <section class="section-1">
-        <h2>This is some random section</h2>
-        <p>
-            And this is some random text beneith your main screen about some random things that will waste your time if you read too much. 
-            You should change this text into something more meaningfull. You can scroll a bit more to the bottom of this page to see more things
-            you probably want to replace.
-        </p>
-    </section>
-    <div class="footer">
-        <div class="footer-section">
-            <h1>Cookies</h1>
-            <p>Chocolate</p>
-            <p>Prime</p>
-            <p>Yummy</p>
-            <p>Creamy</p>
-        </div>
-        <div class="footer-section">
-            <h1>Drinks</h1>
-            <p>Beer</p>
-            <p>Wine</p>
-            <p>Water</p>
-            <p>Applejuice</p>
-        </div>
+
+        <section class="section-1">
+
+            <h2>{{ 'MAIN.title2' | translate }}</h2>
+            <h5>{{ 'MAIN.subtitle2' | translate }}</h5>
+
+        </section>
     </div>
 </div>
 
+
+<!-- contact-section start -->
+<section id="contact" class="contact-section">
+
+    <div class="container card">
+        <div class="contact-wrapper">
+            <div class="section-header text-center mb--50">
+                <h3>{{ 'index.contact.title' | translate}}</h3>
+                <h6>{{ 'index.contact.subtitle' | translate}} <i
+                        class="fa fa-heart"></i>{{ 'index.contact.subtitle2' | translate}}</h6>
+            </div>
+            <div class="contact">
+                <form [formGroup]=contactForm class="contact-form" *ngIf="!contactEmail">
+                    <div class="row">
+                        <div class="col-lg-6 mb-lg-0 margin-top-50">
+                            <input type="hidden" name="receiver" id="receiver" value="didux">
+                            <input type="text" formControlName="name" class="border-radius" name="name" id="name"
+                                placeholder="{{ 'index.contact.name' | translate}}">
+                            <input type="email"  formControlName="email" class="border-radius" name="email" email="true" id="emailaddress"
+                                placeholder="{{ 'index.contact.email' | translate}}">
+                        </div>
+                        <div class="col-lg-6">
+                            <textarea id="message" formControlName="message" class="border-radius"
+                                placeholder="{{ 'index.contact.message' | translate}}"></textarea>
+                        </div>
+                        <div class="col-12 text-center pt--50 send-email-button">
+                            <button type="button" (click)="sendEmail();" [disabled]="!contactForm.valid" class="contact-button">
+                                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                {{ 'index.contact.send' | translate}}
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact-section end -->
+<app-footer></app-footer>

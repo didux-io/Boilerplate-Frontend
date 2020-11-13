@@ -1,4 +1,6 @@
-<fa-icon [icon]="['fas', 'plug']"></fa-icon>
-<span>
-    Build {{ buildNumber$ | async }}
-</span>
+<div *ngIf="(isAdmin$ | async)">
+    <fa-icon [icon]="['fas', 'plug']"></fa-icon>
+    <span>
+        Build {{ buildNumber$ | async }}
+    </span>
+</div>

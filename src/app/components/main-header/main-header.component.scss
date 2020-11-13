@@ -1,34 +1,32 @@
 :host {
-    .main-header {
-        height: 80px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        z-index: 1;
-        position: absolute;
-        background: white;
-        justify-content: space-between;
-        padding-right: 50px;
-
-        p {
-            margin-bottom: 0;
-            font-weight: 800;
-
-            &:hover {
-                cursor: pointer;
-                opacity: 0.5;
-            }
-        }
-
-        img {
-            width: 50px;
-            margin-left: 25px;
-        }
-    }
-
-    .header-logo {
+    .nav-link {
+        color: var(--menu-color);
+        margin-top: revert;
         &:hover {
             cursor: pointer;
         }
+    }
+}
+.image {
+    width: 50px;
+}
+a:not([href]):not([tabindex]) {
+    font-size: 20px;
+    font-weight: 500;
+}
+.sticky-top {
+    position: fixed;
+    width: 100%;
+}
+
+.dropdown-item {
+    &:hover {
+        cursor: pointer;
+    }
+}
+.navbar-brand{
+    color: var(--menu-color);
+    &:hover {
+        cursor: pointer;
     }
 }
