@@ -1,4 +1,4 @@
-import {Component, NgModule, OnDestroy} from "@angular/core";
+import { NgModule, OnDestroy} from "@angular/core";
 import { Subject } from "rxjs";
 
 @NgModule()

@@ -60,3 +60,14 @@ ul li {
     margin-bottom: 1rem !important;
 	color: var(--subtext-color);
 }
+
+.card {
+	box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.1);
+	padding: 30px;
+	margin-bottom: 5vh;
+	margin-top: 5vh;
+}
+
+.image {
+	width: 75px;
+}

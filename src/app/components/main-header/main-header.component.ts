@@ -41,4 +41,16 @@ export class MainHeaderComponent {
         this.appStateFacade.setLanguage(language);
         this.translateService.use(language);
     }
+
+    toggleMobileHamburger(): void {
+        this.isMenuCollapsed = !this.isMenuCollapsed;
+    }
+
+    toggleAccountDropdown(): void {
+        this.isAccountCollapsed = !this.isAccountCollapsed
+    }
+
+    toggleLanguageDropdown(): void {
+        this.isLanguageCollapsed = !this.isLanguageCollapsed
+    }
 }

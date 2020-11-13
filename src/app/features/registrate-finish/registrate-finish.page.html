@@ -1,29 +1,4 @@
 <app-main-header type="login"></app-main-header>
-<<<<<<< HEAD
-<div class="main-view-div">
-<div class="container" style="display: flex; flex-direction: column; align-items: center;">
-        <form [formGroup]=finishRegistrationForm class="registrateForm">
-            <div class="form-group">
-                <label>
-                   {{ 'PROFILE.username' | translate }}
-                </label>
-                <input type="text" class="form-control" formControlName="username">
-            </div>
-            <div class="checkbox-div">
-                <input type="checkbox" id="termsAndPrivacy" name="termsAndPrivacy"
-                    formControlName="termsAndPrivacyAccepted">
-                <label for="termsAndPrivacy">{{ 'REGISTRATE.accept' | translate }} <a (click)="navigateToPrivacy()">{{ 'TITLE.privacy' | translate }}</a>
-                    {{ 'REGISTRATE.and' | translate }} <a (click)="navigateToTerms()">{{ 'TITLE.terms' | translate }}</a></label>
-            </div>
-            <div class="checkbox-div">
-                <input type="checkbox" id="newsLetter" name="newsLetter" formControlName="newsLetter">
-                <label for="newsLetter">{{ 'REGISTRATE.subscribe' | translate }}</label>
-            </div>
-            <button class="btn btn-success" (click)="registrate()" [disabled]="!finishRegistrationForm.valid">
-                {{ 'PROFILE.registrate_button' | translate }}
-            </button>
-        </form>
-=======
 <div class="background-img">
     <div class="container">
         <div class="main-view-div">
@@ -49,7 +24,6 @@
                 </button>
             </form>
         </div>
->>>>>>> feature/setup-boilerplate
     </div>
 </div>
 

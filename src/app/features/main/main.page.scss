@@ -1,4 +1,7 @@
 :host {
+    .container {
+        padding-top: calc(88px + 5vh);
+    }
     h3{
         font-size: 1.875em;
         color: var(--title-color);
@@ -123,6 +126,14 @@
         }
     }
 
+    .border-radius {
+        border-radius: 5px;
+    }
+
+    .margin-top-50 {
+        margin-bottom: 50px;
+    }
+
     .send-email-button {
         border-radius: 5px; margin-top:50px
     }
@@ -135,6 +146,14 @@
 
             background: red;
         }
+    }
+
+    .card {
+        box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.1); 
+        padding: 30px;
+        margin-bottom: 5vh;
+        margin-top: 5vh;
+        border-radius: 10px;
     }
 }
 

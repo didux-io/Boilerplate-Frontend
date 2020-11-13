@@ -1,15 +1,9 @@
-<!-- <div class="main-header">
-        <img src="/assets/img/logo.png" (click)="toMainPage()" class="header-logo" />
-        <p *ngIf="type === 'login'" (click)="navigateToLogin()">Login</p>
-        <p *ngIf="type === 'registrate'" (click)="navigateToRegistrate()">Registreer</p>
-</div> -->
-
 <nav class="navbar navbar-expand-sm sticky-top navbar-light bg-light">
 	<div class="container">
-		<a class="navbar-brand" (click)="navigateToMainPage()"><img src="/assets/img/logo.png"
-				style="width: 50px;">{{ 'HEADER.company' | translate }}</a>
+		<a class="navbar-brand" (click)="navigateToMainPage()"><img src="/assets/img/logo.png" class="image">
+			{{ 'HEADER.company' | translate }}</a>
 		<button class="navbar-toggler" type="button"
-			(click)="isMenuCollapsed = !isMenuCollapsed && isAccountCollapsed==false">
+			(click)="toggleMobileHamburger()">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
@@ -26,7 +20,7 @@
 
 				<li class="nav-item dropdown">
 					<p class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-						(click)="isAccountCollapsed = !isAccountCollapsed" (click)="isLanguageCollapsed = true"
+						(click)="toggleAccountDropdown()" (click)="isLanguageCollapsed = true"
 						data-toggle="dropdown">
 						{{ 'HEADER.account' | translate }}</p>
 					<div [ngbCollapse]="isAccountCollapsed" class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -42,7 +36,7 @@
 				</li>
 				<li class="nav-item dropdown">
 					<p class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-						(click)="isLanguageCollapsed = !isLanguageCollapsed" (click)="isAccountCollapsed = true"
+						(click)="toggleLanguageDropdown()" (click)="isAccountCollapsed = true"
 						data-toggle="dropdown">
 						{{ 'HEADER.language' | translate }}</p>
 					<div [ngbCollapse]="isLanguageCollapsed" class="dropdown-menu" aria-labelledby="navbarDropdown">
