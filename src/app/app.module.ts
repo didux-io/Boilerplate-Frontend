@@ -30,6 +30,8 @@ import { UserStateModule } from "./state/user/user.module";
 import { AppStateModule } from "./state/app/app.module";
 import { WebRtcProvider } from "@proofmeid/webrtc";
 import { ModalModule } from "ngx-bootstrap/modal";
+import { ContactState } from './state/contact/contact.state';
+import { ContactStateModule } from './state/contact/contact.module';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -43,7 +45,8 @@ const NGXS_MODULES = [
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxSelectModule,
     AppStateModule,
-    UserStateModule
+    UserStateModule,
+    ContactStateModule,
 ];
 
 const NGXS_PROVIDERS: Provider[] = [

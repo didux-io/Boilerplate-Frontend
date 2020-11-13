@@ -12,6 +12,6 @@ export class MenuComponent implements OnDestroy {
     }
 
     ngOnDestroy(): void {
-
+        // do nothing
     }
 }

@@ -38,7 +38,6 @@ export class MainHeaderComponent {
     }
 
     selectLanguage(language: string) {
-        console.log("language:", language);
         this.appStateFacade.setLanguage(language);
         this.translateService.use(language);
     }

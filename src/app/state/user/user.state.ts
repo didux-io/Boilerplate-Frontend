@@ -15,6 +15,7 @@ import { UserLoginAction } from "./actions/user-login";
 import { Injectable } from "@angular/core";
 import { FinishRegistrationAction } from "./actions/finish-registration";
 
+
 export interface IUserState {
     access_token: string;
     refresh_token: string;
@@ -192,6 +193,9 @@ export class UserState {
         ctx.patchState({
             registrationError: false,
         });
+        ctx.patchState({
+
+        })
         return this.http.post(
             `${this.configProvider.getBackendUrl()}/v1/user/finishRegistration`,
             {
@@ -214,6 +218,6 @@ export class UserState {
                 });
                 return throwError(error);
             })
-        );
+        ); 
     }
 }

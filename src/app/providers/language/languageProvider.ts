@@ -8,6 +8,7 @@ export class LanguageProvider {
     ];
 
     constructor() {
+        //do nothing
     }
 
     getLanguages() {

@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit() {
-
+        // do nothing
     }
 
     setBuildNumber() {

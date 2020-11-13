@@ -3,7 +3,7 @@ import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from "@angular/c
 import { Store } from "@ngxs/store";
 import { Observable } from "rxjs/Observable";
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
-import { Router } from "@angular/router";
+import { Router } from "@angular/router"
 import "rxjs/add/operator/catch";
 import "rxjs/add/operator/filter";
 import "rxjs/add/operator/switchMap";

@@ -26,7 +26,7 @@ export class OverviewPageComponent implements OnInit {
     }
 
     ngOnInit() {
-
+        //do nothing
     }
     updateOverview(){
         const text = this.overviewForm.get("text").value;

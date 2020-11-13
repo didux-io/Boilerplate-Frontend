@@ -23,7 +23,6 @@ export class FooterComponent {
     ) {
 
     }
-
     navigateToLogin() {
         this.isMenuCollapsed = true;
         this.router.navigate(["login"]);
@@ -34,16 +33,16 @@ export class FooterComponent {
     }
 
     navigateToMainPage() {
-        this.router.navigate(["main"]) && window.scrollTo(0, 0);
+        this.router.navigate(["main"]);
     }
     navigateToTerms() {
-        this.router.navigate(["terms"]) && window.scrollTo(0, 0);
+        this.router.navigate(["terms"]);
     }
     navigateToPrivacy() {
-        this.router.navigate(["privacy"]) && window.scrollTo(0, 0);
+        this.router.navigate(["privacy"]);
     }
     navigateToFAQ() {
-        this.router.navigate(["faq"]) && window.scrollTo(0, 0);
+        this.router.navigate(["faq"]);
     }
 
     selectLanguage(language: string) {

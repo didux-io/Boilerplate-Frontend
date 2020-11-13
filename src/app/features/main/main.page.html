@@ -30,39 +30,23 @@
                         class="fa fa-heart"></i>{{ 'index.contact.subtitle2' | translate}}</h6>
             </div>
             <div class="contact">
-                <form class="contact-form">
+                <form [formGroup]=contactForm class="contact-form" *ngIf="!contactEmail">
                     <div class="row">
                         <div class="col-lg-6 mb-lg-0" style="margin-bottom: 50px;">
                             <input type="hidden" name="receiver" id="receiver" value="didux">
-                            <input type="text" style="border-radius: 5px;" name="name" id="name"
+                            <input type="text" formControlName="name" style="border-radius: 5px;" name="name" id="name"
                                 placeholder="{{ 'index.contact.name' | translate}}">
-                            <input type="email" style="border-radius: 5px;" name="email" id="emailaddress"
+                            <input type="email"  formControlName="email" style="border-radius: 5px;" name="email" id="emailaddress"
                                 placeholder="{{ 'index.contact.email' | translate}}">
-
-                            <!-- Captcha from didux -->
-                            <div class="g-recaptcha" name="captchaCode"
-                                data-sitekey="6Lcs7asUAAAAAEcR9OdIPiDKrI-nkxtxrr5k6hw3">
-                                <div style="width: 304px; height: 78px;">
-                                    <div><iframe
-                                            src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Lcs7asUAAAAAEcR9OdIPiDKrI-nkxtxrr5k6hw3&amp;co=aHR0cHM6Ly9kaWR1eC5pbzo0NDM.&amp;hl=nl&amp;v=1AZgzF1o3OlP73CVr69UmL65&amp;size=normal&amp;cb=tuc0caj6jtwu"
-                                            width="304" height="78" role="presentation" name="a-6l35qdvrcloh"
-                                            frameborder="0" scrolling="no"
-                                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
-                                    </div><textarea id="g-recaptcha-response" name="g-recaptcha-response"
-                                        class="g-recaptcha-response"
-                                        style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
-                                </div><iframe style="display: none;"></iframe>
-                            </div>
-                            <!-- End Captcha -->
 
                         </div>
                         <div class="col-lg-6 ">
-                            <textarea id="message" style="border-radius: 5px;"
+                            <textarea id="message" formControlName="message" style="border-radius: 5px;"
                                 placeholder="{{ 'index.contact.message' | translate}}"></textarea>
                         </div>
                         <div class="col-12 text-center pt--50">
                             <button type="button" style="border-radius: 5px; margin-top:50px" id="sendEmailButton"
-                                onclick="sendEmail();"><i class="fa fa-paper-plane" aria-hidden="true"></i>
+                            (click)="sendEmail()" [disabled]="!contactForm.valid"><i class="fa fa-paper-plane" aria-hidden="true"></i>
                                 {{ 'index.contact.send' | translate}}</button>
                             <a href="#top-page" class="to-top"><span class="ti-angle-up"></span></a>
                         </div>

@@ -3,6 +3,7 @@ import { Store, Select } from "@ngxs/store";
 import { Observable } from "rxjs";
 import { IJWTDecoded } from "src/app/interfaces/jwtDecoded.interface";
 import { FinishRegistrationAction } from "./actions/finish-registration";
+import { contactAction } from "./actions/contact";
 import { LogoutAction } from "./actions/logout.action";
 import { RefreshAction } from "./actions/refresh.action";
 import { RegistrateUserAction } from "./actions/registrate-user";
@@ -61,5 +62,8 @@ export class UserStateFacade {
 
     finishRegistration(username: string, termsAndPrivacyAccepted: string, newsLetter: string): Observable<any> {
         return this.store.dispatch(new FinishRegistrationAction(username, termsAndPrivacyAccepted, newsLetter));
+    }
+    contact(name: string, email: string, message: string): Observable<any> {
+        return this.store.dispatch(new contactAction(name, email, message));
     }
 }
