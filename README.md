@@ -1,4 +1,4 @@
-# Didux.IO Template Frontend
+# Didux.IO Boilerplate Frontend
 
 # Make a private fork
 
