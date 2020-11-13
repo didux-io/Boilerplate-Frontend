@@ -6,6 +6,7 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import {ComponentsModule} from "../../components/components.module";
 
 const routes: Routes = [
     {
@@ -22,7 +23,8 @@ const routes: Routes = [
         CommonModule,
         FormsModule,
         FontAwesomeModule,
-        NgbModule
+        NgbModule,
+        ComponentsModule
     ],
     declarations: [
         OverviewPageComponent,

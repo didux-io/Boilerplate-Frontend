@@ -25,7 +25,7 @@ export class LoginPageComponent extends BaseComponent implements OnInit {
     webRtcEnabled$ = this.appStateFacade.webRtcEnabled$;
     backendUrlDown$ = this.appStateFacade.backendUrlDown$;
 
-    @ViewChild("qrCodeCanvas", null)
+    @ViewChild("qrCodeCanvas")
     qrCodeCanvas: ElementRef;
 
     showMobileLogin = false;

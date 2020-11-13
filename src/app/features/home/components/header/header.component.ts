@@ -7,7 +7,6 @@ import { UserStateFacade } from "src/app/state/user/user.facade";
     templateUrl: "header.component.html",
     styleUrls: ["header.component.scss"]
 })
-@NgModule()
 export class HeaderComponent {
 
     pageTitleLanguageKey$ = this.appStateFacade.pageTitleLanguageKey$;
