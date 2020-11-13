@@ -45,6 +45,7 @@ export class MainPageComponent extends BaseComponent implements OnInit {
 
         this.emailStateFacade.emailSendSuccess$.pipe(takeUntil(this.destroy$), filter(x => !!x)).subscribe(() => {
             this.toastrService.success("Email send!");
+            this.contactForm.reset();
         });
 
         this.emailStateFacade.emailSendFailure$.pipe(takeUntil(this.destroy$), filter(x => !!x)).subscribe(() => {
@@ -73,6 +74,5 @@ export class MainPageComponent extends BaseComponent implements OnInit {
         const message = this.contactForm.get("message").value;
 
         this.emailStateFacade.sendEmail(email, name, message, token);
-
     }
 }

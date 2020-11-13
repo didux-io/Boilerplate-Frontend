@@ -114,15 +114,27 @@
             background-color: var(--base-color);
             border: none;
             color: var(--white);
-            &:hover {
-                color:  var(--white);
-                background-color: var(--title-color);
+            &:enabled {
+                &:hover {
+                    color:  var(--white);
+                    background-color: var(--title-color);
+                }
             }
         }
     }
 
     .send-email-button {
         border-radius: 5px; margin-top:50px
+    }
+
+    .contact-button {
+        border-radius: 5px;
+
+        &:disabled {
+            opacity: 0.5;
+
+            background: red;
+        }
     }
 }
 

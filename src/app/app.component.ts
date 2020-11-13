@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { Title } from "@angular/platform-browser";
 import { TranslateService } from "@ngx-translate/core";
-import { IBuildNumber } from './interfaces/build-number.interface';
+import { IBuildNumber } from "./interfaces/build-number.interface";
 import { ConfigProvider } from "./providers/config/configProvider";
 import { AppStateFacade } from "./state/app/app.facade";
 
