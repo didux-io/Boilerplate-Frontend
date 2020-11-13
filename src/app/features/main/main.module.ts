@@ -4,7 +4,8 @@ import { Routes, RouterModule } from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { TranslateModule } from "@ngx-translate/core";
 import { CommonModule } from "@angular/common";
-import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { FaIconLibrary, FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { fab } from "@fortawesome/free-brands-svg-icons";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { ComponentsModule } from "src/app/components/components.module";
 import { NgxSelectModule } from "ngx-select-ex";
@@ -38,4 +39,7 @@ const routes: Routes = [
 })
 export class MainPageModule {
 
+    constructor(library: FaIconLibrary) {
+        library.addIconPacks(fab);
+    }
 }

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Injectable, Inject } from "@angular/core";
 import { NgxsPlugin, NgxsNextPluginFn, actionMatcher, InitState, UpdateState, getValue, setValue } from "@ngxs/store";
 import { tap, concatMap, reduce, map } from "rxjs/operators";
@@ -27,12 +29,12 @@ export class StoragePlugin implements NgxsPlugin {
     }
 
     handle(state: any, event: any, next: NgxsNextPluginFn) {
-        const options = this.pluginOptions || {} as any;
+        const options = this.pluginOptions || {};
         const matches = actionMatcher(event);
         const isInitAction = matches(InitState) || matches(UpdateState);
         const keys: any[] = Array.isArray(options.key) ? options.key : [options.key];
         let hasMigration = false;
-        let initAction: Observable<any> = of(state);
+        let initAction: Observable<void> = of(state);
 
         if (isInitAction) {
             initAction = from(keys).pipe(
@@ -86,7 +88,7 @@ export class StoragePlugin implements NgxsPlugin {
 
                                 const filtered = [];
                                 for (const element of val) {
-                                    const obj = {} as any;
+                                    const obj = {};
 
                                     for (const subKey of subKeys) {
                                         obj[subKey] = element[subKey];

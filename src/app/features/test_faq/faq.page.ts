@@ -5,7 +5,6 @@ import { LanguageProvider } from "../../providers/language/languageProvider";
 import { ConfigProvider } from "src/app/providers/config/configProvider";
 import { BaseComponent } from "../base-component/base-component";
 
-
 @Component({
     templateUrl: "faq.page.html",
     styleUrls: ["faq.page.scss"]
@@ -22,7 +21,7 @@ export class FaqPageComponent extends BaseComponent implements OnInit {
         super();
     }
 
-    async ngOnInit() {
+    async ngOnInit(): Promise<void> {
         await this.configProvider.getConfig();
         this.languages = this.languageProvider.getLanguages();
     }

@@ -17,6 +17,15 @@
             </span>
         </div>
 
+        <div *ngIf="(isAdmin$ | async)" class="item" [routerLink]="['users']" routerLinkActive="active-link">
+            <div class="menu-icon-container">
+                <fa-icon [icon]="['fas', 'users-cog']"></fa-icon>
+            </div>
+            <span>
+                {{ 'MENU.users' | translate }}
+            </span>
+        </div>
+
         <div class="item" [routerLink]="['logout']" routerLinkActive="active-link">
             <div class="menu-icon-container">
                 <fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon>

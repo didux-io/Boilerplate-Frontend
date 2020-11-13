@@ -1,4 +1,4 @@
-import { Component, TemplateRef } from "@angular/core";
+import { Component } from "@angular/core";
 import { BsModalService } from "ngx-bootstrap/modal";
 
 @Component({
@@ -9,11 +9,7 @@ export class RecoveryModalComponent {
 
     constructor(private modalService: BsModalService) {}
 
-    openModal(template: TemplateRef<any>) {
-        this.modalService.show(template);
-    }
-
-    closeModal() {
+    closeModal(): void {
         this.modalService.hide();
     }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { AppStateFacade } from "src/app/state/app/app.facade";
@@ -8,7 +8,7 @@ import { AppStateFacade } from "src/app/state/app/app.facade";
     templateUrl: "overview.page.html",
     styleUrls: ["overview.page.scss"]
 })
-export class OverviewPageComponent implements OnInit {
+export class OverviewPageComponent {
     overviewForm: FormGroup;
     constructor(
         private router: Router,
@@ -25,10 +25,7 @@ export class OverviewPageComponent implements OnInit {
         });
     }
 
-    ngOnInit() {
-        //do nothing
-    }
-    updateOverview(){
+    updateOverview(): void {
         const text = this.overviewForm.get("text").value;
         const text1 = this.overviewForm.get("text1").value;
         const datum1 = this.overviewForm.get("datum1").value;

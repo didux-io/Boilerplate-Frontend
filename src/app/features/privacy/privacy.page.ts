@@ -18,7 +18,7 @@ export class PrivacyPageComponent extends BaseComponent implements OnInit {
         super();
     }
 
-    async ngOnInit() {
+    async ngOnInit(): Promise<void> {
         await this.configProvider.getConfig();
         this.languages = this.languageProvider.getLanguages();
     }

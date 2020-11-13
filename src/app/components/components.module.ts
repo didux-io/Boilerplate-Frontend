@@ -8,6 +8,7 @@ import { MainHeaderComponent } from "./main-header/main-header.component";
 import { FooterComponent } from "./footer/footer.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { LanguageProvider } from "../providers/language/languageProvider";
+import { InstructionOverlayComponent } from "./instruction-overlay/instruction-overlay.component";
 
 
 @NgModule({
@@ -21,12 +22,14 @@ import { LanguageProvider } from "../providers/language/languageProvider";
     declarations: [
         BuildNumberComponent,
         MainHeaderComponent,
-        FooterComponent
+        FooterComponent,
+        InstructionOverlayComponent
     ],
     exports: [
         BuildNumberComponent,
         MainHeaderComponent,
-        FooterComponent
+        FooterComponent,
+        InstructionOverlayComponent
     ],
     providers: [
         LanguageProvider

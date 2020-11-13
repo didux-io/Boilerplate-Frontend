@@ -5,9 +5,8 @@
     
     //== Colors
     --black-color: #000;
-    --base-color: #393539;
+    --base-color: var(--app-primary-color);;
     --custom-color: blue;
-    --title-color: #F27D42;
     --subtext-color: #9BA4AD;
     --black: #000;
     --white: #fff;

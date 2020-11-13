@@ -10,7 +10,7 @@ import { AppStateFacade } from "src/app/state/app/app.facade";
 })
 export class MainHeaderComponent {
     public isMenuCollapsed = true;
-    public isAccountCollapsed = true; 
+    public isAccountCollapsed = true;
     public isLanguageCollapsed = true;
 
     @Input()
@@ -24,20 +24,20 @@ export class MainHeaderComponent {
 
     }
 
-    navigateToLogin() {
+    navigateToLogin(): void {
         this.isMenuCollapsed = true;
         this.router.navigate(["login"]);
     }
 
-    navigateToRegistrate() {
+    navigateToRegistrate(): void {
         this.router.navigate(["registrate"]);
     }
 
-    navigateToMainPage() {
-        this.router.navigate(["main"]) && window.scrollTo(0, 0);
+    navigateToMainPage(): void {
+        this.router.navigate(["main"]);
     }
 
-    selectLanguage(language: string) {
+    selectLanguage(language: string): void {
         this.appStateFacade.setLanguage(language);
         this.translateService.use(language);
     }

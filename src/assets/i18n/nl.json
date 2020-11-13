@@ -5,13 +5,18 @@
     },
     "MENU": {
         "home": "Home",
+        "users": "Gebruikers",
         "signout": "Uitloggen"
     },
     "HOME": {
         "instructions": "Follow the instructions in the app"
     },
+    "INSTRUCTION_OVERLAY": {
+        "message": "Volg de instructies in de app"
+    },
     "HEADER": {
         "OVERVIEW": "Dashboard",
+        "USERS": "Gebruikers",
         "PROFILE": "Profiel",
         "company": "Didux.io",
         "login": "Inloggen",
@@ -31,6 +36,7 @@
         "role": "Rol",
         "password": "Wachtwoord",
         "login_button": "Login",
+        "login_button_app": "Login met app",
         "language": "Taal",
         "registrate_button": "Registreren",
         "update_button": "Bijwerken",
@@ -59,7 +65,9 @@
         "street":"Brugstraat 9",
         "city":"Almelo, NL",
         "rights":"Didux.io Alle rechten voorbehouden.",
-        "emailAddress":"info@didux.io"
+        "emailAddress":"info@didux.io",
+        "copyright": "© Copyrights 2020 Didux.io alle rechten voorbehouden",
+        "faq":"Veel gestelde vragen"
     },
     "MODALS": {
         "RECOVERY": {

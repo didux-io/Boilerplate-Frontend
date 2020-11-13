@@ -10,15 +10,15 @@ export class StorageProvider implements AsyncStorageEngine {
         return of(localStorage.length);
     }
 
-    getItem(key: any): Observable<any> {
+    getItem(key: string): Observable<string> {
         return of(localStorage.getItem(key));
     }
 
-    setItem(key: any, val: any): Observable<any> {
+    setItem(key: string, val: string): Observable<void> {
         return of(localStorage.setItem(key, val));
     }
 
-    removeItem(key: any): Observable<any> {
+    removeItem(key: string): Observable<void> {
         return of(localStorage.removeItem(key));
     }
 
@@ -26,7 +26,7 @@ export class StorageProvider implements AsyncStorageEngine {
         return of(localStorage.clear());
     }
 
-    key(val: number): Observable<string> {
+    key(): Observable<string> {
         throw new Error("Method not implemented.");
     }
 }

@@ -23,30 +23,33 @@ export class FooterComponent {
     ) {
 
     }
-    navigateToLogin() {
+
+    navigateToLogin(): void {
         this.isMenuCollapsed = true;
         this.router.navigate(["login"]);
     }
 
-    navigateToRegistrate() {
+    navigateToRegistrate(): void {
         this.router.navigate(["registrate"]);
     }
 
-    navigateToMainPage() {
+    navigateToMainPage(): void {
         this.router.navigate(["main"]);
     }
-    navigateToTerms() {
+
+    navigateToTerms(): void {
         this.router.navigate(["terms"]);
     }
-    navigateToPrivacy() {
+
+    navigateToPrivacy(): void {
         this.router.navigate(["privacy"]);
     }
-    navigateToFAQ() {
+
+    navigateToFAQ(): void {
         this.router.navigate(["faq"]);
     }
 
-    selectLanguage(language: string) {
-        console.log("language:", language);
+    selectLanguage(language: string): void {
         this.appStateFacade.setLanguage(language);
         this.translateService.use(language);
     }

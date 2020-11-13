@@ -29,7 +29,7 @@ export class RegistrateFinishPageComponent extends BaseComponent implements OnIn
         });
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.userStateFacade.registrationError$.pipe(skip(1), takeUntil(this.destroy$)).subscribe((error) => {
             if (error) {
                 this.toastr.error("Registration failure");
@@ -51,7 +51,7 @@ export class RegistrateFinishPageComponent extends BaseComponent implements OnIn
         });
     }
 
-    registrate() {
+    registrate(): void {
         const username = this.finishRegistrationForm.get("username").value;
         const termsAndPrivacyAccepted = this.finishRegistrationForm.get("termsAndPrivacyAccepted").value;
         const newsLetter = this.finishRegistrationForm.get("newsLetter").value;

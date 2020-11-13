@@ -1,12 +1,13 @@
-import { Component, OnInit} from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
-import { TranslateService } from "@ngx-translate/core";
 import { LanguageProvider } from "../../providers/language/languageProvider";
 import { ConfigProvider } from "src/app/providers/config/configProvider";
 import { BaseComponent } from "../base-component/base-component";
-import { ContactFacade } from "src/app/state/contact/contact.facade";
-
+import { load, ReCaptchaInstance } from "recaptcha-v3";
+import { EmailStateFacade } from "src/app/state/email/email.facade";
+import { filter, takeUntil } from "rxjs/operators";
+import { ToastrService } from "ngx-toastr";
+import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 
 @Component({
     templateUrl: "main.page.html",
@@ -15,14 +16,16 @@ import { ContactFacade } from "src/app/state/contact/contact.facade";
 export class MainPageComponent extends BaseComponent implements OnInit {
     contactForm: FormGroup;
     languages = [];
+    recaptcha: ReCaptchaInstance
+
 
     constructor(
-        private formBuilder: FormBuilder,
-        private translateService: TranslateService,
         private router: Router,
         private languageProvider: LanguageProvider,
         private configProvider: ConfigProvider,
-        private ContactFacade: ContactFacade
+        private emailStateFacade: EmailStateFacade,
+        private toastrService: ToastrService,
+        private formBuilder: FormBuilder,
     ) {
         super();
 
@@ -33,24 +36,43 @@ export class MainPageComponent extends BaseComponent implements OnInit {
         });
     }
 
-    async ngOnInit() {
-        await this.configProvider.getConfig();
+    async ngOnInit(): Promise<void> {
+        const config = await this.configProvider.getConfig();
         this.languages = this.languageProvider.getLanguages();
+
+        // Captcha
+        this.recaptcha = await load(config.captchaSiteKey);
+
+        this.emailStateFacade.emailSendSuccess$.pipe(takeUntil(this.destroy$), filter(x => !!x)).subscribe(() => {
+            this.toastrService.success("Email send!");
+        });
+
+        this.emailStateFacade.emailSendFailure$.pipe(takeUntil(this.destroy$), filter(x => !!x)).subscribe(() => {
+            this.toastrService.error("Email not send!");
+        });
     }
-    navigateToTerms() {
+
+    navigateToTerms(): void {
         this.router.navigate(["terms"]);
     }
-    navigateToPrivacy() {
+
+    navigateToPrivacy(): void {
         this.router.navigate(["privacy"]);
     }
-    navigateToFAQ() {
+
+    navigateToFAQ(): void {
         this.router.navigate(["faq"]);
     }
-    sendEmail() {
+
+    async sendEmail(): Promise<void> {
+        const token = await this.recaptcha.execute("submit");
+
+        console.log(token);
         const name = this.contactForm.get("name").value;
         const email = this.contactForm.get("email").value;
         const message = this.contactForm.get("message").value;
-        this.ContactFacade.contact(name, email, message);
-        console.log("frikandel");
+
+        this.emailStateFacade.sendEmail(email, name, message, token);
+
     }
 }

@@ -38,17 +38,16 @@
                                 placeholder="{{ 'index.contact.name' | translate}}">
                             <input type="email"  formControlName="email" style="border-radius: 5px;" name="email" id="emailaddress"
                                 placeholder="{{ 'index.contact.email' | translate}}">
-
                         </div>
                         <div class="col-lg-6 ">
                             <textarea id="message" formControlName="message" style="border-radius: 5px;"
                                 placeholder="{{ 'index.contact.message' | translate}}"></textarea>
                         </div>
-                        <div class="col-12 text-center pt--50">
-                            <button type="button" style="border-radius: 5px; margin-top:50px" id="sendEmailButton"
-                            (click)="sendEmail()" [disabled]="!contactForm.valid"><i class="fa fa-paper-plane" aria-hidden="true"></i>
-                                {{ 'index.contact.send' | translate}}</button>
-                            <a href="#top-page" class="to-top"><span class="ti-angle-up"></span></a>
+                        <div class="col-12 text-center pt--50 send-email-button">
+                            <button type="button" (click)="sendEmail();">
+                                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                {{ 'index.contact.send' | translate}}
+                            </button>
                         </div>
                     </div>
                 </form>

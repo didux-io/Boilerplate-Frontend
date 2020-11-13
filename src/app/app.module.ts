@@ -28,13 +28,14 @@ import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { StorageProvider } from "./providers/storage/capacitor-storage.provider";
 import { UserStateModule } from "./state/user/user.module";
 import { AppStateModule } from "./state/app/app.module";
-import { WebRtcProvider } from "@proofmeid/webrtc";
+import { WebRtcProvider } from "@proofmeid/webrtc-web";
 import { ModalModule } from "ngx-bootstrap/modal";
-import { ContactState } from './state/contact/contact.state';
-import { ContactStateModule } from './state/contact/contact.module';
+import { UtilsProvider } from "./providers/utils/utils";
+import { IsAdminGuard } from "./guards/is-admin.guard";
+import { EmailStateModule } from "./state/email/email.module";
 
 // AoT requires an exported function for factories
-export function HttpLoaderFactory(http: HttpClient) {
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     return new TranslateHttpLoader(http);
 }
 
@@ -46,7 +47,7 @@ const NGXS_MODULES = [
     NgxSelectModule,
     AppStateModule,
     UserStateModule,
-    ContactStateModule,
+    EmailStateModule
 ];
 
 const NGXS_PROVIDERS: Provider[] = [
@@ -101,8 +102,10 @@ const NGXS_PROVIDERS: Provider[] = [
         ...NGXS_PROVIDERS,
         ConfigProvider,
         HasJwtTokenDefinedGuard,
+        IsAdminGuard,
         WebRtcProvider,
         LanguageProvider,
+        UtilsProvider,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: RequestInterceptor,

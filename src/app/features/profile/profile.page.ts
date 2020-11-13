@@ -6,6 +6,7 @@ import { LanguageProvider} from "../../providers/language/languageProvider";
 import { ToastrService } from "ngx-toastr";
 import { first } from "rxjs/operators";
 import { UserStateFacade } from "src/app/state/user/user.facade";
+import { UtilsProvider } from "src/app/providers/utils/utils";
 
 @Component({
     templateUrl: "profile.page.html",
@@ -25,7 +26,8 @@ export class ProfilePageComponent implements OnInit {
         private toastr: ToastrService,
         private translateService: TranslateService,
         private languageProvider: LanguageProvider,
-        private userStateFacade: UserStateFacade
+        private userStateFacade: UserStateFacade,
+        private utilsProvider: UtilsProvider
     ) {
         this.appStateFacade.setPageTitleLanguageKey("HEADER.PROFILE");
 
@@ -42,26 +44,17 @@ export class ProfilePageComponent implements OnInit {
         });
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.userStateFacade.jwtDecoded$.subscribe((jwtDecoded) => {
             if (jwtDecoded) {
                 this.profileForm.controls.username.setValue(jwtDecoded.user_claims ? jwtDecoded.user_claims.username : null);
                 this.profileForm.controls.email.setValue(jwtDecoded.user_claims.email);
-                this.profileForm.controls.role.setValue(this.convertUserPowerToRoleName(jwtDecoded.userPower));
+                this.profileForm.controls.role.setValue(this.utilsProvider.convertUserPowerToRoleName(jwtDecoded.userPower));
             }
         });
     }
 
-    convertUserPowerToRoleName(userPower: number) {
-        switch (userPower) {
-            case 1:
-                return "Admin";
-            case 100:
-                return "User";
-        }
-    }
-
-    updateProfile() {
+    updateProfile(): void {
         const username = this.profileForm.get("username").value;
         this.userStateFacade.updateAccount(username).subscribe(() => {
             // Success
