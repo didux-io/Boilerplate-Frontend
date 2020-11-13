@@ -29,7 +29,34 @@
     "preset": "jest-preset-angular",
     "setupFilesAfterEnv": [
       "<rootDir>/setupJest.ts"
+    ],
+    "clearMocks": true,
+    "testResultsProcessor": "jest-sonar-reporter",
+    "roots": [
+      "src"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    },
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "clover"
     ]
+  },
+  "jestSonar": {
+    "reportPath": "coverage",
+    "reportFile": "jest-report.xml",
+    "indent": 4
   },
   "private": true,
   "browser": {
