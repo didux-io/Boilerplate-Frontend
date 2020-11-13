@@ -24,13 +24,4 @@ export class OverviewPageComponent {
             opmerking: new FormControl(""),
         });
     }
-
-    updateOverview(): void {
-        const text = this.overviewForm.get("text").value;
-        const text1 = this.overviewForm.get("text1").value;
-        const datum1 = this.overviewForm.get("datum1").value;
-        const tijd1 = this.overviewForm.get("tijd1").value;
-        const opmerking = this.overviewForm.get("opmerking").value;
-        alert(text + ", " + text1 + ", " + datum1 + ", " + tijd1 + ", " + opmerking);
-    }
 }
