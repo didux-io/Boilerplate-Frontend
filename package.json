@@ -1,5 +1,5 @@
 {
-  "name": "APPLICATION_NAME",
+  "name": "boilerplate-frontend",
   "version": "1.0.0",
   "description": "Boilerplate Frontend",
   "scripts": {
@@ -15,6 +15,16 @@
     "sonar": "sonar-scanner",
     "test": "cross-env NODE_ENV=test jest --coverage --testTimeout=10000; npm run lint:json"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/didux-io/Boilerplate-Frontend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/didux-io/Boilerplate-Frontend/issues"
+  },
+  "homepage": "https://www.didux.io",
+  "author": "Didux.io",
+  "license": "GPL-3.0-only",
   "jest": {
     "preset": "jest-preset-angular",
     "setupFilesAfterEnv": [
