@@ -31,7 +31,7 @@
                 <p *ngIf="!websocketDisconnected" class="qr-code-text">{{ 'PROFILE.loginProofme' | translate }}</p>
             </div>
             <div *ngIf="showMobileLogin && (webRtcEnabled$ | async)" class="fixed-width mobile-button-div">
-                <p>{{ 'PROFILE.clickhere' | translate }}<b> {{ 'PROFILE.proofmeAPP' | translate }}</b></p>
+                <p>{{ 'PROFILE.clickhere' | translate }}<strong> {{ 'PROFILE.proofmeAPP' | translate }}</strong></p>
                 <a [href]="mobileLoginUrl | safeUrl" class="btn btn-success mobile-button" target="_blank">{{ 'PROFILE.login_button_app' | translate }}</a>
             </div>
         </div>
