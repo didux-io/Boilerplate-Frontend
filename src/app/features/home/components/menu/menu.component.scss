@@ -1,7 +1,6 @@
 :host {
     $blue-darken: white;
 
-    width: var(--menu-width);
     height: 100%;
     background-color: var(--app-primary-color);
     display: block;
@@ -15,7 +14,7 @@
         width: 200px;
     }
 
-    build-number-text {
+    .build-number-text {
         opacity: 0.0;
         transition: opacity .1s ease-in-out;
     }
@@ -51,7 +50,7 @@
             width: 200px;
         }
     
-        build-number-text {
+        .build-number-text {
             opacity: 1.0;
             transition: opacity .2s ease-in-out;
         }

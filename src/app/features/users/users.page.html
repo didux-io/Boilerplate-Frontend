@@ -31,8 +31,8 @@
 </ng-template>
 <ng-template #activeTpl let-row let-rowIndex="rowIndex">
    <div *ngIf="editRow !== rowIndex">
-      <img *ngIf="row.active === true || row.active === 'true'" src="/assets/img/success-icon.png" class="table-icon">
-      <img *ngIf="row.active === false || row.active === 'false'" src="/assets/img/failed-icon.png" class="table-icon">
+      <img *ngIf="row.active === true || row.active === 'true'" src="/assets/img/success-icon.png" class="table-icon" alt="user">
+      <img *ngIf="row.active === false || row.active === 'false'" src="/assets/img/failed-icon.png" class="table-icon" alt="user">
    </div>
    <div *ngIf="editRow === rowIndex">
       <div class="form-group">
