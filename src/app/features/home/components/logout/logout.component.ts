@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import {Component, NgModule, OnInit} from "@angular/core";
 import { Router } from "@angular/router";
 import { UserStateFacade } from "src/app/state/user/user.facade";
 import { WebRtcProvider } from "@proofmeid/webrtc";
@@ -8,6 +8,7 @@ import { WebRtcProvider } from "@proofmeid/webrtc";
     templateUrl: "logout.component.html",
     styleUrls: ["logout.component.scss"]
 })
+@NgModule()
 export class LogoutComponent implements OnInit {
 
     constructor(private route: Router,

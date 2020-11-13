@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from "@angular/core";
+import {Component, NgModule, OnDestroy} from "@angular/core";
 import { Router } from "@angular/router";
 
 @Component({
@@ -6,6 +6,7 @@ import { Router } from "@angular/router";
     templateUrl: "menu.component.html",
     styleUrls: ["menu.component.scss"],
 })
+@NgModule()
 export class MenuComponent implements OnDestroy {
 
     constructor(private router: Router) {
