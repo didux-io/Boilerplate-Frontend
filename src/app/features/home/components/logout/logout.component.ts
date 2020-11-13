@@ -8,7 +8,6 @@ import { WebRtcProvider } from "@proofmeid/webrtc-web";
     templateUrl: "logout.component.html",
     styleUrls: ["logout.component.scss"]
 })
-@NgModule()
 export class LogoutComponent implements OnInit {
 
     constructor(private route: Router,

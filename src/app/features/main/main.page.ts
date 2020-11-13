@@ -16,7 +16,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms"
 export class MainPageComponent extends BaseComponent implements OnInit {
     contactForm: FormGroup;
     languages = [];
-    recaptcha: ReCaptchaInstance
+    recaptcha: ReCaptchaInstance;
+    contactEmail: string;
 
 
     constructor(

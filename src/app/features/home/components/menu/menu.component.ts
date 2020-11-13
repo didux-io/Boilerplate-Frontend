@@ -6,7 +6,6 @@ import { UserStateFacade } from "src/app/state/user/user.facade";
     templateUrl: "menu.component.html",
     styleUrls: ["menu.component.scss"],
 })
-@NgModule()
 export class MenuComponent {
 
     isAdmin$ = this.userStateFacade.isAdmin$;

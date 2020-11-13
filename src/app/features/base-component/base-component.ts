@@ -1,6 +1,7 @@
-import { OnDestroy } from "@angular/core";
+import {Component, NgModule, OnDestroy} from "@angular/core";
 import { Subject } from "rxjs";
 
+@NgModule()
 export abstract class BaseComponent implements OnDestroy {
     private destroySubject: Subject<unknown>;
 
