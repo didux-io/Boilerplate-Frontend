@@ -1,5 +1,5 @@
 {
-    "backendUrl": "http://localhost:4015",
+    "backendUrl": "https://bp-backend.didux.network",
     "appName": "APPLICATION_NAME",
     "appDescription": "APPLICATION DESCRIPTION",
     "facebook": "https://www.facebook.com/DiduxVaults",

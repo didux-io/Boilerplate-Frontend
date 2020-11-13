@@ -4,9 +4,14 @@ import {AppStateFacade} from "../../state/app/app.facade";
 import {FontAwesomeTestingModule} from "@fortawesome/angular-fontawesome/testing";
 import {Observable, of} from "rxjs";
 import {take} from "rxjs/operators";
+import {UserStateFacade} from "../../state/user/user.facade";
 
 class MockAppStateFacade {
     buildNumber$: Observable<string> = of("1234");
+}
+
+class MockUserStateFacade {
+    isAdmin$: Observable<boolean> = of(true);
 }
 
 describe("AppComponent", () => {
@@ -17,7 +22,8 @@ describe("AppComponent", () => {
             ],
             providers: [
                 BuildNumberComponent,
-                { provide: AppStateFacade, useClass: MockAppStateFacade }
+                { provide: AppStateFacade, useClass: MockAppStateFacade },
+                { provide: UserStateFacade, useClass: MockUserStateFacade }
             ],
             imports: [
                 FontAwesomeTestingModule
