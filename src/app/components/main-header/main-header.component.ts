@@ -45,7 +45,9 @@ export class MainHeaderComponent {
     toggleMobileHamburger(): void {
         this.isMenuCollapsed = !this.isMenuCollapsed;
     }
-
+    toggleMobileHamburgerDown(): void {
+        this.isMenuCollapsed = true;
+    }
     toggleAccountDropdown(): void {
         this.isAccountCollapsed = !this.isAccountCollapsed
     }
