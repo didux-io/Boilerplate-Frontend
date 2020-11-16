@@ -1,9 +1,9 @@
 # This workflow will do a clean install of node dependencies and build the source code
 
-name: Build
+name: Test
 
 on:
-  [ push, pull_request ]
+  [ pull_request ]
 
 jobs:
   test:
