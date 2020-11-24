@@ -1,6 +1,7 @@
 import { Component, NgZone, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from "ngx-toastr";
 import { skip, takeUntil } from "rxjs/operators";
 import { UserStateFacade } from "src/app/state/user/user.facade";
@@ -18,7 +19,8 @@ export class RegistrateFinishPageComponent extends BaseComponent implements OnIn
         private userStateFacade: UserStateFacade,
         private toastr: ToastrService,
         private ngZone: NgZone,
-        private router: Router
+        private router: Router,
+        private translateService: TranslateService
     ) {
         super();
 
@@ -55,7 +57,7 @@ export class RegistrateFinishPageComponent extends BaseComponent implements OnIn
         const username = this.finishRegistrationForm.get("username").value;
         const termsAndPrivacyAccepted = this.finishRegistrationForm.get("termsAndPrivacyAccepted").value;
         const newsLetter = this.finishRegistrationForm.get("newsLetter").value;
-        this.userStateFacade.finishRegistration(username, termsAndPrivacyAccepted, newsLetter);
+        this.userStateFacade.finishRegistration(username, termsAndPrivacyAccepted, newsLetter, this.translateService.currentLang);
     }
 
     navigateToTerms(): void {
