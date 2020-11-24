@@ -11,4 +11,5 @@ export interface IJWTDecoded {
     fresh: boolean;
     type: string;
     user_claims: IUserClaims;
+    lang: string;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from "ngx-toastr";
 import { skip, takeUntil } from "rxjs/operators";
 import { UserStateFacade } from "src/app/state/user/user.facade";
@@ -18,7 +19,8 @@ export class RegistratePageComponent extends BaseComponent implements OnInit {
     constructor(
         private formBuilder: FormBuilder,
         private userStateFacade: UserStateFacade,
-        private toastr: ToastrService
+        private toastr: ToastrService,
+        private translateService: TranslateService
     ) {
         super();
 
@@ -45,6 +47,7 @@ export class RegistratePageComponent extends BaseComponent implements OnInit {
     registrate(): void {
         const email = this.registrateForm.get("email").value;
         const password = this.registrateForm.get("password").value;
-        this.userStateFacade.registrate(email, password);
+        const language = this.translateService.currentLang;
+        this.userStateFacade.registrate(email, password, language);
     }
 }
