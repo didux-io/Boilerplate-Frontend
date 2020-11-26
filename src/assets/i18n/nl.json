@@ -57,7 +57,6 @@
     "FOOTER":{
         "terms":"Algemene voorwaarden",
         "privacy":"Privacybeleid",
-        "faq":"Veel gestelde vragen",
         "email":"E-mail",
         "menu":"Menu",
         "home":"Home",
@@ -67,7 +66,7 @@
         "rights":"Didux.io Alle rechten voorbehouden.",
         "emailAddress":"info@didux.io",
         "copyright": "© Copyrights 2020 Didux.io alle rechten voorbehouden",
-        "faq":"Veel gestelde vragen"
+        "faq": "Veel gestelde vragen"
     },
     "MODALS": {
         "RECOVERY": {
@@ -91,7 +90,7 @@
         "answer3.2":"- 1. Klik linksbovenin op het bedrijfslogo zodat u op de hoofdpagina bent.",
         "answer3.3":"- 2. Ga naar de sectie: Neem contact met ons op en stuur uw vraag naar ons."
     },
-        "REGISTRATE":{
+    "REGISTRATE":{
         "accept":"Ik accepteer het",
         "and":"en de",
         "subscribe":"Ik wil me abonneren op de nieuwsbrief"
