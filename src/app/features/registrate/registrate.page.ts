@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from "@ngx-translate/core";
 import { ToastrService } from "ngx-toastr";
 import { skip, takeUntil } from "rxjs/operators";
 import { UserStateFacade } from "src/app/state/user/user.facade";

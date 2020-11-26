@@ -34,8 +34,8 @@ const routes: Routes = [
     },
     {
         path: "faq",
-        loadChildren: "./features/test_faq/faq.module#FaqPageModule"
-    },
+        loadChildren: "./features/faq/faq.module#FaqPageModule"
+    }, 
     {
         path: "home",
         loadChildren: "./features/home/home.module#HomePageModule",
