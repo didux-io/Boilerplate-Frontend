@@ -65,7 +65,8 @@
         "city":"Almelo, NL",
         "rights":"Didux.io Alle rechten voorbehouden.",
         "emailAddress":"info@didux.io",
-        "copyright": "© Copyrights 2020 Didux.io alle rechten voorbehouden"
+        "copyright": "© Copyrights 2020 Didux.io alle rechten voorbehouden",
+        "faq": "Veel gestelde vragen"
     },
     "MODALS": {
         "RECOVERY": {
@@ -76,7 +77,18 @@
     },
     "TITLE":{
         "terms":"Algemene voorwaarden",
-        "privacy":"Privacybeleid"
+        "privacy":"Privacybeleid",
+        "faq":"Veel gestelde vragen"
+    },
+    "FAQ":{
+        "question1":"Hebben jullie een privacybeleid pagina?",
+        "answer1":"Ja, u klikt op de privacybeleids tekst in de footer op de hoofdpagina om de privacybeleid pagina te openen.",
+        "question2":"Hebben jullie een pagina met de algemene voorwaarden?",
+        "answer2":"Ja, u klikt op de tekst Algemene voorwaarden in de footer op de hoofdpagina om de pagina Privacybeleid te openen.",
+        "question3":"Hoe kan ik een vraag stellen over het bedrijf over een specifieke vraag die niet op de veel gestelde vragen pagina staat?",
+        "answer3.1":"Staat uw vraag er niet tussen, neem dan contact met ons op. Dit doe je door:",
+        "answer3.2":"- 1. Klik linksbovenin op het bedrijfslogo zodat u op de hoofdpagina bent.",
+        "answer3.3":"- 2. Ga naar de sectie: Neem contact met ons op en stuur uw vraag naar ons."
     },
     "REGISTRATE":{
         "accept":"Ik accepteer het",

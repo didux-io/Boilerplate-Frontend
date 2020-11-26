@@ -45,6 +45,10 @@ export class FooterComponent {
         this.router.navigate(["privacy"]);
     }
 
+    navigateToFAQ(): void {
+        this.router.navigate(["faq"]);
+    }
+
     selectLanguage(language: string): void {
         this.appStateFacade.setLanguage(language);
         this.translateService.use(language);

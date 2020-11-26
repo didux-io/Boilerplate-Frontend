@@ -65,7 +65,8 @@
         "city":"Almelo, NL",
         "rights":"Didux.io All Rights Reserved.",
         "emailAddress":"info@didux.io",
-        "copyright": "© Copyrights 2020 Didux.io all rights reserved"
+        "copyright": "© Copyrights 2020 Didux.io all rights reserved",
+        "faq":"Frequently asked questions"
     },
     "MODALS": {
         "RECOVERY": {
@@ -76,7 +77,18 @@
     },
     "TITLE":{
         "terms":"Terms & conditions",
-        "privacy":"Privacy policy"
+        "privacy":"Privacy policy",
+        "faq":"Frequently asked questions"
+    },
+    "FAQ":{
+        "question1":"Do you have a privacy policy page?",
+        "answer1":"Yes, you click on the Privacy policy text in the footer at the main page to open the Privacy policy page.",
+        "question2":"Do you have a Terms and Condition page?",
+        "answer2":"Yes, you click on the Terms & condition text in the footer at the main page to open the Privacy policy page.",
+        "question3":"How can I ask about the company about a specific question that is not on the FAQ page?",
+        "answer3.1":"If your question is not answered on the FAQ page, please contact us. You do this by:",
+        "answer3.2":"- 1. Click on the company logo at the top left so that you are on the main page.",
+        "answer3.3":"- 2. Scroll to the section: Contact Us, and send your question to us."
     },
     "REGISTRATE":{
         "accept":"I Accept the",
