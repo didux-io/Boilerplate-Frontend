@@ -66,10 +66,6 @@ export class MainPageComponent extends BaseComponent implements OnInit {
         this.router.navigate(["privacy"]);
     }
 
-    navigateToFAQ(): void {
-        this.router.navigate(["faq"]);
-    }
-
     async sendEmail(): Promise<void> {
         const token = await this.recaptcha.execute("submit");
 
